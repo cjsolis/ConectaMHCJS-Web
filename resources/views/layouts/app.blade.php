@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Acme</title>
+    <title>MHCJS</title>
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
@@ -21,8 +21,8 @@
        </div>
      </div>
    </div>
-   <footer id="footer" class="text-center">
-     <p>Copyright 2018 &copy; Acme</p>
+   <footer id="footer" class="text-center" >
+     <p>Copyright 2018 &copy; MHCJS</p>
    </footer>
   </body>
 </html>

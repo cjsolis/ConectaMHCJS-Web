@@ -9,10 +9,28 @@ class PagesController extends Controller
     public function getHome(){
       return view('home');
     }
-    public function getAbout(){
-      return view('about');
+    public function getAcerca(){
+      return view('acerca');
     }
-    public function getContact(){
-      return view('contact');
+    public function getContactenos(){
+      return view('contactenos');
+    }
+    public function getGaleria(){
+      return view('galeria');
+    }
+    public function getNoticias(){
+      return view('noticias');
+    }
+    public function getExhibiciones(){
+      return view('exhibiciones');
+    }
+    public function getEventos(){
+      return view('eventos');
+    }
+    public function getServicios(){
+      return view('servicios');
+    }
+    public function getRecursos(){
+      return view('recursos');
     }
 }

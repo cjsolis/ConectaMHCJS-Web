@@ -14,18 +14,18 @@ class MessagesController extends Controller
       $this->validate($request, [
         'name'=> 'required',
         'email'=> 'required'
-    ]);
-  //  return 'SUCCESS';
-  //create new Message
-  $message = new Message;
-  $message->name = $request->input('name');
-  $message->email = $request->input('email');
-  $message->message = $request->input('message');
-  //save message
-  $message->save();
+        ]);
+      //  return 'SUCCESS';
+      //create new Message
+      $message = new Message;
+      $message->name = $request->input('name');
+      $message->email = $request->input('email');
+      $message->message = $request->input('message');
+      //save message
+      $message->save();
 
-  //redirect
-  return redirect('/')->with('success','Message Sent');//return to home.
+      //redirect
+      return redirect('/')->with('success','Message Sent');//return to home.
 
     }
 

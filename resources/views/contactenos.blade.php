@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section ('content')
-  <h1>Contact</h1>
+  <h1>Contáctenos</h1>
   {!! Form::open(['url' => 'contact/submit']) !!}
       <div class="form-group">
         {{Form::label('name', 'Name')}}

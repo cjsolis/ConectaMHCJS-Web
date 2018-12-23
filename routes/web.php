@@ -12,8 +12,14 @@
 */
 
 Route::get('/', 'PagesController@getHome');
-Route::get('/about', 'PagesController@getAbout');
-Route::get('/contact', 'PagesController@getContact');
+Route::get('/acerca', 'PagesController@getAcerca');
+Route::get('/contactenos', 'PagesController@getContactenos');
+Route::get('/galeria', 'PagesController@getGaleria');
+Route::get('/noticias', 'PagesController@getNoticias');
+Route::get('/exhibiciones', 'PagesController@getExhibiciones');
+Route::get('/eventos', 'PagesController@getEventos');
+Route::get('/servicios', 'PagesController@getServicios');
+Route::get('/recursos', 'PagesController@getRecursos');
 
 
 Route::get('/messages', 'MessagesController@getMessages');
