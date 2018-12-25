@@ -1,29 +1,79 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">MHCJS</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault" >
-        <ul class="navbar-nav mr-auto">
-          <li class="{{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a></li>
-          <li class="{{Request::is('galeria') ? 'active' : ''}}"><a class="nav-link" href="/galeria">Galería</a></li>
-          <li class="{{Request::is('noticias') ? 'active' : ''}}"><a class="nav-link" href="/noticias">Noticias</a></li>
-          <li class="{{Request::is('exhibiciones') ? 'active' : ''}}"><a class="nav-link" href="/exhibiciones">Exhibiciones</a></li>
-          <li class="{{Request::is('eventos') ? 'active' : ''}}"> <a class="nav-link" href="/eventos">Eventos</a></li>
-          <li class="{{Request::is('servicios') ? 'active' : ''}}"> <a class="nav-link" href="/servicios">Servicios</a></li>
-          <li class="{{Request::is('recursos') ? 'active' : ''}}"> <a class="nav-link" href="/recursos">Recursos</a></li>
-          <li class="{{Request::is('acerca') ? 'active' : ''}}">  <a class="nav-link" href="/acerca">Acerca</a></li>
-          <li class="{{Request::is('contactenos') ? 'active' : ''}}"><a class="nav-link" href="/contactenos">Contáctenos</a></li>
+<nav class="nav-arriba" >
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="/">Action</a>
-              <a class="dropdown-item" href="/">Another action</a>
-              <a class="dropdown-item" href="/">Something else here</a>
+
+        <ul>
+          <li><a class="nav-itemarriba" href="#">ES</a></li>
+          <li><a class="nav-itemarriba" href="#">EN</a></li>
+          <li><a class="nav-itemarriba" href="#">Noticias</a></li>
+          <li><a class="nav-itemarriba" href="#">Contáctenos</a></li>
+          <li><a class="nav-itemarriba" href="#">Iniciar Sesión o Registrarse</a></li>
+        </ul>
+</nav>
+
+
+<nav class="nav-main" >
+
+      <div class="logo" >MHCJS</div>
+        <ul>
+          <li><a class="nav-item" href="#">Inicio</a></li>
+
+
+          <li>
+            <a class="nav-item" href="#">Exhibiciones</a>
+            <div class="nav-content">
+              <div class="nav-sub">
+                <ul>
+                  <li><a href="/exhibiciones">Permanentes</a></li>
+                  <li><a href="#">Temporales</a></li>
+                </ul>
+              </div>
             </div>
           </li>
+          <li><a class="nav-item" href="#">Galería </a></li>
+          <li><a class="nav-item" href="#">Eventos </a></li>
+
+          <li>
+            <a class="nav-item" href="#">Servicios</a>
+            <div class="nav-content">
+              <div class="nav-sub">
+                <ul>
+                  <li><a href="#">Visita Guiada</a></li>
+                  <li><a href="#">Servicios Educativos</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a class="nav-item" href="#">Recursos</a>
+            <div class="nav-content">
+              <div class="nav-sub">
+                <ul>
+                  <li><a href="#">Campaña Nacional</a></li>
+                  <li><a href="#">Centro de Información</a></li>
+                  <li><a href="#">Publicaciones</a></li>
+                  <li><a href="#">Guiños del 56</a></li>
+                  <li><a href="#">Tienda en Línea</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a class="nav-item" href="#">Acerca de Nosotros</a>
+            <div class="nav-content">
+              <div class="nav-sub">
+                <ul>
+                  <li><a href="#">Creación</a></li>
+                  <li><a href="#">Arquitectura</a></li>
+                  <li><a href="#">Misión</a></li>
+                  <li><a href="#">Visión</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+
         </ul>
-      </div>
     </nav>

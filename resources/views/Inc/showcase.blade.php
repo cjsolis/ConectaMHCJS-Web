@@ -1,6 +1,8 @@
 <div class="jumbotron text-center">
   <div class="container">
-    <h1>Welcome To Our Site</h1>
+
+    <image img src="C:\xampp\htdocs\ConectaMHCJS\resources\imagenes\logoinicio.png" alt="Logo"></image>
+  
     <p class="lead">Welcome to our brand new laravel powered webseite</p>
   </div>
 
