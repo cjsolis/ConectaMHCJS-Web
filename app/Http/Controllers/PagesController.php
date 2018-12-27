@@ -21,8 +21,11 @@ class PagesController extends Controller
     public function getNoticias(){
       return view('noticias');
     }
-    public function getExhibiciones(){
-      return view('exhibiciones');
+    public function getExhibicionesPermanentes(){
+      return view('exhibicionespermanentes');
+    }
+    public function getExhibicionesTemporales(){
+      return view('exhibicionestemporales');
     }
     public function getEventos(){
       return view('eventos');
@@ -33,4 +36,6 @@ class PagesController extends Controller
     public function getRecursos(){
       return view('recursos');
     }
+
+
 }

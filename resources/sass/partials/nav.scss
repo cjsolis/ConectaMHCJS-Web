@@ -15,8 +15,6 @@ nav ul li:nth-child(5) {}*/
   position: absolute;
   top: 0px;
   right: 0px;
-
-
   width: 100%;
   background-color: #B61B1B;
   height: 40px;
@@ -38,13 +36,14 @@ nav ul li:nth-child(5) {}*/
   }
 }
 .nav-itemarriba{
+  position: relative;
   display: inline-block;
-  padding: 0px 20px;
+  padding: 0px 70px;
   height: 40px;
+
   line-height: 45px;
   color: white;
   text-decoration: none;
-
   &:hover{
     background-color: $nav-foreground-color;
     opacity: 0.5;
@@ -143,7 +142,7 @@ nav ul li:nth-child(5) {}*/
     background-color: $nav-foreground-color;
     text-decoration: underline;
     text-decoration-color: #FF9900;
-    text-decoration-style: double;
+
     ~ .nav-content{
       max-height: 400px;
     }
@@ -178,6 +177,7 @@ nav ul li:nth-child(5) {}*/
 
   //box-sizing:  border-box;
   //text-align: left;
+
   ul{
     @extend %plainlist;
 
@@ -192,6 +192,4 @@ nav ul li:nth-child(5) {}*/
 
     }
   }
-
-
 }
