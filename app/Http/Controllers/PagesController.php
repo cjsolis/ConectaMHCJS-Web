@@ -9,9 +9,6 @@ class PagesController extends Controller
     public function getHome(){
       return view('home');
     }
-    public function getAcerca(){
-      return view('acerca');
-    }
     public function getContactenos(){
       return view('contactenos');
     }
@@ -59,6 +56,23 @@ class PagesController extends Controller
     public function getCatalogo(){
       return view('catalogo');
     }
-
+    public function getTransparencia(){
+      return view('transparencia');
+    }
+    public function getTramites(){
+      return view('tramites');
+    }
+    public function getPregunasFrecuentes(){
+      return view('preguntasfrecuentes');
+    }
+    public function getDenunciasQuejas(){
+      return view('denunciasquejas');
+    }
+    public function getEnlacesAmigos(){
+      return view('enlacesamigos');
+    }
+    public function getAcerca(){
+      return view('acerca');
+    }
 
 }

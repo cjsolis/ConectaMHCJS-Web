@@ -27,8 +27,15 @@ Route::get('/campananacional', 'PagesController@getCampanaNacional');
 Route::get('/centroinformacion', 'PagesController@getCentroInfo');
 Route::get('/arquitecturamuseo', 'PagesController@getArquitecturaMuseo');
 Route::get('/guinos', 'PagesController@getGuinos');
-Route::get('/catalogo', 'PagesController@getCatalogo'); 
+Route::get('/catalogo', 'PagesController@getCatalogo');
+Route::get('/transparencia', 'PagesController@getTransparencia');
+Route::get('/tramites', 'PagesController@getTramites');
+Route::get('/preguntasfrecuentes', 'PagesController@getPregunasFrecuentes');
+Route::get('/denunciasquejas', 'PagesController@getDenunciasQuejas');
+Route::get('/enlacesamigos', 'PagesController@getEnlacesAmigos');
+
+
+
 
 Route::get('/messages', 'MessagesController@getMessages');
-
 Route::post('/contact/submit', 'MessagesController@submit');

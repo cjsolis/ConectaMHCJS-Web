@@ -10,7 +10,7 @@
   padding: 20px;
   color: #fff;
   background: #333;
-  background-color: #000066;
+  background-color: red;
 }
 
 body,
@@ -731,7 +731,7 @@ a.simple {
 /****************************** HOME - Content Part - Footer ******************************/
 
 #footer {
-  background: #062F5D;/*AQUI SE CAMBIA EL COLOR DE FONDO DEL FOOTER*/
+  background: #062F5D;/*el color azul es 062F5D*/
   padding: 20px 0px;
   border-top: 5px solid #bfd6e4;
 }
