@@ -21,7 +21,13 @@ Route::get('/exhibicionestemporales', 'PagesController@getExhibicionesTemporales
 Route::get('/eventos', 'PagesController@getEventos');
 Route::get('/servicios', 'PagesController@getServicios');
 Route::get('/recursos', 'PagesController@getRecursos');
-
+Route::get('/visitaguiada', 'PagesController@getVisitaGuiada');
+Route::get('/servicioseducativos', 'PagesController@getServiciosEducativos');
+Route::get('/campananacional', 'PagesController@getCampanaNacional');
+Route::get('/centroinformacion', 'PagesController@getCentroInfo');
+Route::get('/arquitecturamuseo', 'PagesController@getArquitecturaMuseo');
+Route::get('/guinos', 'PagesController@getGuinos');
+Route::get('/catalogo', 'PagesController@getCatalogo'); 
 
 Route::get('/messages', 'MessagesController@getMessages');
 

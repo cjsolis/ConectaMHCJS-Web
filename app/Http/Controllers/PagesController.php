@@ -37,5 +37,28 @@ class PagesController extends Controller
       return view('recursos');
     }
 
+    public function getVisitaGuiada(){
+      return view('visitaguiada');
+    }
+    public function getServiciosEducativos(){
+      return view('servicioseducativos');
+    }
+
+    public function getCampanaNacional(){
+      return view('campananacional');
+    }
+    public function getCentroInfo(){
+      return view('centroinformacion');
+    }
+    public function getArquitecturaMuseo(){
+      return view('arquitecturamuseo');
+    }
+    public function getGuinos(){
+      return view('guinos');
+    }
+    public function getCatalogo(){
+      return view('catalogo');
+    }
+
 
 }
