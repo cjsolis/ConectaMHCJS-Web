@@ -6,15 +6,15 @@
 }
 
 #footer {
-  margin-top: 30px;
+  margin-top: 90%;/*CON ESTO SE PONE EL FOOTER ABAJO*/
   padding: 20px;
   color: #fff;
   background: #333;
-  background-color: red;
+  background-color: #000066;
 }
 
-body,html {
-  height: 100%;
+body,
+html {
   margin: 0;
   font: 1.3em "Open Sans", sans-serif;
 }
@@ -22,28 +22,6 @@ body,html {
 .content {
   padding: 30px;
 }
-
-
-* {
-  margin: 0;
-}
-
-.page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -142px;
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-.site-footer, .page-wrap:after {
-  height: 142px;
-}
-.site-footer {
-  background: orange;
-}
-
 
 /*nav ul li:first-child { float: left; }
 nav ul li:second-child { float: left; }
@@ -753,7 +731,7 @@ a.simple {
 /****************************** HOME - Content Part - Footer ******************************/
 
 #footer {
-  background: #626879;
+  background: #062F5D;/*AQUI SE CAMBIA EL COLOR DE FONDO DEL FOOTER*/
   padding: 20px 0px;
   border-top: 5px solid #bfd6e4;
 }
