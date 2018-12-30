@@ -61,6 +61,57 @@ nav ul li:nth-child(5) {}*/
 
 
 }
+//NAV BAR PARA DENTRO DE LA TIENDA, CONTIENE LA IMAGEN DEL CARRITO.
+.nav-arriba-tienda{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  background-color: #B61B1B;
+  height: 40px;
+  color: white;
+  padding: 0;
+  .logo{
+    float: left;
+    height: 40px;
+    padding: 3px 30px;
+    font-size: 1.4em;
+    line-height: 40px;
+  }
+  > ul{
+    @extend %plainlist;
+    float: left;
+    >li{
+      float: left;
+    }
+  }
+}
+.nav-itemarriba-tienda{
+  position: relative;
+  display: inline-block;
+  padding: 0px 40px;
+  height: 40px;
+
+  line-height: 45px;
+  color: white;
+  text-decoration: none;
+  &:hover{
+    background-color: $nav-foreground-color;
+    opacity: 0.5;
+  }
+  &:focus{
+    background-color: $nav-foreground-color;
+    text-decoration-color: black;
+    text-decoration: none;
+    color: black;
+    opacity: 0.5;
+    ~ .nav-contentarriba{
+      max-height: 400px;
+    }
+  }
+
+
+}
 
 /*.nav-contentarriba{
   position: absolute;

@@ -1,5 +1,5 @@
 
-<div id="footer">
+<div id="footer" style="margin-top: 90%;background: #062F5D;">
    <div class="container footer">
      <div class="one_fourth"  style="width: 500px;">
 

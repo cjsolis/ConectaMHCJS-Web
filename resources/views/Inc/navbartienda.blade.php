@@ -1,18 +1,17 @@
-
-
-
-<nav class="nav-arriba" style=" position: absolute;  top: 0px;" >
+<nav class="nav-arriba-tienda" style=" position: absolute;  top: 0px;
+width: 100%; " >
         <ul>
-          <li><a class="nav-itemarriba" href="#">ES</a></li>
-          <li><a class="nav-itemarriba" href="#">EN</a></li>
-          <li><a class="nav-itemarriba" href="/noticias">Noticias</a></li>
-          <li><a class="nav-itemarriba" href="/contactenos">Contáctenos</a></li>
-          <li><a class="nav-itemarriba" href="logintienda">Iniciar Sesión</a></li>
-          <li><a class="nav-itemarriba" href="/registrarsetienda">Registrarse</a></li>
-
+          <li><a class="nav-itemarriba-tienda" style="padding: 0px 50px;left:90px;" href="#">ES</a></li>
+          <li><a class="nav-itemarriba-tienda" style="padding: 0px 50px;left:90px;" href="#">EN</a></li>
+          <li><a class="nav-itemarriba-tienda" style="padding: 0px 50px;left:90px;" href="/noticias">Noticias</a></li>
+          <li><a class="nav-itemarriba-tienda" style="padding: 0px 50px;left:90px;" href="/contactenos">Contáctenos</a></li>
+          <li><a class="nav-itemarriba-tienda" style="padding: 0px 50px;left:90px;" href="logintienda">Iniciar Sesión</a></li>
+          <li><a class="nav-itemarriba-tienda" style="padding: 0px 50px;left:90px;" href="/registrarsetienda">Registrarse</a></li>
+          <li>
+            <a class="nav-itemarriba-tienda" style="padding: 0px 50px;left:90px;" href="#"><img src="/images/carro30.png" ></a>
+          </li>
         </ul>
 </nav>
-
 
 
 <nav class="navbar navbar-expand-lg navbar-light" style=" position: absolute;  left: 200px;top: 200px; ">
@@ -80,51 +79,3 @@
 
   </div>
 </nav>
-
-
-<!--
-<nav  class="nav-main navbar-expand" style=" position: absolute;  left: 175px;top: 200px;" >
-        <ul>
-          <li><a class="nav-item active" href="/">Inicio</a></li>
-
-          <li class="nav-item dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Exhibiciones<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li ><a  href="/exhibicionespermanentes">Permanentes</a></li>
-                  <li ><a  href="/exhibicionestemporales">Temporales</a></li>
-                </ul>
-          </li>
-          <li><a class="nav-item" href="/galeria">Galería </a></li>
-          <li><a class="nav-item" href="#">Eventos </a></li>
-
-          <li>
-            <a class="nav-item" href="#">Servicios</a>
-            <div class="nav-content">
-              <div class="nav-sub">
-                <ul>
-                  <li><a href="#">Visita Guiada</a></li>
-                  <li><a href="#">Servicios Educativos</a></li>
-                </ul>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <a class="nav-item" href="#">Recursos</a>
-            <div class="nav-content">
-              <div class="nav-sub">
-                <ul>
-                  <li><a href="#">Campaña Nacional</a></li>
-                  <li><a href="#">Centro de Información</a></li>
-                  <li><a href="#">Publicaciones</a></li>
-                  <li><a href="#">Guiños del 56</a></li>
-                  <li><a href="#">Tienda en Línea</a></li>
-                </ul>
-              </div>
-            </div>
-          </li>
-
-          <li>  <a class="nav-item" href="#">Tienda</a></li>
-
-
-        </ul>
-</nav>-->

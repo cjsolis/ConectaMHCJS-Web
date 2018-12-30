@@ -33,7 +33,9 @@ Route::get('/tramites', 'PagesController@getTramites');
 Route::get('/preguntasfrecuentes', 'PagesController@getPregunasFrecuentes');
 Route::get('/denunciasquejas', 'PagesController@getDenunciasQuejas');
 Route::get('/enlacesamigos', 'PagesController@getEnlacesAmigos');
-
+Route::get('/logintienda', 'PagesController@getLogin');
+Route::get('/registrarsetienda', 'PagesController@getRegistrarse');
+Route::get('/catalogotienda', 'PagesController@getCatalogoTienda');
 
 
 

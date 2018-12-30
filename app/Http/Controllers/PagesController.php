@@ -74,5 +74,14 @@ class PagesController extends Controller
     public function getAcerca(){
       return view('acerca');
     }
+    public function getLogin(){
+      return view('logintienda');
+    }
+    public function getRegistrarse(){
+      return view('registrarsetienda');
+    }
+    public function getCatalogoTienda(){
+      return view('catalogotienda');
+    }
 
 }

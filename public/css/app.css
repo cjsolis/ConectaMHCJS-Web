@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);.nav-arriba > ul,
+.nav-arriba-tienda > ul,
 .nav-main > ul {
   margin: 80;
   padding: 0;
@@ -87,6 +88,61 @@ nav ul li:nth-child(5) {}*/
 }
 
 .nav-itemarriba:focus ~ .nav-contentarriba {
+  max-height: 400px;
+}
+
+.nav-arriba-tienda {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  background-color: #B61B1B;
+  height: 40px;
+  color: white;
+  padding: 0;
+}
+
+.nav-arriba-tienda .logo {
+  float: left;
+  height: 40px;
+  padding: 3px 30px;
+  font-size: 1.4em;
+  line-height: 40px;
+}
+
+.nav-arriba-tienda > ul {
+  float: left;
+}
+
+.nav-arriba-tienda > ul > li {
+  float: left;
+}
+
+.nav-itemarriba-tienda {
+  position: relative;
+  display: inline-block;
+  padding: 0px 50px;
+  height: 40px;
+  line-height: 45px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-itemarriba-tienda:hover {
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+.nav-itemarriba-tienda:focus {
+  background-color: #fff;
+  -webkit-text-decoration-color: black;
+          text-decoration-color: black;
+  text-decoration: none;
+  color: black;
+  opacity: 0.5;
+}
+
+.nav-itemarriba-tienda:focus ~ .nav-contentarriba {
   max-height: 400px;
 }
 

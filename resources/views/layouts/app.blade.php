@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" >
   <head>
     <meta charset="utf-8">
     <title>MHCJS</title>
@@ -11,10 +11,18 @@
 
   </head>
 
-  <body>
+  <body >
     <div id="container">
       <div class="page-wrap">
-          @include('inc.navbar')
+
+          <?php if (Request::is('catalogotienda')) { ?>
+            <?php echo "es catalogo de la tienda" ?>
+              @include('inc.navbartienda')
+          <?php } else { ?>
+            <?php echo "NO LO ES" ?>
+              @include('inc.navbar')
+          <?php } ?>
+
           <div class="container">
             @include('inc.showcase')
             <!--@if(Request::is('/'))
@@ -29,7 +37,7 @@
             </div>
        </div>
      </div>
-@include('inc.footers')
+     @include('inc.footers')
 
 
 
