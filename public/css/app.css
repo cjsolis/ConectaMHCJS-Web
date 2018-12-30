@@ -7,7 +7,7 @@
 }
 
 #footer {
-  margin-top: 90%;/*CON ESTO SE PONE EL FOOTER ABAJO*/
+  margin-top: 30px;
   padding: 20px;
   color: #fff;
   background: #333;
@@ -121,7 +121,7 @@ nav ul li:nth-child(5) {}*/
 .nav-itemarriba-tienda {
   position: relative;
   display: inline-block;
-  padding: 0px 50px;
+  padding: 0px 40px;
   height: 40px;
   line-height: 45px;
   color: white;
@@ -787,7 +787,7 @@ a.simple {
 /****************************** HOME - Content Part - Footer ******************************/
 
 #footer {
-  background: #062F5D;/*el color azul es 062F5D*/
+  background: #626879;
   padding: 20px 0px;
   border-top: 5px solid #bfd6e4;
 }
@@ -13217,3 +13217,4 @@ a.text-dark:focus {
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
