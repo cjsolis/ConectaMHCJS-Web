@@ -1,0 +1,16 @@
+configurar laravel con heroku postgresql:
+-heroku create
+-heroku login
+-heroku config:set BUILDPACK_URL-https://github.com/heroku/heroku-buildpack-php, si o sirve entonces
+heroku config:add BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-php
+-heroku addons:add heroku-postgresql:hobby-dev
+-heroku config, tira esto:
+	BUILDPACK_URL: https://github.com/heroku/heroku-buildpack-php
+	DATABASE_URL:  postgres://pttsikyrznbjem:28645d9f17a96100e64c45bbb29c10876787e1faf7d3c4775fe2466208d7bc3d@ec2-54-235-247-209.compute-1.amazonaws.com:5432/dc67bf559lhkps
+
+se agarra el DATABASE_URL configurar el .env, ejemplo postgres://usuario:contrasena@host/basededatos
+
+
+heroku config para el proyecto xampp/htdocs/Desarrollo:
+BUILDPACK_URL: https://github.com/heroku/heroku-buildpack-php
+DATABASE_URL:  postgres://ilmvhqctnknqvo:fad4a8c1909610195f7bfe0375956e322922d6bf214b57bd759322b93ac92774@ec2-174-129-25-182.compute-1.amazonaws.com:5432/d135sre9bdobei
