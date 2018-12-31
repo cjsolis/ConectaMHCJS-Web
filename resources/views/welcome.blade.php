@@ -8,10 +8,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Laravel</title>
 
-        <!-- Fonts -->
+        
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
+
         <style>
             html, body {
                 background-color: #fff;

@@ -25,9 +25,7 @@
 
           <div class="container">
             @include('Inc.showcase')
-            <!--@if(Request::is('/'))
-              @include('inc.showcase')
-            @endif-->
+
              <div class="row" style=" position: absolute;  left: 200px;top: 350px;">
                <div class="col-md-8 col-lg-8">
                  @include('Inc.messages')
@@ -38,31 +36,6 @@
        </div>
      </div>
      @include('Inc.footers')
-
-
-
-
-     <!--<footer>
-       <h1>Footer Content</h1>
-     </footer>-->
-
-
-     <!--<footer>
-     	<div class="footerLinks" style="color:#000066 ; bottom:0; position: fixed; width: 100%;height: 150px;margin-top: 600px; margin-right: -100px;background-color: #000066;">
-     		<ul>
-     			<li><a href="#">Privacy Policy</a></li>
-       			<li><a href="#">Legal</a></li>
-       			<li><a href="#">Site Map</a></li>
-       			<li><a href="#">Contact Us</a></li>
-     		</ul>
-     	</div>
-     	<div class="copyright">
-     		<p>Copyright 2016</p>
-     </footer>-->
-
-     <!--<footer id="footer" class="text-center" style="color:#000066 ; bottom:0; position: fixed; width: 100%;height: 150px;margin-top: 600px; margin-right: -100px;background-color: #000066;">
-       <p>Copyright 2018 &copy; MHCJS</p>
-     </footer>-->
 
   </body>
 </html>
