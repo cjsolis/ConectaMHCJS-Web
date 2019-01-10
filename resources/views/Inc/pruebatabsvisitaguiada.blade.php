@@ -1,6 +1,3 @@
-@extends('layouts.app')
-@section ('content')
-
 <style>
      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
      @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
@@ -24,8 +21,8 @@ p {
 }
 
 main {
- min-width: 920px;
- max-width: 900px;
+ min-width: 820px;
+ max-width: 800px;
  padding: 50px;
  margin: 0 auto;
  background: #fff;
@@ -113,52 +110,39 @@ input:checked + label {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
-
-
-<main>
    <input id="tab1" type="radio" name="tabs" checked>
-   <label for="tab1">Ruta de los Héroes</label>
+   <label for="tab1">Información General</label>
 
    <input id="tab2" type="radio" name="tabs">
-   <label for="tab2">Actividades Educativas</label>
+   <label for="tab2">Formulario de Solicitud</label>
 
-   <input id="tab3" type="radio" name="tabs">
-   <label for="tab3">Materiales Educativos</label>
 
    <section id="content1">
-     <p>
-       El proyecto Ruta de los Héroes es impulsado por el Museo Histórico Cultural Juan Santamaría, con la finalidad de despertar la conciencia histórica de las comunidades existentes en el espacio geográfico transitado por el ejército expedicionario costarricense durante la guerra contra los filibusteros en los años 1856-1857. Las actividades son organizadas e impulsadas por el Museo según sea el grado de interés de las distintas comunidades. La iniciativa fue aprobada por el Consejo Superior de Educación, en la sesión ordinaria N° 2-05 del 18 de enero del 2005. Ver acuerdo.<br />
-       <b>Hitos Históricos: una responsabilidad compartida</b><br /><br />
-       La construcción de Hitos Históricos en comunidades que forman parte de la Ruta de los Héroes se realiza con apoyo del Museo.<br />
-       Aporte del Museo:
-        <ul style="margin-left:70px;">
-          <li>Planos para la construcción.</li>
-          <li>  Placa de referencia histórica.</li>
-          <li>Placa de crédito del Museo.</li>
-          <li>Publicaciones alusivas.</li>
-          <li>Invitaciones y material divulgativo.</li>
-        </ul>
-        Comunidad:
-         <ul style="margin-left:70px;">
-           <li>Asignación de espacio.</li>
-           <li>Construcción del hito.</li>
-           <li>Placas de crédito.</li>
-           <li>Organización del acto cívico.</li>
-           <li>Mantenimiento del espacio.</li>
-         </ul>
-        Comunidades que cuentan con Hitos Históricos:
-          <ul style="margin-left:70px;">
-            <li>Muelle, Sarapiquí.</li>
-            <li>Sardinal, Sarapiquí.</li>
-            <li>La Trinidad, Sarapiquí.</li>
-            <li>Muelle, San Carlos.</li>
-            <li>Boca San Carlos, desembocadura en el río San Juan.</li>
-            <li>MPuntarenas, Parque Victoria.</li>
-            <li>Bebedero, Cañas-Guanacaste.</li>
-            <li>Ciruelas, Alajuela .</li>
-          </ul>
-     </p>
+     <p >
+       <ol >
+          <li>La visita guiada es el recorrido guiado por las salas de exhibición del Museo.</li>
+          <li>A petición del organizador de la visita, se puede incluir:
+            El organizador de la gira elegirá el tema de la Campaña Nacional que más le interese profundizar: personajes, aspecto económico, aspecto militar, aspecto social o bien alguna fase de la gesta heroica en particular.</li>
+            <ul style="margin-left:70px;">
+              <li>Recorrido por salas de historia de la Campaña Nacional.</li>
+              <li>Una charla sobre un tema de historia de la Campaña Nacional.</li>
+              <li>Proyección de video infantil “Juan el Héroe” (especialmente recomendado para niños desde prekinder hasta tercer grado).</li>
+              <li>Un recorrido por las instalaciones del Museo (Antiguo Cuartel de Armas y Antigua Cárcel).</li>
+              <li>Un recorrido por las exhibiciones temporales que se encuentren en ese momento. </li>
+            </ul>
 
+          <li>El tiempo del recorrido dependerá del interés en la profundización del tema así como de la edad de los visitantes.</li>
+          <li>El cupo máximo para la charla y proyección es de 181 personas.</li>
+          <li>El cupo máximo para el recorrido por las salas y edificio es de 30 personas. Si el grupo es más grande se subdividirá en  más subgrupos y el tiempo total de la visita se extenderá.</li>
+          <li>Se recomienda que los grupos no traigan bolsos o salveques grandes para realizar el recorrido por las salas. </li>
+       </ol>
+
+
+     <p>
+       Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump. Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
+       Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump. Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
+
+     </p>
    </section>
 
    <section id="content2">
@@ -185,9 +169,3 @@ input:checked + label {
 
 
    </section>
-
-
- </main>
-
-
-@endsection

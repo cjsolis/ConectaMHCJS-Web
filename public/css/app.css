@@ -7,7 +7,7 @@
 }
 
 #footer {
-  margin-top: 90%;/*CON ESTO SE PONE EL FOOTER ABAJO*/
+  margin-top: 30px;
   padding: 20px;
   color: #fff;
   background: #333;
@@ -121,7 +121,7 @@ nav ul li:nth-child(5) {}*/
 .nav-itemarriba-tienda {
   position: relative;
   display: inline-block;
-  padding: 0px 50px;
+  padding: 0px 40px;
   height: 40px;
   line-height: 45px;
   color: white;
@@ -787,7 +787,7 @@ a.simple {
 /****************************** HOME - Content Part - Footer ******************************/
 
 #footer {
-  background: #062F5D;/*el color azul es 062F5D*/
+  background: #626879;
   padding: 20px 0px;
   border-top: 5px solid #bfd6e4;
 }
@@ -1769,6 +1769,78 @@ span.color {
     width: 100%;
     margin-top: 13px;
   }
+}
+
+/* Style the tab */
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+ul.tab-nav {
+  list-style: none;
+  border-bottom: 1px solid #bbb;
+  padding-left: 5px;
+}
+
+ul.tab-nav li {
+  display: inline;
+}
+
+ul.tab-nav li a.button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -1px;
+  border-bottom: none;
+}
+
+ul.tab-nav li a.active.button {
+  border-bottom: 0.175em solid #fff;
+}
+
+.tab-content .tab-pane {
+  display: none;
+}
+
+.tab-content .tab-pane.active {
+  display: block;
 }
 
 /*!
@@ -4042,7 +4114,7 @@ pre code {
   font-weight: 400;
   line-height: 1.6;
   color: #495057;
-  background-color: #ff0000;
+  background-color: white;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -4066,7 +4138,7 @@ pre code {
 
 .form-control:focus {
   color: #495057;
-  background-color: #ff0000;
+  background-color: white;
   border-color: #a1cbef;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
@@ -4680,8 +4752,8 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #ff0000;
-  background-color: #3490dc;
+  color: white;
+  background-color: #0C17A8;
   border-color: #3490dc;
 }
 
