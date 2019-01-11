@@ -37,6 +37,8 @@ Route::get('/logintienda', 'PagesController@getLogin');
 Route::get('/registrarsetienda', 'PagesController@getRegistrarse');
 Route::get('/catalogotienda', 'PagesController@getCatalogoTienda');
 
+Route::get('/tabVisitaGuiada', 'PagesController@openCit');
+
 
 
 Route::get('/messages', 'MessagesController@getMessages');

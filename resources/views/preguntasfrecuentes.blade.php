@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section ('content')
-<h1>Preguntas Frecuentes</h1>
-<p>ng elnt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+       <h1>Preguntas Frecuentes</h1>
+        <strong><big>¿Donde se encuentra ubicado el Museo Historico Juan Santamatía?</big></strong><br>
+        El Museo Histórico Cultural Juan Santamaría se ubica al costado norte del Parque Central de la Ciudad de Alajuela, Costa Rica. El edificio es color gris claro. Cuenta con dos torreones a ambos lados de la fachada.<br/>
 @endsection

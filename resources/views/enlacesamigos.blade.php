@@ -1,5 +1,13 @@
 @extends('layouts.app')
 @section ('content')
 <h1>Enlaces Amigos</h1>
-<p>ng elnt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<br><big>Museos de Costa Rica</br></big>
+<br><a href="enlacepagina.html">Instituto Latinoamerica de Museologia (Costa Rica)</a></br>
+<br><a href="enlacepagina.html">Museo de Arte Costarricense</a></br>
+<br><a href="enlacepagina.html">Museo de los Niños Centro Costarricense de la Ciencia y la Cultura</a></br>
+<br><a href="enlacepagina.html">Museo de Arte y Diseño Contemporaneo</a></br>
+
+<br><big>Instituciones del Ministerio de Cultura y Juventud</big></br>
+<p>Centro de Investigacion y Conservacion del Patrimonio</p>
 @endsection
