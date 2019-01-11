@@ -788,8 +788,12 @@ a.simple {
 
 #footer {
   background: #626879;
-  padding: 20px 0px;
-  border-top: 5px solid #bfd6e4;
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
 }
 
 .footer p {
@@ -1771,49 +1775,6 @@ span.color {
   }
 }
 
-/* Style the tab */
-
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
-/* Style the buttons inside the tab */
-
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
 ul.tab-nav {
   list-style: none;
   border-bottom: 1px solid #bbb;
@@ -1841,6 +1802,58 @@ ul.tab-nav li a.active.button {
 
 .tab-content .tab-pane.active {
   display: block;
+}
+
+.ignoreparent {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.wrapper {
+  min-height: calc(80% + 142px);
+  margin-bottom: -142px;
+}
+
+.wrapper:after {
+  display: block;
+  content: "";
+  height: 142px;
+}
+
+.site-footer,
+.wrapper:after {
+  height: 142px;
+}
+
+.site-footer {
+  background: orange;
+}
+
+#footerb {
+  color: white;
+  background: #333;
+  background-color: #062F5D;
+  height: 142px;
+  text-align: center;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(2.19rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #495057;
+  background-color: white;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
 /*!
@@ -4114,7 +4127,7 @@ pre code {
   font-weight: 400;
   line-height: 1.6;
   color: #495057;
-  background-color: white;
+  background-color: #white;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -4753,12 +4766,12 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: white;
-  background-color: #0C17A8;
+  background-color: #062F5D;
   border-color: #3490dc;
 }
 
 .btn-primary:hover {
-  color: #ff0000;
+  color: white;
   background-color: #227dc7;
   border-color: #2176bd;
 }

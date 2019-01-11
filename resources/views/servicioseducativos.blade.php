@@ -126,7 +126,7 @@ input:checked + label {
    <label for="tab3">Materiales Educativos</label>
 
    <section id="content1">
-     <p>
+     <p ALIGN="justify">
        El proyecto Ruta de los Héroes es impulsado por el Museo Histórico Cultural Juan Santamaría, con la finalidad de despertar la conciencia histórica de las comunidades existentes en el espacio geográfico transitado por el ejército expedicionario costarricense durante la guerra contra los filibusteros en los años 1856-1857. Las actividades son organizadas e impulsadas por el Museo según sea el grado de interés de las distintas comunidades. La iniciativa fue aprobada por el Consejo Superior de Educación, en la sesión ordinaria N° 2-05 del 18 de enero del 2005. Ver acuerdo.<br />
        <b>Hitos Históricos: una responsabilidad compartida</b><br /><br />
        La construcción de Hitos Históricos en comunidades que forman parte de la Ruta de los Héroes se realiza con apoyo del Museo.<br />
@@ -157,6 +157,20 @@ input:checked + label {
             <li>Bebedero, Cañas-Guanacaste.</li>
             <li>Ciruelas, Alajuela .</li>
           </ul>
+          <ul style="margin-left:70px;">
+            <li>Planos para la construcción.</li>
+            <li>  Placa de referencia histórica.</li>
+            <li>Placa de crédito del Museo.</li>
+            <li>Publicaciones alusivas.</li>
+            <li>Invitaciones y material divulgativo.</li>
+          </ul>
+          <ul style="margin-left:70px;">
+            <li>Planos para la construcción.</li>
+            <li>  Placa de referencia histórica.</li>
+            <li>Placa de crédito del Museo.</li>
+            <li>Publicaciones alusivas.</li>
+            <li>Invitaciones y material divulgativo.</li>
+          </ul>
      </p>
 
    </section>
@@ -165,7 +179,7 @@ input:checked + label {
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
          {!! Form::open(['url' => 'contact/submit']) !!}
              <div class="form-group" style="width:500px;">
-               {{Form::label('name', 'Name')}}
+               {{Form::label('name', 'Nombre')}}
                {{Form::text('name', '',['class' => 'form-control','placeholder'=> 'Enter name'])}}
              </div>
              <div class="form-group" style="width:500px;">

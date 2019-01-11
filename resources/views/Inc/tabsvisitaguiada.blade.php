@@ -119,8 +119,8 @@ input:checked + label {
 
    <section id="content1">
      <p >
-       <ol >
-          <li>La visita guiada es el recorrido guiado por las salas de exhibición del Museo.</li>
+       <ol ALIGN="justify">
+          <li >La visita guiada es el recorrido guiado por las salas de exhibición del Museo.</li>
           <li>A petición del organizador de la visita, se puede incluir:
             El organizador de la gira elegirá el tema de la Campaña Nacional que más le interese profundizar: personajes, aspecto económico, aspecto militar, aspecto social o bien alguna fase de la gesta heroica en particular.</li>
             <ul style="margin-left:70px;">
@@ -137,28 +137,30 @@ input:checked + label {
           <li>Se recomienda que los grupos no traigan bolsos o salveques grandes para realizar el recorrido por las salas. </li>
        </ol>
 
-
-     <p>
-       Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump. Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
-       Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump. Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
-
-     </p>
    </section>
 
    <section id="content2">
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
          {!! Form::open(['url' => 'contact/submit']) !!}
              <div class="form-group" style="width:500px;">
-               {{Form::label('name', 'Name')}}
-               {{Form::text('name', '',['class' => 'form-control','placeholder'=> 'Enter name'])}}
+               {{Form::label('name', 'Nombre')}}
+               {{Form::text('name', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('email', 'E-mail Address')}}
-               {{Form::text('email', '',['class' => 'form-control','placeholder'=> 'Enter email'])}}
+               {{Form::label('email', 'Correo electrónico')}}
+               {{Form::text('email', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('message', 'Message')}}
-               {{Form::textarea('message', '',['class' => 'form-control','placeholder'=> 'Enter message'])}}
+               {{Form::label('telefono', 'Teléfono')}}
+               {{Form::text('telefono', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('institucion', 'Institución(opcional)')}}
+               {{Form::text('institucion', '',['class' => 'form-control','placeholder'=> 'Institución'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('personas', 'Cantidad de personas')}}
+               {{Form::text('personas', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
              </div>
              <div>
                {{Form::submit('Enviar',['class'=>'btn btn-primary'])}}

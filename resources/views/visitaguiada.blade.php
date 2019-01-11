@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section ('content')
 
-@include('Inc.pruebatabsvisitaguiada')
+@include('Inc.tabsvisitaguiada')
 
 @endsection
