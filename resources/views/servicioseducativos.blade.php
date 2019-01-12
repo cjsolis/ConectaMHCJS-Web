@@ -197,8 +197,15 @@ input:checked + label {
      </div>
    </section>
 
-
+   <section id="content3">
+     <p ALIGN="justify">Los Museos son instituciones con un carácter educativo no formal que facilitan a los públicos  el conocimiento no sólo a través de actividades sino también de materiales educativos.<br />
+       <br />
+       El Museo ha creado una serie de materiales educativos con el fin de facilitar al docente y al estudiante el estudio del tema de la Campaña Nacional, los cuáles se ponen a disposición de los usuarios para fines académicos.<br />
+       <br />
+       <strong>Materiales PDF para descargar: </strong><br />
+     </p>
    </section>
+
 
 
  </main>

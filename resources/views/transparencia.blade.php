@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section ('content')
-<h1>Junta Administrativa</h1>
+<h1 id="titulojunta">Transparencia</h1>
 <p ALIGN="justify">El Museo Histórico Cultural Juan Santamaría está regido por una Junta Administrativa, integrada por cinco miembros. Cuenta con personería jurídica, para atender todo lo relativo al cuidado de la institución y al enriquecimiento de su patrimonio, de acuerdo con lo establecido en la ley y en su reglamento. Los miembros de esta Junta Administrativa desempeñan sus cargos AD HONOREM.<br />
 <br />
 
@@ -8,7 +8,7 @@ La preside el representante del Ministerio de Cultura y Juventud; los cuatro res
 <br />
 <strong>2015</strong>
 <br/>
-<a href="../pdfs/reporte2-05-10.pdf" download="Reporte2Mayo2010">
+<a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
 ACTA 761-15.pdf
 </a>
 
