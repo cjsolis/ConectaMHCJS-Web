@@ -107,24 +107,43 @@ input:checked + label {
 }
 
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<ul class="nav nav-tabs" style="width:1000px;">
-  <li class="active"><a data-toggle="tab" href="#home">Reserva Visita Guiada</a></li>
-</ul>
 
-<div class="tab-content">
-  <div id="home" class="tab-pane fade in active">
-    <h3>Información General</h3>
-    <p>Some content.</p>
-  </div>
-  <div id="menu1" class="tab-pane fade">
-    <h3>Menu 1</h3>
-    <p>Some content in menu 1.</p>
-  </div>
-  <div id="menu2" class="tab-pane fade">
-    <h3>Menu 2</h3>
-    <p>Some content in menu 2.</p>
-  </div>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+   <input id="tab1" type="radio" name="tabs" checked>
+   <label for="tab1">Reserva Visita Guiada</label>
+
+
+   <section id="content1">
+     <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
+         {!! Form::open(['url' => 'contact/submit']) !!}
+             <div class="form-group" style="width:500px;">
+               {{Form::label('name', 'Nombre')}}
+               {{Form::text('name', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('email', 'Correo electrónico')}}
+               {{Form::text('email', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('telefono', 'Teléfono')}}
+               {{Form::text('telefono', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('institucion', 'Institución(opcional)')}}
+               {{Form::text('institucion', '',['class' => 'form-control','placeholder'=> 'Institución'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('personas', 'Cantidad de personas')}}
+               {{Form::text('personas', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
+             </div>
+             <div>
+               {{Form::submit('Enviar',['class'=>'btn btn-primary'])}}
+             </div>
+         {!! Form::close() !!}
+     </div>
+   </section>
+
+
+   </section>
