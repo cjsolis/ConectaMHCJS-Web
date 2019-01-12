@@ -113,9 +113,6 @@ input:checked + label {
    <input id="tab1" type="radio" name="tabs" checked>
    <label for="tab1">Información General</label>
 
-   <input id="tab2" type="radio" name="tabs">
-   <label for="tab2">Formulario de Solicitud</label>
-
 
    <section id="content1">
      <p >

@@ -83,5 +83,8 @@ class PagesController extends Controller
     public function getCatalogoTienda(){
       return view('catalogotienda');
     }
+    public function getReservaVisitaGuiada(){
+      return view('reservavisitaguiada');
+    }
 
 }

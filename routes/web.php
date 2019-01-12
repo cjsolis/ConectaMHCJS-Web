@@ -36,7 +36,7 @@ Route::get('/enlacesamigos', 'PagesController@getEnlacesAmigos');
 Route::get('/logintienda', 'PagesController@getLogin');
 Route::get('/registrarsetienda', 'PagesController@getRegistrarse');
 Route::get('/catalogotienda', 'PagesController@getCatalogoTienda');
-
+Route::get('/reservavisitaguiada', 'PagesController@getReservaVisitaGuiada');
 
 
 Route::get('/messages', 'MessagesController@getMessages');
