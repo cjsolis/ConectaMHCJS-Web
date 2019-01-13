@@ -176,25 +176,14 @@ input:checked + label {
    </section>
 
    <section id="content2">
-     <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
-         {!! Form::open(['url' => 'contact/submit']) !!}
-             <div class="form-group" style="width:500px;">
-               {{Form::label('name', 'Nombre')}}
-               {{Form::text('name', '',['class' => 'form-control','placeholder'=> 'Enter name'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
-               {{Form::label('email', 'E-mail Address')}}
-               {{Form::text('email', '',['class' => 'form-control','placeholder'=> 'Enter email'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
-               {{Form::label('message', 'Message')}}
-               {{Form::textarea('message', '',['class' => 'form-control','placeholder'=> 'Enter message'])}}
-             </div>
-             <div>
-               {{Form::submit('Enviar',['class'=>'btn btn-primary'])}}
-             </div>
-         {!! Form::close() !!}
-     </div>
+     <p>Los Servicios Educativos facilitan, promueven y organizan de manera efectiva el acercamiento de distintos públicos al Museo, según sus intereses en el ámbito educativo y de investigación, impulsando una función vital del Museo en su vocación educativa.
+
+En este sentido, impulsan una comprensión y comunicación eficiente y efectiva entre el visitante y el Museo por medio de visitas guiadas, actividades lúdicas, talleres, charlas, materiales educativos, etc.
+
+Por medio de este programa se brinda atención a los visitantes (docentes, estudiantes y público en general) procedentes de distintas partes del país. </p>
+<br />
+Los servicios educativos incluyen visitas guiadas, justificación Ruta de los Héroes, talleres y charlas y materiales educativos.
+
    </section>
 
    <section id="content3">
@@ -203,6 +192,35 @@ input:checked + label {
        El Museo ha creado una serie de materiales educativos con el fin de facilitar al docente y al estudiante el estudio del tema de la Campaña Nacional, los cuáles se ponen a disposición de los usuarios para fines académicos.<br />
        <br />
        <strong>Materiales PDF para descargar: </strong><br />
+
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Desplegable Juan Rafael Mora Porras
+       </a>
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Desplegable Las tres Batallas de Rivas
+       </a>
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Desplegable Batalla de Santa Rosa
+       </a>
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Unidad Didáctica Juan Santamaría Heroe de mi Patria
+       </a>
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Consejos prácticos para la preparación y montaje de exhibiciones didácticas
+       </a>
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Un camino a la aproximación de las Ciencias Sociales
+       </a>
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Desplegable Francisca Carrasco Jiménez
+       </a>
+
      </p>
    </section>
 

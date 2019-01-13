@@ -145,6 +145,18 @@ input:checked + label {
                {{Form::label('personas', 'Cantidad de personas')}}
                {{Form::text('personas', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
              </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('fecha', 'Fecha')}}
+               {{Form::text('fecha', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('hora', 'Hora')}}
+               {{Form::text('hora', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('motivo', 'Motivo')}}
+               {{Form::text('motivo', '',['class' => 'form-control','placeholder'=> 'Motivo'])}}
+             </div>
              <div>
                {{Form::submit('Enviar',['class'=>'btn btn-primary'])}}
              </div>
@@ -182,6 +194,19 @@ input:checked + label {
                {{Form::label('personas', 'Cantidad de personas')}}
                {{Form::text('personas', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
              </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('fecha', 'Fecha')}}
+               {{Form::text('fecha', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('hora', 'Hora')}}
+               {{Form::text('hora', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('motivo', 'Motivo')}}
+               {{Form::text('motivo', '',['class' => 'form-control','placeholder'=> 'Motivo'])}}
+             </div>
+
              <div>
                {{Form::submit('Enviar',['class'=>'btn btn-primary'])}}
              </div>
@@ -199,6 +224,31 @@ input:checked + label {
    <section id="content4">
      <p ALIGN="justify">
        Se adjuntan descargables.
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Informe de Ejecución del Presupuesto - Evaluación del Plan Operativo Institucional 2015
+       </a>
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Plan Estratégico 2016-2020
+       </a>
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Plan de compras 2016
+       </a>
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Modificación al plan de compras 01-2016
+       </a>
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Modificación al plan de compras 02-2016
+       </a>
+       <br />
+       <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+       Presupuesto Ordinario - Plan Operativo Institucional 2017
+       </a>
+
      </p>
 
    </section>

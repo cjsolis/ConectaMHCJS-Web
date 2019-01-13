@@ -41,3 +41,6 @@ Route::get('/reservavisitaguiada', 'PagesController@getReservaVisitaGuiada');
 
 Route::get('/messages', 'MessagesController@getMessages');
 Route::post('/contact/submit', 'MessagesController@submit');
+
+Route::get('/messages', 'FormularioReservaVisitaGuiada@getMessages');
+Route::post('/reservavisitaguiada/submit', 'FormularioReservaVisitaGuiada@Enviar');
