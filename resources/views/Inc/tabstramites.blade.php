@@ -150,6 +150,72 @@ input:checked + label {
              </div>
          {!! Form::close() !!}
      </div>
+
+    <br>
+    <br>
+     <p ALIGN="justify">
+     Documentos de relevancia:
+     </p>
+     <br>
+     <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tr%C3%A1mites-usoespacios%2FCuenta-bancaria-Banco-Nacio.jpg?alt=media&token=92f04ac6-7fd5-49aa-a4c4-09a678e47ccf" download="acta7612015.pdf">
+     Cuenta bancaria Banco Nacional colones MHCJS
+     </a>
+
+     <br>
+     <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tr%C3%A1mites-usoespacios%2FReglamento%20para%20pr%C3%A9stamo%20y%20uso%20de%20espacios%20MHCJS.pdf?alt=media&token=84c86950-f429-49d6-ab12-dd13fa8dfcee" download="acta7612015.pdf">
+     Reglamento de préstamo y uso de espacios MHCJS
+     </a>
+
+     <br>
+     <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tr%C3%A1mites-usoespacios%2FRequisitos%20de%20uso%20de%20espacios.pdf?alt=media&token=b954d0f2-b9fc-4a2e-b0e8-8aaaec232444" download="acta7612015.pdf">
+     Requisito de uso de Espacios
+     </a>
+
+     <br>
+     <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tr%C3%A1mites-usoespacios%2FCanon%20de%20mantenimiento%20MHCJS%202015.pdf?alt=media&token=ff554927-987c-46c1-bc90-acf63a64a2e7" download="acta7612015.pdf">
+     Canon de mantenimiento MHCJS 2015
+     </a>
+
+     <br>
+     <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tr%C3%A1mites-usoespacios%2FFicha%20Tecnicas%20Auditorio%20JRMP-2015.doc?alt=media&token=6f30970d-29ca-4c5a-829e-aeeaad5a6739" download="acta7612015.pdf">
+     Ficha técnica del Auditorio Juan Rafael Mora Porras MHCJS
+     </a>
+
+     <br>
+     <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tr%C3%A1mites-usoespacios%2FFicha%20Tecnica%20Salas%20Educativas-2015.doc?alt=media&token=61890b1b-0095-468f-9ca3-c8248d93ed91" download="acta7612015.pdf">
+     Ficha técnica Salas Educativas
+     </a>
+
+     <br>
+     <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tr%C3%A1mites-usoespacios%2FEquipo%20y%20mobiliario%20del%20Auditorio%20Juan%20Rafael%20Mora%20Porras.pdf?alt=media&token=968e6d28-56c0-4179-ad8e-ac947d4fe11d" download="acta7612015.pdf">
+     Equipo y mobiliario del Auditorio Juan Rafael Mora Porras
+     </a>
+
+     <br>
+     <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tr%C3%A1mites-usoespacios%2FMobiliario%20de%20salas%20educativas.pdf?alt=media&token=152f4336-c12b-471b-83ae-a304b4be9db8" download="acta7612015.pdf">
+     Mobiliario de Salas educativas
+     </a>
+
+     <br>
+     <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tr%C3%A1mites-usoespacios%2FCarta%20de%20Compromiso.doc?alt=media&token=6bbbd38f-a0ee-479b-8559-875aba86853e" download="acta7612015.pdf">
+     Carta de Compromiso
+     </a>
+
+     <br>
+     <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tr%C3%A1mites-usoespacios%2FLista%20de%20ingreso%20de%20materiales.doc?alt=media&token=95bb4496-6e08-428e-aea9-a0ff1e1720d6" download="acta7612015.pdf">
+     Lista de ingreso de materiales
+     </a>
+
+     <br>
+     <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tr%C3%A1mites-usoespacios%2FLista%20de%20ingreso%20de%20personas.doc?alt=media&token=22c8fd2f-573f-421d-8217-e3f4db79c804" download="acta7612015.pdf">
+     Lista de ingreso de personas
+     </a> 
+     <br>
+     <br>
+
+
+
+
    </section>
 
    <section id="content2">
@@ -197,8 +263,47 @@ input:checked + label {
    </section>
 
    <section id="content4">
-     <p ALIGN="justify">
-       Se adjuntan descargables.
-     </p>
+    <h1 id="títuloDescargaDocumentos">Descarga de Documentos</h1>
+    <br />
+      <strong>2015</strong>
+    <br/>
+
+    <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tramites-administrativos%2FModificacion-01-2016.xlsx?alt=media&token=70cef8c1-5d9a-4bd6-8d98-3974678f7508" download="acta7612015.pdf">
+    Informe de Ejecución del Presupuesto - Evaluación del Plan Operativo Institucional 2015
+    </a>
+
+    <br />
+      <strong>2016</strong>
+    <br/>
+
+    <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tramites-administrativos%2FPLAN-ESTRATEGICO-2016-2020.pdf?alt=media&token=99e0ce3a-2360-40e6-8be9-69bfe660b8a4" download="acta7612015.pdf">
+    Plan Estratégico 2016-2020
+    </a>
+
+    <br/>
+
+    <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tramites-administrativos%2FPlan-de-compras-2016.xlsx?alt=media&token=7616f3d4-406a-4225-80cb-e6443c3535b7" download="acta7612015.pdf">
+    Plan de compras 2016
+    </a>
+
+    <br/>
+
+    <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tramites-administrativos%2FModificacion-01-2016.xlsx?alt=media&token=70cef8c1-5d9a-4bd6-8d98-3974678f7508" download="acta7612015.pdf">
+    Modificación al plan de compras 01-2016
+    </a>
+
+    <br/>
+
+    <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tramites-administrativos%2FModificacion-02-2016.xlsx?alt=media&token=b712911e-a065-4ae6-8529-2087cde650c1" download="acta7612015.pdf">
+    Modificación al plan de compras 02-2016
+    </a>
+
+    <br />
+      <strong>2017</strong>
+    <br/>
+
+    <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/tramites-administrativos%2FPresupuesto-POI-2017.pdf?alt=media&token=3b1856b7-56e9-4645-b73c-b4149062a287" download="acta7612015.pdf">
+    Presupuesto Ordinario - Plan Operativo Institucional 2017
+    </a>
 
    </section>
