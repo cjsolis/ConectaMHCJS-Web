@@ -117,7 +117,7 @@ input:checked + label {
 
    <section id="content1">
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
-         {!! Form::open(['url' => 'contact/submit']) !!}
+         {!! Form::open(['url' => 'reservavisitaguiada/Enviar']) !!}
 
              <div class="form-group" style="width:500px;">
                {{Form::label('telefono', 'Teléfono')}}
@@ -147,7 +147,7 @@ input:checked + label {
                {{Form::label('materialeseducativos', 'Materiales Educativos')}}
                {{Form::text('materialeseducativos', '',['class' => 'form-control','placeholder'=> 'Materiales Educativos'])}}
              </div>
-             
+
 
              <div class="form-group" style="width:500px;">
                {{Form::label('necesidadesespeciales', 'Necesidades especiales')}}

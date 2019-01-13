@@ -25,16 +25,16 @@ class FormularioReservaVisitaGuiadaController extends Controller
     //  return 'SUCCESS';
     //create new ReservaVisitaGuiada
     $reservavisitaguiada = new ReservaVisitaGuiada;
-    $reservavisitaguiada->reservavisitaguiada = $request->input('telefono');
-    $reservavisitaguiada->reservavisitaguiada = $request->input('institucion');
-    $reservavisitaguiada->reservavisitaguiada = $request->input('personas');
-    $reservavisitaguiada->reservavisitaguiada = $request->input('rango');
-    $reservavisitaguiada->reservavisitaguiada = $request->input('fecha');
-    $reservavisitaguiada->reservavisitaguiada = $request->input('hora');
-    $reservavisitaguiada->reservavisitaguiada = $request->input('materialeseducativos');
-    $reservavisitaguiada->reservavisitaguiada = $request->input('necesidadesespeciales');
+    $reservavisitaguiada->telefono = $request->input('telefono');
+    $reservavisitaguiada->institucion = $request->input('institucion');
+    $reservavisitaguiada->personas = $request->input('personas');
+    $reservavisitaguiada->rango = $request->input('rango');
+    $reservavisitaguiada->fecha = $request->input('fecha');
+    $reservavisitaguiada->hora = $request->input('hora');
+    $reservavisitaguiada->materialeseducativos = $request->input('materialeseducativos');
+    $reservavisitaguiada->necesidadesespeciales = $request->input('necesidadesespeciales');
     //save message
-    $message->save();
+    $reservavisitaguiada->save();
 
     //redirect
     return redirect('/')->with('success','Message Sent');//return to home.

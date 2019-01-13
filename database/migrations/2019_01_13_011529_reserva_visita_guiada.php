@@ -16,7 +16,7 @@ class ReservaVisitaGuiada extends Migration
       Schema::create('reservavisitaguiada', function (Blueprint $table) {
         $table->increments('id_reserva');
         $table->integer('id_usuario')->unsigned()->unique();
-        $table->foreign('id_usuario')->references('id_usuario')->on('users');
+        
         $table->string('institucion');
         $table->integer('numpersonas');
         $table->string('rangoedad');
