@@ -13,7 +13,7 @@ class FormularioUsoEspacios extends Migration
      */
     public function up()
     {
-      Schema::create('formulariousoespacios', function (Blueprint $table) {
+      Schema::create('formulario_uso_espacios', function (Blueprint $table) {
         $table->increments('id_usoespacios');
         $table->string('nombre');
         $table->string('correo');
@@ -35,6 +35,6 @@ class FormularioUsoEspacios extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formulariousoespacios');
+        Schema::dropIfExists('formulario_uso_espacios');
     }
 }

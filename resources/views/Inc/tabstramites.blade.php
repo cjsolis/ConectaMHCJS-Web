@@ -124,14 +124,14 @@ input:checked + label {
        El Museo cuenta con espacios educativos y culturales para el desarrollo de actividades académicas y artísticas, tanto por parte de la comunidad de Alajuela, como por todos los costarricenses. Estos espacios tienen un costo de canon de mantenimiento que debe consultarse en la documentación adjunta. Los usuarios de estos espacios deben tener en cuenta que los edificios sede del Museo: Antiguo Cuartel de Armas y Antigua Cárcel de Alajuela,  son patrimonio arquitectónico nacional, por lo cual, cualquier actividad educativa y cultural debe estar supeditada al cuido del espacio. Para realizar una solicitud de uso de espacios llene el formulario.
      </p>
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
-         {!! Form::open(['url' => 'contact/submit']) !!}
+         {!! Form::open(['url' => 'tramites/EnviarUsoEspacios']) !!}
              <div class="form-group" style="width:500px;">
-               {{Form::label('name', 'Nombre')}}
-               {{Form::text('name', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
+               {{Form::label('nombre', 'Nombre')}}
+               {{Form::text('nombre', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('email', 'Correo electrónico')}}
-               {{Form::text('email', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
+               {{Form::label('correo', 'Correo electrónico')}}
+               {{Form::text('correo', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
              </div>
              <div class="form-group" style="width:500px;">
                {{Form::label('telefono', 'Teléfono')}}
@@ -173,14 +173,14 @@ input:checked + label {
           <br />Realice su solicitud de voluntariado:
     </p>
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
-         {!! Form::open(['url' => 'contact/submit']) !!}
+         {!! Form::open(['url' => 'tramites/EnviarVoluntariado']) !!}
              <div class="form-group" style="width:500px;">
-               {{Form::label('name', 'Nombre')}}
-               {{Form::text('name', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
+               {{Form::label('nombre', 'Nombre')}}
+               {{Form::text('nombre', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('email', 'Correo electrónico')}}
-               {{Form::text('email', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
+               {{Form::label('correo', 'Correo electrónico')}}
+               {{Form::text('correo', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
              </div>
              <div class="form-group" style="width:500px;">
                {{Form::label('telefono', 'Teléfono')}}

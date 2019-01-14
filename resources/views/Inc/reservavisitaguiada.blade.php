@@ -154,10 +154,6 @@ input:checked + label {
                {{Form::text('necesidadesespeciales', '',['class' => 'form-control','placeholder'=> 'Necesidades especiales'])}}
              </div>
 
-
-
-
-
              <div>
                {{Form::submit('Enviar',['class'=>'btn btn-primary'])}}
              </div>

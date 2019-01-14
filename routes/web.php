@@ -44,3 +44,5 @@ Route::post('/contact/submit', 'MessagesController@submit');
 
 Route::get('/messages', 'FormularioReservaVisitaGuiada@getMessages');
 Route::post('/reservavisitaguiada/Enviar', 'FormularioReservaVisitaGuiadaController@Enviar');
+Route::post('/tramites/EnviarUsoEspacios', 'FormularioUsoEspaciosController@EnviarUsoEspacios');
+Route::post('/tramites/EnviarVoluntariado', 'FormularioVoluntariadoController@EnviarVoluntariado');

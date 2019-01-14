@@ -13,7 +13,7 @@ class FormularioVoluntariado extends Migration
      */
     public function up()
     {
-      Schema::create('formulariovoluntariado', function (Blueprint $table) {
+      Schema::create('formulario_voluntariados', function (Blueprint $table) {
         $table->increments('id_voluntariado');
         $table->string('nombre');
         $table->string('correo');
@@ -33,6 +33,6 @@ class FormularioVoluntariado extends Migration
      */
     public function down()
     {
-          Schema::dropIfExists('formulariovoluntariado');
+          Schema::dropIfExists('formulario_voluntariados');
     }
 }
