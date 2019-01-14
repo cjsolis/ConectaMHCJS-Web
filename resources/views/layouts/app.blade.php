@@ -27,9 +27,7 @@
 
               <div class="container">
                 @include('Inc.showcase')
-                <!--@if(Request::is('/'))
-                  @include('inc.showcase')
-                @endif-->
+               
                  <div class="row" style=" position: absolute;  left: 200px;top: 350px;">
                    <div class="col-md-8 col-lg-8">
                      <div class="wrapper">
