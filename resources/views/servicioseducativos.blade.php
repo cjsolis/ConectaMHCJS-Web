@@ -241,9 +241,9 @@ input:checked + label {
 
       <br>
       <br>
-
-      
-
+      <input type='checkbox' name='thing' value='valuable' id="thing"/><label for="thing"></label> <label>get an army</label>
+      <br>
+      <br>
 
      </p>
    </section>

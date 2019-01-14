@@ -38,6 +38,20 @@ Route::get('/registrarsetienda', 'PagesController@getRegistrarse');
 Route::get('/catalogotienda', 'PagesController@getCatalogoTienda');
 Route::get('/reservavisitaguiada', 'PagesController@getReservaVisitaGuiada');
 
+/** Rutas del sistema administrador */
+Route::get('/admin', 'PagesController@getAdmin');
+Route::get('/admin/elemqr', 'PagesController@getAdminElemQR');
+Route::get('/admin/catalogo', 'PagesController@getAdminCatalogo');
+Route::get('/admin/formularios', 'PagesController@getAdminFormularios');
+Route::get('/admin/galeria', 'PagesController@getAdminGaleria');
+Route::get('/admin/noticias', 'PagesController@getAdminNoticias');
+Route::get('/admin/servicios', 'PagesController@getAdminServicios');
+Route::get('/admin/tramites', 'PagesController@getAdminTramites');
+Route::get('/admin/transparencia', 'PagesController@getAdminTransparencia');
+Route::get('/admin/reservaciones', 'PagesController@getAdminReservaciones');
+Route::get('/admin/usuarios', 'PagesController@getAdminUsuarios');
 
+
+/** Rutas que traía esto */
 Route::get('/messages', 'MessagesController@getMessages');
 Route::post('/contact/submit', 'MessagesController@submit');
