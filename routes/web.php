@@ -46,3 +46,8 @@ Route::get('/messages', 'FormularioReservaVisitaGuiada@getMessages');
 Route::post('/reservavisitaguiada/Enviar', 'FormularioReservaVisitaGuiadaController@Enviar');
 Route::post('/tramites/EnviarUsoEspacios', 'FormularioUsoEspaciosController@EnviarUsoEspacios');
 Route::post('/tramites/EnviarVoluntariado', 'FormularioVoluntariadoController@EnviarVoluntariado');
+
+Route::get('/admin', 'MainController@index');
+Route::post('/admin/checklogin', 'MainController@checklogin');
+Route::get('admin/successlogin', 'MainController@successlogin');
+Route::get('main/logout', 'MainController@logout');
