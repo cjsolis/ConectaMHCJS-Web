@@ -1,0 +1,6 @@
+BUILDPACK_URL: https://github.com/heroku/heroku-buildpack-php
+DATABASE_URL:  postgres://dsplxuicrqtcsi:a009a9c8a9878087835d8667aa4dacd39de07aec829bca56131dc2f37a813d80@ec2-23-21-86-22.compute-1.amazonaws.com:5432/denvpl59imnahk
+
+En el env configurar:
+postgres://usuario:contrasena@host/basededatos
+postgres://
