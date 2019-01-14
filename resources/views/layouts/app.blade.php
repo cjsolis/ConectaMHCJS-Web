@@ -19,22 +19,21 @@
 
               <?php if (Request::is('catalogotienda')) { ?>
                 <?php echo "es catalogo de la tienda" ?>
-                  @include('inc.navbartienda')
+                  @include('Inc.navbartienda')
               <?php } else { ?>
                 <?php echo "NO LO ES" ?>
-                  @include('inc.navbar')
+                  @include('Inc.navbar')
               <?php } ?>
 
               <div class="container">
-                @include('inc.showcase')
+                @include('Inc.showcase')
                 <!--@if(Request::is('/'))
                   @include('inc.showcase')
                 @endif-->
                  <div class="row" style=" position: absolute;  left: 200px;top: 350px;">
                    <div class="col-md-8 col-lg-8">
-                     @include('Inc.messages')
                      <div class="wrapper">
-                       @yield('content')
+                        @yield('content')
                      </div>
                      <div class="ignoreparent">
                         @include('Inc.footers')

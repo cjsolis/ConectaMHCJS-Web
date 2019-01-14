@@ -176,25 +176,14 @@ input:checked + label {
    </section>
 
    <section id="content2">
-     <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
-         {!! Form::open(['url' => 'contact/submit']) !!}
-             <div class="form-group" style="width:500px;">
-               {{Form::label('name', 'Nombre')}}
-               {{Form::text('name', '',['class' => 'form-control','placeholder'=> 'Enter name'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
-               {{Form::label('email', 'E-mail Address')}}
-               {{Form::text('email', '',['class' => 'form-control','placeholder'=> 'Enter email'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
-               {{Form::label('message', 'Message')}}
-               {{Form::textarea('message', '',['class' => 'form-control','placeholder'=> 'Enter message'])}}
-             </div>
-             <div>
-               {{Form::submit('Enviar',['class'=>'btn btn-primary'])}}
-             </div>
-         {!! Form::close() !!}
-     </div>
+     <p>Los Servicios Educativos facilitan, promueven y organizan de manera efectiva el acercamiento de distintos públicos al Museo, según sus intereses en el ámbito educativo y de investigación, impulsando una función vital del Museo en su vocación educativa.
+
+En este sentido, impulsan una comprensión y comunicación eficiente y efectiva entre el visitante y el Museo por medio de visitas guiadas, actividades lúdicas, talleres, charlas, materiales educativos, etc.
+
+Por medio de este programa se brinda atención a los visitantes (docentes, estudiantes y público en general) procedentes de distintas partes del país. </p>
+<br />
+Los servicios educativos incluyen visitas guiadas, justificación Ruta de los Héroes, talleres y charlas y materiales educativos.
+
    </section>
 
    <section id="content3">

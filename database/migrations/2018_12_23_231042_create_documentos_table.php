@@ -17,9 +17,7 @@ class CreateDocumentosTable extends Migration
           $table->increments('id_documento');
           $table->string('direccion');
           $table->string('nombre');
-          $table->string('mime_type');
-          $table->string('file_name');
-          $table->bytea('file_data');
+
 
         });
     }

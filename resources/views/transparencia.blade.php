@@ -11,6 +11,44 @@ La preside el representante del Ministerio de Cultura y Juventud; los cuatro res
 <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/actas-transparencia%2FACTA%20761-15.pdf?alt=media&token=57096ec7-1920-40ea-9a10-94331f32e431" download="acta7612015.pdf">
 ACTA 761-15.pdf
 </a>
+<br/>
+<a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+ACTA 762-15.pdf
+</a>
+<br/>
+<a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+ACTA 763-15.pdf
+</a>
+<br/>
+<a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+ACTA 764-15.pdf
+</a>
+<br/>
+<a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+ACTA 765-15.pdf
+</a>
+<br/>
+<a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+ACTA 766-15.pdf
+</a>
+<br/>
+<a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+ACTA 767-15.pdf
+</a>
+<br/>
+<a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+ACTA 768-15.pdf
+</a>
+<br/>
+<a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+ACTA 769-15.pdf
+</a>
+<br/>
+<a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/hola123.pdf?alt=media&token=b930caa1-836e-4301-91cb-81786fd7f178" download="ACTA7615">
+ACTA 770-15.pdf
+</a>
+
+
 
 <br>
 <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/actas-transparencia%2FACTA%20762-15.pdf?alt=media&token=28a277b8-1890-4c5e-8205-2d7388d3ca5f" download="acta7612015.pdf">

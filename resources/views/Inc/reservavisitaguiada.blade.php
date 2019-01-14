@@ -117,15 +117,8 @@ input:checked + label {
 
    <section id="content1">
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
-         {!! Form::open(['url' => 'contact/submit']) !!}
-             <div class="form-group" style="width:500px;">
-               {{Form::label('name', 'Nombre')}}
-               {{Form::text('name', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
-               {{Form::label('email', 'Correo electrónico')}}
-               {{Form::text('email', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
-             </div>
+         {!! Form::open(['url' => 'reservavisitaguiada/Enviar']) !!}
+
              <div class="form-group" style="width:500px;">
                {{Form::label('telefono', 'Teléfono')}}
                {{Form::text('telefono', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
@@ -138,6 +131,29 @@ input:checked + label {
                {{Form::label('personas', 'Cantidad de personas')}}
                {{Form::text('personas', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
              </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('rango', 'Rango de edad')}}
+               {{Form::text('rango', '',['class' => 'form-control','placeholder'=> 'Rango de edad'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('fecha', 'Fecha')}}
+               {{Form::text('fecha', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('hora', 'Hora')}}
+               {{Form::text('hora', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('materialeseducativos', 'Materiales Educativos')}}
+               {{Form::text('materialeseducativos', '',['class' => 'form-control','placeholder'=> 'Materiales Educativos'])}}
+             </div>
+
+
+             <div class="form-group" style="width:500px;">
+               {{Form::label('necesidadesespeciales', 'Necesidades especiales')}}
+               {{Form::text('necesidadesespeciales', '',['class' => 'form-control','placeholder'=> 'Necesidades especiales'])}}
+             </div>
+
              <div>
                {{Form::submit('Enviar',['class'=>'btn btn-primary'])}}
              </div>
