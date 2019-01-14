@@ -16,6 +16,9 @@ class CreateDocumentosTable extends Migration
         Schema::create('documentos', function (Blueprint $table) {
           $table->increments('id_documento');
           $table->string('direccion');
+          $table->string('nombre');
+
+
         });
     }
 

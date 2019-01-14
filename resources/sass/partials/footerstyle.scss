@@ -456,8 +456,16 @@ a.simple {
 /****************************** HOME - Content Part - Footer ******************************/
 #footer {
 	background:#626879;
-	padding:20px 0px;
-	border-top:5px solid #bfd6e4;
+	//padding:20px 0px;
+	//border-top:5px solid #bfd6e4;
+
+	 display:none;
+	 position: absolute;
+	 left: 0;
+	 bottom: 0;
+	 height: auto;
+	 width: 100%;
+
 }
 .footer p {
 	color:white;

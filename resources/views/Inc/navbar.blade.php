@@ -53,6 +53,8 @@
           <a class="dropdown-item" style="color: white;" href="/visitaguiada">Visita Guiada</a>
             <div class="dropdown-divider"></div>
           <a class="dropdown-item" style="color: white;" href="/servicioseducativos">Servicios Educativos</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" style="color: white;" href="/reservavisitaguiada">Reserva Visita Guiada</a>
 
 
         </div>

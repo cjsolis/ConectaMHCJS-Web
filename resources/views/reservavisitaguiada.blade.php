@@ -1,6 +1,4 @@
 @extends('layouts.app')
 @section ('content')
-
-@include('Inc.tabsvisitaguiada')
-
+@include('Inc.reservavisitaguiada')
 @endsection
