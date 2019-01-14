@@ -3,4 +3,3 @@ DATABASE_URL:  postgres://dsplxuicrqtcsi:a009a9c8a9878087835d8667aa4dacd39de07ae
 
 En el env configurar:
 postgres://usuario:contrasena@host/basededatos
-postgres://
