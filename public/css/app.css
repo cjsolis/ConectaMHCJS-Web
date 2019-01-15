@@ -2111,10 +2111,10 @@ th {
   text-align: inherit;
 }
 
-label {
+/* label {
   display: inline-block;
   margin-bottom: 0.5rem;
-}
+} */
 
 button {
   border-radius: 0;
@@ -2161,7 +2161,12 @@ button::-moz-focus-inner,
   border-style: none;
 }
 
-input[type="radio"],
+input[type="radio"]{
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
 input[type="checkbox"] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -5895,8 +5900,12 @@ input[type="button"].btn-block {
 }
 
 .btn-group-toggle > .btn input[type="radio"],
+.btn-group-toggle > .btn-group > .btn input[type="radio"]{
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
 .btn-group-toggle > .btn input[type="checkbox"],
-.btn-group-toggle > .btn-group > .btn input[type="radio"],
 .btn-group-toggle > .btn-group > .btn input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -6042,7 +6051,9 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
-.input-group-text input[type="radio"],
+.input-group-text input[type="radio"]{
+  margin-top: 0;
+}
 .input-group-text input[type="checkbox"] {
   margin-top: 0;
 }
