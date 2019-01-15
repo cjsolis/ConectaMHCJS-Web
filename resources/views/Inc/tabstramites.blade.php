@@ -126,36 +126,36 @@ input:checked + label {
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
          {!! Form::open(['url' => 'tramites/EnviarUsoEspacios']) !!}
              <div class="form-group" style="width:500px;">
-               {{Form::label('nombre', 'Nombre')}}
-               {{Form::text('nombre', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
+               {{Form::label('nombre_usoespacios', 'Nombre')}}
+               {{Form::text('nombre_usoespacios', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('correo', 'Correo electrónico')}}
-               {{Form::text('correo', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
+               {{Form::label('correo_usoespacios', 'Correo electrónico')}}
+               {{Form::text('correo_usoespacios', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('telefono', 'Teléfono')}}
-               {{Form::text('telefono', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
+               {{Form::label('telefono_usoespacios', 'Teléfono')}}
+               {{Form::text('telefono_usoespacios', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('institucion', 'Institución(opcional)')}}
-               {{Form::text('institucion', '',['class' => 'form-control','placeholder'=> 'Institución'])}}
+               {{Form::label('institucion_usoespacios', 'Institución(opcional)')}}
+               {{Form::text('institucion_usoespacios', '',['class' => 'form-control','placeholder'=> 'Institución'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('personas', 'Cantidad de personas')}}
-               {{Form::text('personas', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
+               {{Form::label('personas_usoespacios', 'Cantidad de personas')}}
+               {{Form::text('personas_usoespacios', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('fecha', 'Fecha')}}
-               {{Form::text('fecha', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
+               {{Form::label('fecha_usoespacios', 'Fecha')}}
+               {{Form::text('fecha_usoespacios', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('hora', 'Hora')}}
-               {{Form::text('hora', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
+               {{Form::label('hora_usoespacios', 'Hora')}}
+               {{Form::text('hora_usoespacios', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('motivo', 'Motivo')}}
-               {{Form::text('motivo', '',['class' => 'form-control','placeholder'=> 'Motivo'])}}
+               {{Form::label('motivo_usoespacios', 'Motivo')}}
+               {{Form::text('motivo_usoespacios', '',['class' => 'form-control','placeholder'=> 'Motivo'])}}
              </div>
              <div>
                {{Form::submit('Enviar',['class'=>'btn btn-primary'])}}
@@ -175,36 +175,36 @@ input:checked + label {
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
          {!! Form::open(['url' => 'tramites/EnviarVoluntariado']) !!}
              <div class="form-group" style="width:500px;">
-               {{Form::label('nombre', 'Nombre')}}
-               {{Form::text('nombre', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
+               {{Form::label('nombre_voluntariado', 'Nombre')}}
+               {{Form::text('nombre_voluntariado', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('correo', 'Correo electrónico')}}
-               {{Form::text('correo', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
+               {{Form::label('correo_voluntariado', 'Correo electrónico')}}
+               {{Form::text('correo_voluntariado', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('telefono', 'Teléfono')}}
-               {{Form::text('telefono', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
+               {{Form::label('telefono_voluntariado', 'Teléfono')}}
+               {{Form::text('telefono_voluntariado', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('institucion', 'Institución(opcional)')}}
-               {{Form::text('institucion', '',['class' => 'form-control','placeholder'=> 'Institución'])}}
+               {{Form::label('institucion_voluntariado', 'Institución(opcional)')}}
+               {{Form::text('institucion_voluntariado', '',['class' => 'form-control','placeholder'=> 'Institución'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('personas', 'Cantidad de personas')}}
-               {{Form::text('personas', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
+               {{Form::label('personas_voluntariado', 'Cantidad de personas')}}
+               {{Form::text('personas_voluntariado', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('fecha', 'Fecha')}}
-               {{Form::text('fecha', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
+               {{Form::label('fecha_voluntariado', 'Fecha')}}
+               {{Form::text('fecha_voluntariado', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('hora', 'Hora')}}
-               {{Form::text('hora', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
+               {{Form::label('hora_voluntariado', 'Hora')}}
+               {{Form::text('hora_voluntariado', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('motivo', 'Motivo')}}
-               {{Form::text('motivo', '',['class' => 'form-control','placeholder'=> 'Motivo'])}}
+               {{Form::label('motivo_voluntariado', 'Motivo')}}
+               {{Form::text('motivo_voluntariado', '',['class' => 'form-control','placeholder'=> 'Motivo'])}}
              </div>
 
              <div>

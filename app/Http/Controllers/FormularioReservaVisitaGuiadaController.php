@@ -12,29 +12,29 @@ class FormularioReservaVisitaGuiadaController extends Controller
     //return $request->input('name');
     //obliga a que los campos de name y email se llenen,
     //si no no hace submit.
-    /*$this->validate($request, [
-      'telefono'=> 'required',
-      'personas'=>'required',
-      'rango'=>'required',
-      'fecha'=>'required',
-      'hora'=>'required',
-      'materialeseducativos'=>'required',
-      'necesidadesespeciales'=>'required',
+    $this->validate($request, [
+      'telefono_visitaguiada'=> 'required',
+      'personas_visitaguiada'=>'required',
+      'rango_visitaguiada'=>'required',
+      'fecha_visitaguiada'=>'required',
+      'hora_visitaguiada'=>'required',
+      'materialeseducativos_visitaguiada'=>'required',
+      'necesidadesespeciales_visitaguiada'=>'required',
 
 
-    ]);*/
+    ]);
     //  return 123;
     //create new ReservaVisitaGuiada
     $reservavisita = new ReservaVisitaGuiada;
     $reservavisita->id_usuario=1;
-    $reservavisita->institucion = $request->input('institucion');
-    $reservavisita->numpersonas = $request->input('personas');
-    $reservavisita->rangoedad = $request->input('rango');
-    $reservavisita->fecha = $request->input('fecha');
-    $reservavisita->hora = $request->input('hora');
-    $reservavisita->materialeseducativos = $request->input('materialeseducativos');
-    $reservavisita->necesidadesespeciales = $request->input('necesidadesespeciales');
-    $reservavisita->telefono = $request->input('telefono');
+    $reservavisita->institucion = $request->input('institucion_visitaguiada');
+    $reservavisita->numpersonas = $request->input('personas_visitaguiada');
+    $reservavisita->rangoedad = $request->input('rango_visitaguiada');
+    $reservavisita->fecha = $request->input('fecha_visitaguiada');
+    $reservavisita->hora = $request->input('hora_visitaguiada');
+    $reservavisita->materialeseducativos = $request->input('materialeseducativos_visitaguiada');
+    $reservavisita->necesidadesespeciales = $request->input('necesidadesespeciales_visitaguiada');
+    $reservavisita->telefono = $request->input('telefono_visitaguiada');
 
     //save message
     $reservavisita->save();
