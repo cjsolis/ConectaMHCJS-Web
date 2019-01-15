@@ -1,4 +1,4 @@
-<div style="position: absolute;  left: 0px;top: 200px;">  
+<div style="position: absolute;  left: 0px;top: 200px;">
   <div class="vertical-menu">
     <a href="/admin/catalogo">Catálogo</a>
     <a href="/admin/elemqr">Elemento QR</a>
@@ -10,6 +10,7 @@
     <a href="/admin/tramites">Trámites</a>
     <a href="/admin/transparencia">Transparencia</a>
     <a href="/admin/usuarios">Usuarios</a>
+    <a href="{{ url('admin/logout') }}">Logout</a>
   </div>
 </div>
 
@@ -26,7 +27,7 @@
         Catálogo
         <span class="sr-only">(current)</span></a>
       </li>
-      
+
       <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
         <a class="nav-link" href="/admin/elemqr">Elemento QR</a>
       </li>

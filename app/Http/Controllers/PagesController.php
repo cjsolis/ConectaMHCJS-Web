@@ -29,7 +29,7 @@ class PagesController extends Controller
     public function getExhibicionesTemporales(){
       return view('exhibicionestemporales');
     }
-    
+
     public function getEventos(){
       return view('eventos');
     }
@@ -109,9 +109,9 @@ class PagesController extends Controller
       return view('reservavisitaguiada');
     }
 
-    public function getAdmin(){
+  /*  public function getAdmin(){
       return view('admin');
-    }
+    }*/
 
     public function getAdminElemQR(){
       return view('admineleqr');

@@ -39,7 +39,7 @@ Route::get('/catalogotienda', 'PagesController@getCatalogoTienda');
 Route::get('/reservavisitaguiada', 'PagesController@getReservaVisitaGuiada');
 
 /** Rutas del sistema administrador */
-Route::get('/admin', 'PagesController@getAdmin');
+//Route::get('/admin', 'PagesController@getAdmin');
 Route::get('/admin/elemqr', 'PagesController@getAdminElemQR');
 Route::get('/admin/catalogo', 'PagesController@getAdminCatalogo');
 Route::get('/admin/formularios', 'PagesController@getAdminFormularios');
@@ -64,4 +64,4 @@ Route::post('/tramites/EnviarVoluntariado', 'FormularioVoluntariadoController@En
 Route::get('/admin', 'MainController@index');
 Route::post('/admin/checklogin', 'MainController@checklogin');
 Route::get('admin/successlogin', 'MainController@successlogin');
-Route::get('main/logout', 'MainController@logout');
+Route::get('admin/logout', 'MainController@logout');
