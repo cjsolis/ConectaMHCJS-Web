@@ -1,6 +1,3 @@
-
-
-
 <nav class="nav-arriba" style=" position: absolute;  top: 0px;" >
         <ul>
           <li><a class="nav-itemarriba" href="#">ES</a></li>

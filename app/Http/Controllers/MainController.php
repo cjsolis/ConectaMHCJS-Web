@@ -28,17 +28,17 @@ class MainController extends Controller
          return redirect('admin/successlogin');//si se loguea, va a
         }
         else  {
-         return back()->with('error', 'Wrong Login Details');
+         return back()->with('error', 'Datos inválidos');
         }
 
    }
 
    function successlogin() {
-     return view('successlogin');
+     return view('admincatalogo');
    }
 
    function logout() {
      Auth::logout();
-     return redirect('home');
+     return redirect('admin');
    }
 }

@@ -1,9 +1,9 @@
 
-<div id="footerb"style="width:100%; height:240px;background:#062F5D;">
+<div id="footerb"style="width:100%; height:265px;background:#062F5D;">
    <div class="container footer">
      <div class="one_fourth"  style="width: 500px;">
-
         <ul class="list-inline">
+          <br>
           <a href="https://www.facebook.com/museosantamaria.mcj.cr/" target="_blank" style="padding-left: 24px;"><img src="/images/fbicon.png" ></a>
           <a href="https://twitter.com/MHCJS" target="_blank"><img src="/images/twittericon.png" ></a>
           <a href="https://www.youtube.com/user/MHCJS" target="_blank"><img src="/images/youtubeicon.png" ></a>
