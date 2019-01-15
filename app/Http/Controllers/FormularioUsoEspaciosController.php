@@ -12,27 +12,26 @@ class FormularioUsoEspaciosController extends Controller
     //obliga a que los campos de name y email se llenen,
     //si no no hace submit.
     $this->validate($request, [
-      'nombre'=> 'required',
-      'correo'=> 'required',
-      'telefono'=> 'required',
-      'personas'=>'required',
-      'fecha'=>'required',
-      'hora'=>'required',
-      'motivo'=>'required',
-
+      'nombre_usoespacios'=> 'required',
+      'correo_usoespacios'=> 'required',
+      'telefono_usoespacios'=> 'required',
+      'personas_usoespacios'=>'required',
+      'fecha_usoespacios'=>'required',
+      'hora_usoespacios'=>'required',
+      'motivo_usoespacios'=>'required',
 
     ]);
     //  return 123;
     //create new reserva espacio
     $reservausoespacios = new FormularioUsoEspacios;
-    $reservausoespacios->nombre = $request->input('nombre');
-    $reservausoespacios->correo = $request->input('correo');
-    $reservausoespacios->telefono = $request->input('telefono');
-    $reservausoespacios->institucion = $request->input('institucion');
-    $reservausoespacios->numpersonas = $request->input('personas');
-    $reservausoespacios->fecha = $request->input('fecha');
-    $reservausoespacios->hora = $request->input('hora');
-    $reservausoespacios->motivo = $request->input('motivo');
+    $reservausoespacios->nombre = $request->input('nombre_usoespacios');
+    $reservausoespacios->correo = $request->input('correo_usoespacios');
+    $reservausoespacios->telefono = $request->input('telefono_usoespacios');
+    $reservausoespacios->institucion = $request->input('institucion_usoespacios');
+    $reservausoespacios->numpersonas = $request->input('personas_usoespacios');
+    $reservausoespacios->fecha = $request->input('fecha_usoespacios');
+    $reservausoespacios->hora = $request->input('hora_usoespacios');
+    $reservausoespacios->motivo = $request->input('motivo_usoespacios');
 
 
 

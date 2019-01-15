@@ -11,28 +11,28 @@ class FormularioVoluntariadoController extends Controller
     //return $request->input('name');
     //obliga a que los campos de name y email se llenen,
     //si no no hace submit.
-    /*$this->validate($request, [
-      'nombre'=> 'required',
-      'correo'=> 'required',
-      'telefono'=> 'required',
-      'personas'=>'required',
-      'fecha'=>'required',
-      'hora'=>'required',
-      'motivo'=>'required',
+    $this->validate($request, [
+      'nombre_voluntariado'=> 'required',
+      'correo_voluntariado'=> 'required',
+      'telefono_voluntariado'=> 'required',
+      'personas_voluntariado'=>'required',
+      'fecha_voluntariado'=>'required',
+      'hora_voluntariado'=>'required',
+      'motivo_voluntariado'=>'required',
 
 
-    ]);*/
+    ]);
     //  return 123;
     //create new reserva voluntariado
     $reservavoluntariado = new FormularioVoluntariado;
-    $reservavoluntariado->nombre = $request->input('nombre');
-    $reservavoluntariado->correo = $request->input('correo');
-    $reservavoluntariado->telefono = $request->input('telefono');
-    $reservavoluntariado->institucion = $request->input('institucion');
-    $reservavoluntariado->numpersonas = $request->input('personas');
-    $reservavoluntariado->fecha = $request->input('fecha');
-    $reservavoluntariado->hora = $request->input('hora');
-    $reservavoluntariado->motivo = $request->input('motivo');
+    $reservavoluntariado->nombre = $request->input('nombre_voluntariado');
+    $reservavoluntariado->correo = $request->input('correo_voluntariado');
+    $reservavoluntariado->telefono = $request->input('telefono_voluntariado');
+    $reservavoluntariado->institucion = $request->input('institucion_voluntariado');
+    $reservavoluntariado->numpersonas = $request->input('personas_voluntariado');
+    $reservavoluntariado->fecha = $request->input('fecha_voluntariado');
+    $reservavoluntariado->hora = $request->input('hora_voluntariado');
+    $reservavoluntariado->motivo = $request->input('motivo_voluntariado');
 
 
 

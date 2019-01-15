@@ -120,38 +120,36 @@ input:checked + label {
          {!! Form::open(['url' => 'reservavisitaguiada/Enviar']) !!}
 
              <div class="form-group" style="width:500px;">
-               {{Form::label('telefono', 'Teléfono')}}
-               {{Form::text('telefono', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
+               {{Form::label('telefono_visitaguiada', 'Teléfono')}}
+               {{Form::text('telefono_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('institucion', 'Institución(opcional)')}}
-               {{Form::text('institucion', '',['class' => 'form-control','placeholder'=> 'Institución'])}}
+               {{Form::label('institucion_visitaguiada', 'Institución(opcional)')}}
+               {{Form::text('institucion_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Institución'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('personas', 'Cantidad de personas')}}
-               {{Form::text('personas', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
+               {{Form::label('personas_visitaguiada', 'Cantidad de personas')}}
+               {{Form::text('personas_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('rango', 'Rango de edad')}}
-               {{Form::text('rango', '',['class' => 'form-control','placeholder'=> 'Rango de edad'])}}
+               {{Form::label('rango_visitaguiada', 'Rango de edad')}}
+               {{Form::text('rango_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Rango de edad'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('fecha', 'Fecha')}}
-               {{Form::text('fecha', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
+               {{Form::label('fecha_visitaguiada', 'Fecha')}}
+               {{Form::text('fecha_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('hora', 'Hora')}}
-               {{Form::text('hora', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
+               {{Form::label('hora_visitaguiada', 'Hora')}}
+               {{Form::text('hora_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('materialeseducativos', 'Materiales Educativos')}}
-               {{Form::text('materialeseducativos', '',['class' => 'form-control','placeholder'=> 'Materiales Educativos'])}}
+               {{Form::label('materialeseducativos_visitaguiada', 'Materiales Educativos')}}
+               {{Form::text('materialeseducativos_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Materiales Educativos'])}}
              </div>
-
-
              <div class="form-group" style="width:500px;">
-               {{Form::label('necesidadesespeciales', 'Necesidades especiales')}}
-               {{Form::text('necesidadesespeciales', '',['class' => 'form-control','placeholder'=> 'Necesidades especiales'])}}
+               {{Form::label('necesidadesespeciales_visitaguiada', 'Necesidades especiales')}}
+               {{Form::text('necesidadesespeciales_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Necesidades especiales'])}}
              </div>
 
              <div>
