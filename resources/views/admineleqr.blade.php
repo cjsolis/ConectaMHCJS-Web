@@ -109,7 +109,7 @@
 
     <section id="content1">
         
-        <label id="solurlimg">Nombre del Elemento QR:</label><br>
+        <!-- <label id="solurlimg">Nombre del Elemento QR:</label><br>
         <input type="text" name="newstitle" class="custom-textfield"><br><br>
 
         <label id="solurlimg">Descripción del Elemento QR:</label><br>
@@ -117,7 +117,29 @@
 
         <label id="solurlimg">Dirección url de la imagen del Elemento QR:</label><br>
         <input type="text" name="newscontent" class="custom-textfield"><br><br>
-        <button type="button">Agregar</button>
+        <button type="button">Agregar</button> -->
+
+        <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
+            {!! Form::open(['url' => 'admin/elemqr/EnviarElemQR']) !!}
+                <div class="form-group" style="width:500px;">
+                {{Form::label('nombre_eleqr', 'Nombre del Elemento QR:')}}
+                {{Form::text('nombre_eleqr', '',['class' => 'form-control','placeholder'=> 'Nombre del Elemento QR'])}}
+                </div>
+
+                <div class="form-group" style="width:500px;">
+                {{Form::label('descripcion_eleqr', 'Descripción del Elemento QR:')}}
+                {{Form::textarea('descripcion_eleqr', '',['class' => 'form-control','placeholder'=> 'Descripcion del Elemento QR'])}}
+                </div>
+
+                <div class="form-group" style="width:500px;">
+                {{Form::label('url_imagen_eleqr', 'Dirección url de la imagen del Elemento QR:')}}
+                {{Form::text('url_imagen_eleqr', '',['class' => 'form-control','placeholder'=> 'Dirección url de imagen'])}}
+                </div>
+                <div>
+                {{Form::submit('Añadir',['class'=>'btn btn-primary'])}}
+                </div>
+            {!! Form::close() !!}
+        </div>
 
     </section>
 

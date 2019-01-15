@@ -93,9 +93,21 @@
 
     <section id="content1">
         
-        <label id="solurlimg">Dirección url de la imágen:</label><br>
+        <!-- <label id="solurlimg">Dirección url de la imágen:</label><br>
         <input type="text" name="imgurl" class="custom-textfield"><br><br>
-        <button type="button">Agregar</button>
+        <button type="button">Agregar</button> -->
+
+        <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
+            {!! Form::open(['url' => 'admin/galeria/EnviarImagen']) !!}
+                <div class="form-group" style="width:500px;">
+                {{Form::label('url_imagen', 'Dirección url de la imagen a subir:')}}
+                {{Form::text('url_imagen', '',['class' => 'form-control','placeholder'=> 'Url imagen'])}}
+                </div>
+                <div>
+                {{Form::submit('Añadir',['class'=>'btn btn-primary'])}}
+                </div>
+            {!! Form::close() !!}
+        </div>
 
     </section>
 

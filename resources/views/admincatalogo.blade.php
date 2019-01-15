@@ -104,7 +104,7 @@
 
     <section id="content1">
 
-        <label id="solurlimg">Nombre de la Pieza:</label><br>
+        <!-- <label id="solurlimg">Nombre de la Pieza:</label><br>
         <input type="text" name="piecename" class="custom-textfield"><br><br>
 
         <label id="solurlimg">Nombre de Categoría:</label><br>
@@ -115,7 +115,30 @@
 
         <label id="solurlimg">Dirección url de la imagen de la Pieza:</label><br>
         <input type="text" name="pieceimgurl" class="custom-textfield"><br><br>
-        <button type="button">Agregar</button>
+        <button type="button">Agregar</button> -->
+
+        <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
+            {!! Form::open(['url' => 'admin/catalogo/EnviarPieza']) !!}
+                <div class="form-group" style="width:500px;">
+                {{Form::label('nombre_pieza', 'Nombre de la pieza:')}}
+                {{Form::text('nombre_pieza', '',['class' => 'form-control','placeholder'=> 'Nombre de la pieza'])}}
+                </div>
+
+
+                <div class="form-group" style="width:500px;">
+                {{Form::label('descripcion_pieza', 'Descripción de la pieza:')}}
+                {{Form::textarea('descripcion_pieza', '',['class' => 'form-control','placeholder'=> 'Descripcion de la pieza'])}}
+                </div>
+
+                <div class="form-group" style="width:500px;">
+                {{Form::label('url_imagen_pieza', 'Dirección url de la imagen de la pieza:')}}
+                {{Form::text('url_imagen_pieza', '',['class' => 'form-control','placeholder'=> 'Dirección url de imagen'])}}
+                </div>
+                <div>
+                {{Form::submit('Añadir',['class'=>'btn btn-primary'])}}
+                </div>
+            {!! Form::close() !!}
+        </div>
 
     </section>
 

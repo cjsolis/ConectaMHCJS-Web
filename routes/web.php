@@ -60,6 +60,11 @@ Route::get('/messages', 'FormularioReservaVisitaGuiada@getMessages');
 Route::post('/reservavisitaguiada/Enviar', 'FormularioReservaVisitaGuiadaController@Enviar');
 Route::post('/tramites/EnviarUsoEspacios', 'FormularioUsoEspaciosController@EnviarUsoEspacios');
 Route::post('/tramites/EnviarVoluntariado', 'FormularioVoluntariadoController@EnviarVoluntariado');
+Route::post('/admin/galeria/EnviarImagen', 'GaleriaFotosController@store');
+Route::post('/admin/catalogo/EnviarPieza', 'CatalogoPiezasController@store');
+Route::post('/admin/elemqr/EnviarElemQR', 'ElemQrController@store');
+Route::post('/admin/noticias/EnviarNoticia', 'NoticiasController@store');
+Route::post('/admin/tramites/EnviarActa', 'DocumentosController@storeActa');
 
 Route::get('/admin', 'MainController@index');
 Route::post('/admin/checklogin', 'MainController@checklogin');

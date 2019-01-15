@@ -109,7 +109,7 @@
 
     <section id="content1">
         
-        <label id="solurlimg">Título de la Noticia:</label><br>
+        <!-- <label id="solurlimg">Título de la Noticia:</label><br>
         <input type="text" name="newstitle" class="custom-textfield"><br><br>
 
         <label id="solurlimg">Descripción de la Noticia:</label><br>
@@ -117,7 +117,29 @@
 
         <label id="solurlimg">Contenido de la Noticia:</label><br>
         <input type="text" name="newscontent" class="custom-textarea2"><br><br>
-        <button type="button">Agregar</button>
+        <button type="button">Agregar</button> -->
+
+        <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
+            {!! Form::open(['url' => 'admin/noticias/EnviarNoticia']) !!}
+                <div class="form-group" style="width:500px;">
+                {{Form::label('titulo_noticia', 'Título de la Noticia:')}}
+                {{Form::text('titulo_noticia', '',['class' => 'form-control','placeholder'=> 'Título de la Noticia'])}}
+                </div>
+
+                <div class="form-group" style="width:500px;">
+                {{Form::label('descripcion_noticia', 'Descripción de la Noticia:')}}
+                {{Form::textarea('descripcion_noticia', '',['class' => 'form-control','placeholder'=> 'Descripción de la Noticia'])}}
+                </div>
+
+                <div class="form-group" style="width:500px;">
+                {{Form::label('contenido_noticia', 'Contenido de la Noticia:')}}
+                {{Form::textarea('contenido_noticia', '',['class' => 'form-control','placeholder'=> 'Contenido de la Noticia'])}}
+                </div>
+                <div>
+                {{Form::submit('Añadir',['class'=>'btn btn-primary'])}}
+                </div>
+            {!! Form::close() !!}
+        </div>
 
     </section>
 
