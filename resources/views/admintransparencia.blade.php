@@ -93,7 +93,7 @@
 
     <section id="content1">
         
-        <label id="solurlimg">Nombre del Acta:</label><br>
+        <!-- <label id="solurlimg">Nombre del Acta:</label><br>
         <input type="text" name="actname" class="custom-textfield"><br><br>
 
         <label id="solurlimg">Año del Acta:</label><br>
@@ -101,7 +101,29 @@
 
         <label id="solurlimg">Dirección url del Acta:</label><br>
         <input type="text" name="acturl" class="custom-textfield"><br><br>
-        <button type="button">Agregar</button>
+        <button type="button">Agregar</button> -->
+
+        <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
+            {!! Form::open(['url' => 'admin/tramites/EnviarActa']) !!}
+                <div class="form-group" style="width:500px;">
+                {{Form::label('nombre_acta', 'Nombre del Acta:')}}
+                {{Form::text('nombre_acta', '',['class' => 'form-control','placeholder'=> 'Nombre del Acta'])}}
+                </div>
+
+                <div class="form-group" style="width:500px;">
+                {{Form::label('fecha_acta', 'Fecha del Acta:')}}
+                {{Form::date('fecha_acta', '',['class' => 'form-control','placeholder'=> 'Fecha del Acta'])}}
+                </div>
+
+                <div class="form-group" style="width:500px;">
+                {{Form::label('url_acta', 'Dirección url del Acta:')}}
+                {{Form::text('url_acta', '',['class' => 'form-control','placeholder'=> 'Dirección url del Acta'])}}
+                </div>
+                <div>
+                {{Form::submit('Añadir',['class'=>'btn btn-primary'])}}
+                </div>
+            {!! Form::close() !!}
+        </div>
 
     </section>
 
