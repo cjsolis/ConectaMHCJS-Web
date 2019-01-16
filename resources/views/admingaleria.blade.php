@@ -123,7 +123,12 @@ $datosusuario = App\GaleriaFotos::all();
                 @foreach($datosusuario as $dato)
                     <tr>
                         <th><img src="{{ $dato->url_imagen}}" width="25%"></th>
-                        <!-- <th> Hay que agregar uno para la función de eliminar foto </th> -->
+                        <th>
+                            {!! Form::open(['url' => ['admin/galeria/EliminarImagen', $dato->id_imagen], 'method' => 'POST', 'class' => 'pull-right']) !!}
+                                {{Form::hidden('_method', 'DELETE')}}
+                                {{Form::submit('Borrar',['class'=>'btn btn-danger'])}}
+                            {!! Form::close() !!}
+                        </th><!-- <th> Hay que agregar uno para la función de eliminar foto </th> -->
                     </tr>  
                 @endforeach
             </table>

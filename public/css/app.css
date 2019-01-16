@@ -1820,7 +1820,7 @@ ul.tab-nav li a.active.button {
 }
 
 .ignoreparent {
-  width: 100vw;
+  width: 100%;
   margin-left: calc(50% - 50vw);
 }
 
@@ -2579,7 +2579,7 @@ pre code {
 .col-xl-12,
 .col-xl,
 .col-xl-auto {
-  position: relative;
+  position: absolute;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -4985,13 +4985,13 @@ fieldset:disabled a.btn {
 }
 
 .btn-danger {
-  color: #ff0000;
+  color: white;
   background-color: #e3342f;
   border-color: #e3342f;
 }
 
 .btn-danger:hover {
-  color: #ff0000;
+  color: white;
   background-color: #d0211c;
   border-color: #c51f1a;
 }
@@ -5004,7 +5004,7 @@ fieldset:disabled a.btn {
 
 .btn-danger.disabled,
 .btn-danger:disabled {
-  color: #ff0000;
+  color: white;
   background-color: #e3342f;
   border-color: #e3342f;
 }
@@ -5012,7 +5012,7 @@ fieldset:disabled a.btn {
 .btn-danger:not(:disabled):not(.disabled):active,
 .btn-danger:not(:disabled):not(.disabled).active,
 .show > .btn-danger.dropdown-toggle {
-  color: #ff0000;
+  color: white;
   background-color: #c51f1a;
   border-color: #b91d19;
 }

@@ -99,6 +99,9 @@ class GaleriaFotosController extends Controller
      */
     public function destroy(GaleriaFotos $galeriaFotos)
     {
-        //
+        echo $galeriaFotos;
+        $galeriaFotos->delete();
+        
+        return redirect('/prueba123123123')->with('success', 'Stock has been deleted Successfully');
     }
 }
