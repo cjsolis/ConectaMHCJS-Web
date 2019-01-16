@@ -55,7 +55,7 @@ class ElemQrController extends Controller
         //save message
         $elemqr->save();
     
-    
+        echo 'Si se metió acá';
         return redirect('/admin/elemqr')->with('success','Message Sent');
     }
 
@@ -67,7 +67,7 @@ class ElemQrController extends Controller
      */
     public function show(ElemQr $elemQr)
     {
-        //
+        return $elemQr;
     }
 
     /**
