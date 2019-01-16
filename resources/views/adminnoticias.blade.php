@@ -108,18 +108,8 @@
     <label for="tab3" class="custom-label">Modificar Noticias</label>
 
     <section id="content1">
-        
-        <!-- <label id="solurlimg">Título de la Noticia:</label><br>
-        <input type="text" name="newstitle" class="custom-textfield"><br><br>
 
-        <label id="solurlimg">Descripción de la Noticia:</label><br>
-        <textarea name="newsdescription" class="custom-textarea"></textarea><br><br>
-
-        <label id="solurlimg">Contenido de la Noticia:</label><br>
-        <input type="text" name="newscontent" class="custom-textarea2"><br><br>
-        <button type="button">Agregar</button> -->
-
-        <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
+        <div>
             {!! Form::open(['url' => 'admin/noticias/EnviarNoticia']) !!}
                 <div class="form-group" style="width:500px;">
                 {{Form::label('titulo_noticia', 'Título de la Noticia:')}}

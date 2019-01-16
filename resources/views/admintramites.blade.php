@@ -1,4 +1,4 @@
 @extends('layouts.adminlayout')
 @section ('content')
-<h1> hola </h1>
+<h1> En construcción </h1>
 @endsection

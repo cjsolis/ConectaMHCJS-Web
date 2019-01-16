@@ -14,7 +14,8 @@ class GaleriaFotosController extends Controller
      */
     public function index()
     {
-        return GaleriaFotos::all();
+        $galeria = GaleriaFotos::all();
+        return $galeria;
     }
 
     /**

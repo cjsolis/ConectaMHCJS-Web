@@ -92,18 +92,8 @@
     <label for="tab2" class="custom-label">Eliminar Actas</label>
 
     <section id="content1">
-        
-        <!-- <label id="solurlimg">Nombre del Acta:</label><br>
-        <input type="text" name="actname" class="custom-textfield"><br><br>
 
-        <label id="solurlimg">Año del Acta:</label><br>
-        <input type="text" name="actyear" class="custom-textfield"><br><br>
-
-        <label id="solurlimg">Dirección url del Acta:</label><br>
-        <input type="text" name="acturl" class="custom-textfield"><br><br>
-        <button type="button">Agregar</button> -->
-
-        <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
+        <div>
             {!! Form::open(['url' => 'admin/tramites/EnviarActa']) !!}
                 <div class="form-group" style="width:500px;">
                 {{Form::label('nombre_acta', 'Nombre del Acta:')}}

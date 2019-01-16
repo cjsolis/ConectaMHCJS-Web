@@ -21,7 +21,7 @@ tr:nth-child(even) {
 
 $datosusuario = App\ReservaVisitaGuiada::all();
   
-echo $datosusuario[0];
+echo $datosusuario;
 
  ?>
 <table>
