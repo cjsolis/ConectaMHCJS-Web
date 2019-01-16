@@ -83,6 +83,14 @@
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+<?php
+
+$datosusuario = App\GaleriaFotos::all();
+  
+?>
+
+
 <main>
     <strong> Administrar Galería </strong><br><br>
     <input id="tab1" type="radio" class="custom-radio" name="tabs" checked>
@@ -93,11 +101,7 @@
 
     <section id="content1">
         
-        <!-- <label id="solurlimg">Dirección url de la imágen:</label><br>
-        <input type="text" name="imgurl" class="custom-textfield"><br><br>
-        <button type="button">Agregar</button> -->
-
-        <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
+        <div>
             {!! Form::open(['url' => 'admin/galeria/EnviarImagen']) !!}
                 <div class="form-group" style="width:500px;">
                 {{Form::label('url_imagen', 'Dirección url de la imagen a subir:')}}
@@ -110,11 +114,21 @@
         </div>
 
     </section>
-
-    <section id="content2">
         
-        <p> Under construction </p>
+    <section id="content2">
 
+        <div style="overflow-y:scroll;height:300px;width: 800px; height:600px;" >
+            <table class="table table-striped table-hover">
+                <!-- $datosusuario es una lista que se define en la línea 89 -->
+                @foreach($datosusuario as $dato)
+                    <tr>
+                        <th><img src="{{ $dato->url_imagen}}" width="25%"></th>
+                        <!-- <th> Hay que agregar uno para la función de eliminar foto </th> -->
+                    </tr>  
+                @endforeach
+            </table>
+        </div>
+        
     </section>
 
 </main>

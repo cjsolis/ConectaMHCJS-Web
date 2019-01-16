@@ -66,6 +66,9 @@ Route::post('/admin/elemqr/EnviarElemQR', 'ElemQrController@store');
 Route::post('/admin/noticias/EnviarNoticia', 'NoticiasController@store');
 Route::post('/admin/tramites/EnviarActa', 'DocumentosController@storeActa');
 
+// Prueba de get cosas
+Route::get('/admin/galeria/BuscarImagen', 'GaleriaFotosController@index'); //Este creo que ni es necesario, era un intento para hacer get de las mierdas
+
 Route::get('/admin', 'MainController@index');
 Route::post('/admin/checklogin', 'MainController@checklogin');
 Route::get('admin/successlogin', 'MainController@successlogin');
