@@ -10,7 +10,7 @@ class UsersTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
         User::create([
           'name' => 'Pablo Alicante',
           'email' => 'pabloalicante@gmail.com',
