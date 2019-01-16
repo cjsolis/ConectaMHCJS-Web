@@ -20,13 +20,18 @@ tr:nth-child(even) {
 <?php
 
 $datosusuario = App\ReservaVisitaGuiada::all();
-  
-echo $datosusuario[0];
 
+echo $datosusuario[0];
+foreach($datosusuario as $key => $value){
+  echo $key . ':' . $value . '<br>';
+    /*foreach ($filatabla as $key => $value) {
+          echo $key . ':' . $value . '<br>';
+    }*/
+}
  ?>
 <table>
   <tr>
-    <th>Número reserva</th>
+    <th>Númesro reserva</th>
     <th>Id usuario</th>
     <th>Institución</th>
     <th>Personas</th>
