@@ -44,10 +44,12 @@ class FormularioReservaVisitaGuiadaController extends Controller
 
     return redirect('/')->with('success','Message Sent');
 
-  /*  public function getMessages(){
-      $messages = Message::all();
+  /*  public function getReservaUsuario(Request $idusuario){
+      $datosusuario = DB::table('reserva_visita_guiadas')->where('id_usuario', 1)->get();
+
       return view('messages')->with('messages',$messages);
     }*/
+
 
 
   }
