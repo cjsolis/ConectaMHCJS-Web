@@ -113,7 +113,11 @@ input:checked + label {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
+<?php
 
+$doc_me = App\Documentos::all()->where('tipo_documento', '=', 'ME');
+
+?>
 
 <main>
    <input id="tab1" type="radio" name="tabs" checked>
@@ -191,50 +195,27 @@ Los servicios educativos incluyen visitas guiadas, justificación Ruta de los H�
        <br />
        El Museo ha creado una serie de materiales educativos con el fin de facilitar al docente y al estudiante el estudio del tema de la Campaña Nacional, los cuáles se ponen a disposición de los usuarios para fines académicos.<br />
        <br />
-       <strong>Materiales PDF para descargar: </strong><br />
+       <strong>Materiales para descargar</strong>
+        <br>
+        <br>
 
-       <br>
-      <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/servicios%2FConsejos%20pr%C3%A1cticos%20para%20la%20preparaci%C3%B3n%20y%20montaje%20de%20exhibiciones%20did%C3%A1cticas.pdf?alt=media&token=f7d1452e-0b16-4191-9efa-362f8cb64059" download="acta7612015.pdf">
-      Consejos prácticos para la preparación y montaje de exhibiciones didácticas
-      </a>
+        <div style="overflow-y:scroll;width: auto; height:300px;" >
+          <table class="table table-striped table-hover">
+            <tr>
+                <th><strong>Nombre</strong></th>
+                <th><strong>Documento</strong></th>
+                @foreach($doc_me as $doc)
+                        <tr>
+                            <th>{{ $doc->nombre_documento }}</th>
+                            <th><a href="{{ $doc->url_documento }}" target="_blank">Descargar</a></th>
+                        </tr>  
+                @endforeach
+            </tr>
+          </table>
+        </div>
+        <br>
+        <br/>
 
-      <br>
-      <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/servicios%2FUn%20camino%20a%20la%20aproximaci%C3%B3n%20de%20las%20Ciencias%20Sociales.pdf?alt=media&token=d0eaed58-3bba-4739-bad5-768eb034b84e" download="acta7612015.pdf">
-      Un camino a la aproximación de las Ciencias Sociales
-      </a>
-
-      <br>
-      <a href="https://firebasestorage.googleapis.com/v0/b/conectamhcjs2019.appspot.com/o/servicios%2FUnidad%20Did%C3%A1ctica%20Juan%20Santamar%C3%ADa%20Heroe%20de%20mi%20Patria.pdf?alt=media&token=a11a0267-1eca-4d3b-833e-ad54a0fee36d" download="acta7612015.pdf">
-      Unidad Didáctica Juan Santamaría Heroe de mi Patria
-      </a>
-
-      <br>
-      <a href="http://www.museojuansantamaria.go.cr/materiales-de-educacion/64-desplegable-batalla-de-santa-rosa.html" download="acta7612015.pdf">
-      Desplegable Batalla de Santa Rosa
-      </a>
-
-      <br>
-      <a href="http://www.museojuansantamaria.go.cr/materiales-de-educacion/66-desplegable-las-tres-batallas-de-rivas.html" download="acta7612015.pdf">
-      Desplegable Las tres Batallas de Rivas
-      </a>
-
-      <br>
-      <a href="http://www.museojuansantamaria.go.cr/materiales-de-educacion/65-desplegable-juan-rafael-mora-porras.html" download="acta7612015.pdf">
-      Desplegable Juan Rafael Mora Porras
-      </a>
-
-      <br>
-      <a href="http://www.museojuansantamaria.go.cr/materiales-de-educacion/60-desplegable-francisca-carrasco-jimenez.html" download="acta7612015.pdf">
-      Desplegable Francisca Carrasco Jiménez
-      </a>
-
-      <br>
-      <br>
-      <input type='checkbox' name='thing' value='valuable' id="thing"/><label for="thing"></label> <label>get an army</label>
-      <br>
-      <br>
-
-     </p>
    </section>
 
 
