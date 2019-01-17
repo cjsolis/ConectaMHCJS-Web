@@ -14,7 +14,8 @@ class GaleriaFotosController extends Controller
      */
     public function index()
     {
-        return GaleriaFotos::all();
+        $galeria = GaleriaFotos::all();
+        return $galeria;
     }
 
     /**
@@ -96,8 +97,19 @@ class GaleriaFotosController extends Controller
      * @param  \App\GaleriaFotos  $galeriaFotos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(GaleriaFotos $galeriaFotos)
+    /* public function destroy(GaleriaFotos $galeriaFotos)
     {
-        //
+        echo $galeriaFotos;
+        $galeriaFotos->delete();
+        
+        return redirect('/admin/galeria')->with('success', 'Stock has been deleted Successfully');
+    } */
+
+    public function destroy($id)
+    {
+        $galeriaFotos = GaleriaFotos::find($id);
+        $galeriaFotos->delete();
+        
+        return redirect('/admin/galeria')->with('success', 'Stock has been deleted Successfully');
     }
 }

@@ -27,7 +27,7 @@
 
               <div class="container">
                 @include('Inc.showcase')
-                 <div class="row" style=" position: absolute;  left: 200px;top: 350px;">
+                 <div class="row" style=" position: absolute; left: 200px;top: 350px;">
                    <div class="col-md-8 col-lg-8">
                      <div class="wrapper">
                         @include('Inc.mensajeerror')

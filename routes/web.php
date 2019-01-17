@@ -51,12 +51,6 @@ Route::get('/admin/transparencia', 'PagesController@getAdminTransparencia');
 Route::get('/admin/reservaciones', 'PagesController@getAdminReservaciones');
 Route::get('/admin/usuarios', 'PagesController@getAdminUsuarios');
 
-
-/** Rutas que traía esto */
-Route::get('/messages', 'MessagesController@getMessages');
-Route::post('/contact/submit', 'MessagesController@submit');
-
-Route::get('/messages', 'FormularioReservaVisitaGuiada@getMessages');
 Route::post('/reservavisitaguiada/Enviar', 'FormularioReservaVisitaGuiadaController@Enviar');
 Route::post('/tramites/EnviarUsoEspacios', 'FormularioUsoEspaciosController@EnviarUsoEspacios');
 Route::post('/tramites/EnviarVoluntariado', 'FormularioVoluntariadoController@EnviarVoluntariado');
@@ -65,6 +59,11 @@ Route::post('/admin/catalogo/EnviarPieza', 'CatalogoPiezasController@store');
 Route::post('/admin/elemqr/EnviarElemQR', 'ElemQrController@store');
 Route::post('/admin/noticias/EnviarNoticia', 'NoticiasController@store');
 Route::post('/admin/tramites/EnviarActa', 'DocumentosController@storeActa');
+
+// Prueba de get cosas
+Route::get('/admin/galeria/BuscarImagen', 'GaleriaFotosController@index'); //Este creo que ni es necesario, era un intento para hacer get de las mierdas
+
+Route::delete('/admin/galeria/EliminarImagen/{id_imagen}', 'GaleriaFotosController@destroy');
 
 Route::get('/admin', 'MainController@index');
 Route::post('/admin/checklogin', 'MainController@checklogin');
