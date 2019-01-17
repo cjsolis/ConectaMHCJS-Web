@@ -11,31 +11,42 @@
 |
 */
 
-Route::get('/', 'PagesController@getHome');
-Route::get('/acerca', 'PagesController@getAcerca');
+/*Secciones sin implementar
+*/
 Route::get('/contactenos', 'PagesController@getContactenos');
 Route::get('/galeria', 'PagesController@getGaleria');
-Route::get('/noticias', 'PagesController@getNoticias');
 Route::get('/exhibicionespermanentes', 'PagesController@getExhibicionesPermanentes');
 Route::get('/exhibicionestemporales', 'PagesController@getExhibicionesTemporales');
 Route::get('/eventos', 'PagesController@getEventos');
-Route::get('/servicios', 'PagesController@getServicios');
-Route::get('/recursos', 'PagesController@getRecursos');
-Route::get('/visitaguiada', 'PagesController@getVisitaGuiada');
-Route::get('/servicioseducativos', 'PagesController@getServiciosEducativos');
 Route::get('/campananacional', 'PagesController@getCampanaNacional');
 Route::get('/centroinformacion', 'PagesController@getCentroInfo');
 Route::get('/arquitecturamuseo', 'PagesController@getArquitecturaMuseo');
 Route::get('/guinos', 'PagesController@getGuinos');
-Route::get('/catalogo', 'PagesController@getCatalogo');
-Route::get('/transparencia', 'PagesController@getTransparencia');
-Route::get('/tramites', 'PagesController@getTramites');
 Route::get('/preguntasfrecuentes', 'PagesController@getPregunasFrecuentes');
 Route::get('/denunciasquejas', 'PagesController@getDenunciasQuejas');
 Route::get('/enlacesamigos', 'PagesController@getEnlacesAmigos');
+Route::get('/catalogotienda', 'PagesController@getCatalogoTienda');
+/**/
+
+Route::get('/', 'PagesController@getHome');
+Route::get('/acerca', 'PagesController@getAcerca');
+
+
+
+Route::get('/servicios', 'PagesController@getServicios');
+Route::get('/recursos', 'PagesController@getRecursos');
+Route::get('/visitaguiada', 'PagesController@getVisitaGuiada');
+Route::get('/servicioseducativos', 'PagesController@getServiciosEducativos');
+
+
+Route::get('/catalogo', 'PagesController@getCatalogo');
+Route::get('/transparencia', 'PagesController@getTransparencia');
+Route::get('/tramites', 'PagesController@getTramites');
+
+
 Route::get('/logintienda', 'PagesController@getLogin');
 Route::get('/registrarsetienda', 'PagesController@getRegistrarse');
-Route::get('/catalogotienda', 'PagesController@getCatalogoTienda');
+
 Route::get('/reservavisitaguiada', 'PagesController@getReservaVisitaGuiada');
 
 /** Rutas del sistema administrador */
@@ -44,7 +55,7 @@ Route::get('/admin/elemqr', 'PagesController@getAdminElemQR');
 Route::get('/admin/catalogo', 'PagesController@getAdminCatalogo');
 Route::get('/admin/formularios', 'PagesController@getAdminFormularios');
 Route::get('/admin/galeria', 'PagesController@getAdminGaleria');
-Route::get('/admin/noticias', 'PagesController@getAdminNoticias');
+
 Route::get('/admin/servicios', 'PagesController@getAdminServicios');
 Route::get('/admin/tramites', 'PagesController@getAdminTramites');
 Route::get('/admin/transparencia', 'PagesController@getAdminTransparencia');
@@ -57,15 +68,26 @@ Route::post('/tramites/EnviarVoluntariado', 'FormularioVoluntariadoController@En
 Route::post('/admin/galeria/EnviarImagen', 'GaleriaFotosController@store');
 Route::post('/admin/catalogo/EnviarPieza', 'CatalogoPiezasController@store');
 Route::post('/admin/elemqr/EnviarElemQR', 'ElemQrController@store');
-Route::post('/admin/noticias/EnviarNoticia', 'NoticiasController@store');
+
 Route::post('/admin/tramites/EnviarActa', 'DocumentosController@storeActa');
 
 // Prueba de get cosas
 Route::get('/admin/galeria/BuscarImagen', 'GaleriaFotosController@index'); //Este creo que ni es necesario, era un intento para hacer get de las mierdas
 
 Route::delete('/admin/galeria/EliminarImagen/{id_imagen}', 'GaleriaFotosController@destroy');
+Route::get('/admin/catalogo/elementos', 'CatalogoPiezasController@index');
 
 Route::get('/admin', 'MainController@index');
 Route::post('/admin/checklogin', 'MainController@checklogin');
 Route::get('admin/successlogin', 'MainController@successlogin');
 Route::get('admin/logout', 'MainController@logout');
+
+//Route::resource('galeria', 'GaleriaFotosController');
+//Route::resource('/noticias', 'NoticiasController');
+
+// Rutas para los elementos de la tabla noticias
+Route::get('/noticias', 'NoticiasController@index');
+Route::get('/noticias/{noticia}', 'NoticiasController@show');
+Route::post('/admin/noticias/agregar', 'NoticiasController@store');
+Route::get('/admin/noticias', 'NoticiasController@indexAdmin');
+Route::delete('/admin/noticias/{noticia}', 'NoticiasController@destroy');

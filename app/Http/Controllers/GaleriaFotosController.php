@@ -17,7 +17,7 @@ class GaleriaFotosController extends Controller
         $galeria = GaleriaFotos::all();
         return $galeria;
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -112,4 +112,5 @@ class GaleriaFotosController extends Controller
         
         return redirect('/admin/galeria')->with('success', 'Stock has been deleted Successfully');
     }
+
 }

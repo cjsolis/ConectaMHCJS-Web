@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class CatalogoPiezasController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +15,8 @@ class CatalogoPiezasController extends Controller
      */
     public function index()
     {
-        //
+        $piezas = CatalogoPiezasController::all();
+        return view('admincatalogo', $piezas);
     }
 
     /**

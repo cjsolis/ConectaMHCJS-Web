@@ -87,7 +87,7 @@
 <?php
 
 $datosusuario = App\GaleriaFotos::all();
-  
+
 ?>
 
 
@@ -128,7 +128,7 @@ $datosusuario = App\GaleriaFotos::all();
                                 {{Form::hidden('_method', 'DELETE')}}
                                 {{Form::submit('Borrar',['class'=>'btn btn-danger'])}}
                             {!! Form::close() !!}
-                        </th><!-- <th> Hay que agregar uno para la función de eliminar foto </th> -->
+                        </th>
                     </tr>  
                 @endforeach
             </table>

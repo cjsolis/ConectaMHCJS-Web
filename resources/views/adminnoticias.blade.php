@@ -71,8 +71,7 @@
     }
 
     #tab1:checked ~ #content1,
-    #tab2:checked ~ #content2,
-    #tab3:checked ~ #content3 {
+    #tab2:checked ~ #content2{
         display: block;
     }
 
@@ -99,18 +98,18 @@
 <main>
     <strong> Administrar Noticias </strong><br><br>
     <input id="tab1" type="radio" class="custom-radio" name="tabs" checked>
-    <label for="tab1" class="custom-label">Añadir Noticias</label>
+    <label for="tab1" class="custom-label">Buscar Noticias</label>
 
     <input id="tab2" type="radio" class="custom-radio" name="tabs">
-    <label for="tab2" class="custom-label">Eliminar Noticias</label>
+    <label for="tab2" class="custom-label">Añadir Noticias</label>
 
-    <input id="tab3" type="radio" class="custom-radio" name="tabs">
-    <label for="tab3" class="custom-label">Modificar Noticias</label>
+{{--     <input id="tab3" type="radio" class="custom-radio" name="tabs">
+    <label for="tab3" class="custom-label">Modificar Noticias</label> --}}
 
-    <section id="content1">
+    <section id="content2">
 
         <div>
-            {!! Form::open(['url' => 'admin/noticias/EnviarNoticia']) !!}
+            {!! Form::open(['url' => 'admin/noticias/agregar']) !!}
                 <div class="form-group" style="width:500px;">
                 {{Form::label('titulo_noticia', 'Título de la Noticia:')}}
                 {{Form::text('titulo_noticia', '',['class' => 'form-control','placeholder'=> 'Título de la Noticia'])}}
@@ -126,24 +125,70 @@
                 {{Form::textarea('contenido_noticia', '',['class' => 'form-control','placeholder'=> 'Contenido de la Noticia'])}}
                 </div>
                 <div>
-                {{Form::submit('Añadir',['class'=>'btn btn-primary'])}}
+                {{Form::submit('Añadir', ['class'=>'btn btn-primary'])}}
                 </div>
             {!! Form::close() !!}
         </div>
 
     </section>
 
-    <section id="content2">
+    <section id="content1">
         
-        <p> Under construction </p>
+        @if(count($noticias) > 0)
+            {!! Form::open(['method'=>'GET','url'=>'/admin/noticias','role'=>'search'])  !!}
+                {{Form::text('search')}}
+                {{Form::submit('Buscar',['class'=>'btn btn-primary'])}}
+            {!! Form::close() !!}
+            <div style="overflow-y:scroll;width: auto; height:300px;" >
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <th><strong>Título</strong></th>
+                        <th><strong>Fecha (yyyy-mm-dd)</strong></th>
+                        <th><strong>Modificar</strong></th>
+                        <th><strong>Eliminar</strong></th>
+                        @foreach($noticias as $noticia)
+                                <tr>
+                                    <th>{{ $noticia->titulo_noticia }}</th>
+                                    <th>{{ $noticia->fecha_noticia }}</th>
+                                    <th></th>
+                                    <th>
+                                        {!! Form::open(['url' => ['/admin/noticias', $noticia->id_noticia], 'method' => 'POST']) !!}
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('X',['class'=>'btn btn-danger'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                </tr>  
+                        @endforeach
+                    </tr>
+                </table>
+            </div>
+        @else
+            {!! Form::open(['method'=>'GET','url'=>'/admin/noticias','role'=>'search'])  !!}
+                {{Form::text('search')}}
+                {{Form::submit('Buscar',['class'=>'btn btn-primary'])}}
+            {!! Form::close() !!}
+            <br>
+            <strong> No se encontraron elementos. </strong>
+            <br>
+            <br>
+            <table class="table table-striped table-hover">
+                    <tr>
+                        <th><strong>Título</strong></th>
+                        <th><strong>Fecha (yyyy-mm-dd)</strong></th>
+                        <th><strong>Modificar</strong></th>
+                        <th><strong>Eliminar</strong></th>
+                    </tr>
+            </table>
+        @endif
+        
 
     </section>
 
-    <section id="content3">
+{{--     <section id="content3">
         
         <p> Under construction </p>
 
-    </section>
+    </section> --}}
 
 </main>
 @endsection

@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class NoticiasController extends Controller
 {
+    public function indexAdmin()
+    {
+        $noticias = Noticias::search()->orderBy('titulo_noticia')->paginate(20);
+    
+        return view('adminnoticias', compact('noticias'));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,8 @@ class NoticiasController extends Controller
      */
     public function index()
     {
-        //
+        $noticias = Noticias::orderBy('fecha_noticia', 'desc')->paginate(3);
+        return view('noticias')->with('noticias', $noticias);
     }
 
     /**
@@ -56,7 +64,7 @@ class NoticiasController extends Controller
         $noticias->save();
     
     
-        return redirect('/admin/noticias')->with('success','Message Sent');
+        return redirect('/admin/noticias')->with('success','Noticia añadida con éxito.');
     }
 
     /**
@@ -65,9 +73,11 @@ class NoticiasController extends Controller
      * @param  \App\Noticias  $noticias
      * @return \Illuminate\Http\Response
      */
-    public function show(Noticias $noticias)
+    public function show($id)
     {
-        //
+        //$noticia = Noticias::all()->where('titulo_noticia','LIKE', $id);
+        $noticia = Noticias::find($id);
+        return view('mostrarnoticia')->with('noticia', $noticia);
     }
 
     /**
@@ -99,8 +109,11 @@ class NoticiasController extends Controller
      * @param  \App\Noticias  $noticias
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Noticias $noticias)
+    public function destroy($id)
     {
-        //
+        $noticia = Noticias::find($id);
+        $noticia->delete();
+        
+        return redirect('/admin/noticias')->with('success', 'La noticia se ha eliminado correctamente.');
     }
 }

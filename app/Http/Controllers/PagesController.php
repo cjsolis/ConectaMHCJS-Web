@@ -18,10 +18,10 @@ class PagesController extends Controller
       return view('galeria');
     }
 
-    public function getNoticias(){
+    /* public function getNoticias(){
       return view('noticias');
     }
-
+ */
     public function getExhibicionesPermanentes(){
       return view('exhibicionespermanentes');
     }

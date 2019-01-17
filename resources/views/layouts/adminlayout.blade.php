@@ -23,7 +23,8 @@
                 <div class="row" style="position: absolute;  left: 225px;top: 200px;">
                    <div class="col-md-8 col-lg-8">
                         <div class="wrapper">
-                        @yield('content')
+                            @include('Inc.mensajeerror')
+                            @yield('content')
                         </div>
                     </div>
                 </div>
