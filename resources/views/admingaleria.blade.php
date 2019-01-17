@@ -124,7 +124,7 @@ $datosusuario = App\GaleriaFotos::all();
                     <tr>
                         <th><img src="{{ $dato->url_imagen}}" width="25%"></th>
                         <th>
-                            {!! Form::open(['url' => ['admin/galeria/EliminarImagen', $dato->id_imagen], 'method' => 'POST', 'class' => 'pull-right']) !!}
+                            {!! Form::open(['url' => ['admin/galeria/EliminarImagen', $dato->id_imagen], 'method' => 'POST']) !!}
                                 {{Form::hidden('_method', 'DELETE')}}
                                 {{Form::submit('Borrar',['class'=>'btn btn-danger'])}}
                             {!! Form::close() !!}

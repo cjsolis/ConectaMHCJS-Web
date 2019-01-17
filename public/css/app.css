@@ -1820,7 +1820,7 @@ ul.tab-nav li a.active.button {
 }
 
 .ignoreparent {
-  width: 100%;
+  width: 100vw;
   margin-left: calc(50% - 50vw);
 }
 
@@ -2579,7 +2579,7 @@ pre code {
 .col-xl-12,
 .col-xl,
 .col-xl-auto {
-  position: absolute;
+  position: relative;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
