@@ -86,29 +86,30 @@
 <main>
     <strong> Administrar Actas de Transparencia </strong><br><br>
     <input id="tab1" type="radio" class="custom-radio" name="tabs" checked>
-    <label for="tab1" class="custom-label">Añadir Actas</label>
+    <label for="tab1" class="custom-label">Buscar Actas</label>
 
     <input id="tab2" type="radio" class="custom-radio" name="tabs">
-    <label for="tab2" class="custom-label">Eliminar Actas</label>
+    <label for="tab2" class="custom-label">Añadir Actas</label>
 
-    <section id="content1">
+    <section id="content2">
 
         <div>
-            {!! Form::open(['url' => 'admin/tramites/EnviarActa']) !!}
-                <div class="form-group" style="width:500px;">
+            {!! Form::open(['url' => 'admin/tramites/agregar']) !!}
+                <div class="form-group">
                 {{Form::label('nombre_acta', 'Nombre del Acta:')}}
                 {{Form::text('nombre_acta', '',['class' => 'form-control','placeholder'=> 'Nombre del Acta'])}}
                 </div>
 
-                <div class="form-group" style="width:500px;">
+                <div class="form-group">
                 {{Form::label('fecha_acta', 'Fecha del Acta:')}}
                 {{Form::date('fecha_acta', '',['class' => 'form-control','placeholder'=> 'Fecha del Acta'])}}
                 </div>
 
-                <div class="form-group" style="width:500px;">
+                <div class="form-group">
                 {{Form::label('url_acta', 'Dirección url del Acta:')}}
                 {{Form::text('url_acta', '',['class' => 'form-control','placeholder'=> 'Dirección url del Acta'])}}
                 </div>
+
                 <div>
                 {{Form::submit('Añadir',['class'=>'btn btn-primary'])}}
                 </div>
@@ -117,9 +118,60 @@
 
     </section>
 
-    <section id="content2">
+    <section id="content1">
         
-        <p> Under construction </p>
+            @if(count($documentos) > 0)
+            <div class="form-group">
+                {!! Form::open(['method'=>'GET','url'=>'/admin/transparencia','role'=>'search'])  !!}
+                    {{Form::text('search')}}
+                    {{Form::submit('Buscar', ['class'=>'btn btn-primary'])}}
+                {!! Form::close() !!}
+            </div>
+            <div style="overflow-y:scroll;width: auto; height:500px;" >
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <th><strong>Nombre</strong></th>
+                        <th><strong>Fecha</strong></th>
+                        <th></th>
+                        <th></th>
+                        @foreach($documentos as $documento)
+                                <tr>
+                                    <th>{{ $documento->nombre_documento }}</th>
+                                    <th>{{ $documento->fecha_documento }}</th>
+                                    <th>
+                                        {!! Form::open(['url' => ['/admin/transparencia', $documento->id_documento, 'editar'], 'method' => 'GET']) !!}
+                                            {{Form::submit('Editar',['class'=>'btn btn-primary'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                    <th>
+                                        {!! Form::open(['url' => ['/admin/transparencia', $documento->id_documento], 'method' => 'POST']) !!}
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('X',['class'=>'btn btn-danger'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                </tr>  
+                        @endforeach
+                    </tr>
+                </table>
+            </div>
+        @else
+            {!! Form::open(['method'=>'GET','url'=>'/admin/transparencia','role'=>'search'])  !!}
+                {{Form::text('search')}}
+                {{Form::submit('Buscar',['class'=>'btn btn-primary'])}}
+            {!! Form::close() !!}
+            <br>
+            <strong> No se encontraron elementos. </strong>
+            <br>
+            <br>
+            <table class="table table-striped table-hover">
+                    <tr>
+                        <th><strong>Nombre</strong></th>
+                        <th><strong>Fecha</strong></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+            </table>
+        @endif
 
     </section>
 

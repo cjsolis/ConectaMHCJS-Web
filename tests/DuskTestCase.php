@@ -31,7 +31,7 @@ abstract class DuskTestCase extends BaseTestCase
     {
         $options = (new ChromeOptions)->addArguments([
             '--disable-gpu',
-          //  '--headless',//sin esto corre chrome
+            //  '--headless',//sin esto corre chrome
             '--window-size=1920,1080',
         ]);
 

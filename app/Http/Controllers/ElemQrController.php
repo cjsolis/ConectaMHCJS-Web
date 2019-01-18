@@ -7,32 +7,24 @@ use Illuminate\Http\Request;
 
 class ElemQrController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function indexAdmin()
+    {
+        
+        $elementos = ElemQr::search()->orderBy('nombre_elemqr')->paginate(20);
+        return view('admineleqr', compact('elementos'));
+    }
+    
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //return $request->input('name');
@@ -55,52 +47,57 @@ class ElemQrController extends Controller
         //save message
         $elemqr->save();
     
-        echo 'Si se metió acá';
-        return redirect('/admin/elemqr')->with('success','Message Sent');
+        return redirect('/admin/elemqr')->with('success','Elemento añadido con éxito.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\ElemQr  $elemQr
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show(ElemQr $elemQr)
     {
         return $elemQr;
     }
 
+    public function showApi($id)
+    {
+        $elem = ElemQr::find($id);
+        return $elem;
+    }
+    
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\ElemQr  $elemQr
      * @return \Illuminate\Http\Response
      */
-    public function edit(ElemQr $elemQr)
+    public function edit($id)
     {
-        //
+        $elemento = ElemQr::find($id);
+        return view('editarelemqr')->with('elemento', $elemento); 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ElemQr  $elemQr
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ElemQr $elemQr)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nombre_eleqr'=> 'required',
+            'descripcion_eleqr'=> 'required',
+            'url_imagen_eleqr'=> 'required|url|active_url',
+
+        ]);
+
+        $elemqr = ElemQr::find($id);
+        $elemqr->nombre_elemqr = $request->input('nombre_eleqr');
+        $elemqr->descripcion_elemqr = $request->input('descripcion_eleqr');
+        $elemqr->url_img_elemqr = $request->input('url_imagen_eleqr');
+ 
+        $elemqr->save();
+    
+        return redirect('/admin/elemqr')->with('success','Elemento modificado con éxito.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\ElemQr  $elemQr
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ElemQr $elemQr)
+    public function destroy($id)
     {
-        //
+        $elemento = ElemQr::find($id);
+        $elemento->delete();
+        
+        return redirect('/admin/elemqr')->with('success', 'El Elemento QR se ha eliminado correctamente.');
     }
 }

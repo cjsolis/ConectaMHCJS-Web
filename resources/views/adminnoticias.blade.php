@@ -71,8 +71,7 @@
     }
 
     #tab1:checked ~ #content1,
-    #tab2:checked ~ #content2,
-    #tab3:checked ~ #content3 {
+    #tab2:checked ~ #content2{
         display: block;
     }
 
@@ -96,52 +95,91 @@
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
 <main>
     <strong> Administrar Noticias </strong><br><br>
     <input id="tab1" type="radio" class="custom-radio" name="tabs" checked>
-    <label for="tab1" class="custom-label">Añadir Noticias</label>
+    <label for="tab1" class="custom-label">Buscar Noticias</label>
 
     <input id="tab2" type="radio" class="custom-radio" name="tabs">
-    <label for="tab2" class="custom-label">Eliminar Noticias</label>
+    <label for="tab2" class="custom-label">Añadir Noticias</label>
 
-    <input id="tab3" type="radio" class="custom-radio" name="tabs">
-    <label for="tab3" class="custom-label">Modificar Noticias</label>
-
-    <section id="content1">
+    <section id="content2">
 
         <div>
-            {!! Form::open(['url' => 'admin/noticias/EnviarNoticia']) !!}
-                <div class="form-group" style="width:500px;">
-                {{Form::label('titulo_noticia', 'Título de la Noticia:')}}
-                {{Form::text('titulo_noticia', '',['class' => 'form-control','placeholder'=> 'Título de la Noticia'])}}
+            {!! Form::open(['url' => 'admin/noticias/agregar']) !!}
+                <div class="form-group">
+                    {{Form::label('titulo_noticia', 'Título de la Noticia:')}}
+                    {{Form::text('titulo_noticia', '',['class' => 'form-control','placeholder'=> 'Título de la Noticia'])}}
                 </div>
 
-                <div class="form-group" style="width:500px;">
-                {{Form::label('descripcion_noticia', 'Descripción de la Noticia:')}}
-                {{Form::textarea('descripcion_noticia', '',['class' => 'form-control','placeholder'=> 'Descripción de la Noticia'])}}
+                <div class="form-group">
+                    {{Form::label('descripcion_noticia', 'Descripción de la Noticia:')}}
+                    {{Form::textarea('descripcion_noticia', '',['class' => 'form-control','placeholder'=> 'Descripción de la Noticia'])}}
                 </div>
-
-                <div class="form-group" style="width:500px;">
-                {{Form::label('contenido_noticia', 'Contenido de la Noticia:')}}
-                {{Form::textarea('contenido_noticia', '',['class' => 'form-control','placeholder'=> 'Contenido de la Noticia'])}}
+                <div class="form-group">
+                    {{Form::label('contenido_noticia', 'Contenido de la Noticia:')}}
+                    {{Form::textarea('contenido_noticia', '',['id' => 'article-ckeditor', 'class' => 'form-control','placeholder'=> 'Contenido de la Noticia'])}}
                 </div>
-                <div>
-                {{Form::submit('Añadir',['class'=>'btn btn-primary'])}}
+                <div class="form-group">
+                    {{Form::submit('Añadir', ['class'=>'btn btn-primary'])}}
                 </div>
             {!! Form::close() !!}
         </div>
 
     </section>
 
-    <section id="content2">
+    <section id="content1">
         
-        <p> Under construction </p>
-
-    </section>
-
-    <section id="content3">
+        @if(count($noticias) > 0)
+            {!! Form::open(['method'=>'GET','url'=>'/admin/noticias','role'=>'search'])  !!}
+                {{Form::text('search')}}
+                {{Form::submit('Buscar',['class'=>'btn btn-primary'])}}
+            {!! Form::close() !!}
+            <div style="overflow-y:scroll;width: auto; height:300px;" >
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <th><strong>Título</strong></th>
+                        <th><strong>Fecha (yyyy-mm-dd)</strong></th>
+                        <th></th>
+                        <th></th>
+                        @foreach($noticias as $noticia)
+                                <tr>
+                                    <th>{{ $noticia->titulo_noticia }}</th>
+                                    <th>{{ $noticia->fecha_noticia }}</th>
+                                    <th>
+                                        {!! Form::open(['url' => ['/admin/noticias', $noticia->id_noticia, 'editar'], 'method' => 'GET']) !!}
+                                            {{Form::submit('Editar',['class'=>'btn btn-primary'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                    <th>
+                                        {!! Form::open(['url' => ['/admin/noticias', $noticia->id_noticia], 'method' => 'POST']) !!}
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('X',['class'=>'btn btn-danger'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                </tr>  
+                        @endforeach
+                    </tr>
+                </table>
+            </div>
+        @else
+            {!! Form::open(['method'=>'GET','url'=>'/admin/noticias','role'=>'search'])  !!}
+                {{Form::text('search')}}
+                {{Form::submit('Buscar',['class'=>'btn btn-primary'])}}
+            {!! Form::close() !!}
+            <br>
+            <strong> No se encontraron elementos. </strong>
+            <br>
+            <br>
+            <table class="table table-striped table-hover">
+                    <tr>
+                        <th><strong>Título</strong></th>
+                        <th><strong>Fecha (yyyy-mm-dd)</strong></th>
+                    </tr>
+            </table>
+        @endif
         
-        <p> Under construction </p>
 
     </section>
 

@@ -14,14 +14,14 @@ class PagesController extends Controller
       return view('contactenos');
     }
 
-    public function getGaleria(){
+    /* public function getGaleria(){
       return view('galeria');
-    }
+    } */
 
-    public function getNoticias(){
+    /* public function getNoticias(){
       return view('noticias');
     }
-
+ */
     public function getExhibicionesPermanentes(){
       return view('exhibicionespermanentes');
     }
@@ -117,9 +117,9 @@ class PagesController extends Controller
       return view('admineleqr');
     }
 
-    public function getAdminCatalogo(){
+    /* public function getAdminCatalogo(){
       return view('admincatalogo');
-    }
+    } */
 
     public function getAdminFormularios(){
       return view('adminformularios');

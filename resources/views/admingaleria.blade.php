@@ -87,52 +87,94 @@
 <?php
 
 $datosusuario = App\GaleriaFotos::all();
-  
+
 ?>
 
 
 <main>
     <strong> Administrar Galería </strong><br><br>
     <input id="tab1" type="radio" class="custom-radio" name="tabs" checked>
-    <label for="tab1" class="custom-label">Añadir Imágenes</label>
+    <label for="tab1" class="custom-label">Buscar Imágenes</label>
 
     <input id="tab2" type="radio" class="custom-radio" name="tabs">
-    <label for="tab2" class="custom-label">Eliminar Imágenes</label>
+    <label for="tab2" class="custom-label">Añadir Imágenes</label>
 
-    <section id="content1">
+    <section id="content2">
         
         <div>
-            {!! Form::open(['url' => 'admin/galeria/EnviarImagen']) !!}
-                <div class="form-group" style="width:500px;">
-                {{Form::label('url_imagen', 'Dirección url de la imagen a subir:')}}
-                {{Form::text('url_imagen', '',['class' => 'form-control','placeholder'=> 'Url imagen'])}}
+            {!! Form::open(['url' => 'admin/galeria/agregar']) !!}
+                <div class="form-group">
+                    {{Form::label('url_imagen', 'Dirección url de la imagen a subir:')}}
+                    {{Form::text('url_imagen', '',['class' => 'form-control','placeholder'=> 'Url imagen'])}}
                 </div>
-                <div>
-                {{Form::submit('Añadir',['class'=>'btn btn-primary'])}}
+
+                <div class="form-group">
+                    {{Form::label('descripcion_imagen', 'Descripción de la imagen:')}}
+                    {{Form::textarea('descripcion_imagen', '',['class' => 'form-control','placeholder'=> 'Descripción de la imagen'])}}
+                </div>
+
+                <div class="form-group">
+                    {{Form::submit('Añadir',['class'=>'btn btn-primary'])}}
                 </div>
             {!! Form::close() !!}
         </div>
 
     </section>
         
-    <section id="content2">
+    <section id="content1">
 
-        <div style="overflow-y:scroll;height:300px;width: 800px; height:600px;" >
-            <table class="table table-striped table-hover">
-                <!-- $datosusuario es una lista que se define en la línea 89 -->
-                @foreach($datosusuario as $dato)
+            @if(count($imagenes) > 0)
+            <div class="form-group">
+                {!! Form::open(['method'=>'GET','url'=>'/admin/galeria','role'=>'search'])  !!}
+                    {{Form::text('search')}}
+                    {{Form::submit('Buscar', ['class'=>'btn btn-primary'])}}
+                {!! Form::close() !!}
+            </div>
+            <div style="overflow-y:scroll;width: auto; height:500px;" >
+                <table class="table table-striped table-hover">
                     <tr>
-                        <th><img src="{{ $dato->url_imagen}}" width="25%"></th>
-                        <th>
-                            {!! Form::open(['url' => ['admin/galeria/EliminarImagen', $dato->id_imagen], 'method' => 'POST']) !!}
-                                {{Form::hidden('_method', 'DELETE')}}
-                                {{Form::submit('Borrar',['class'=>'btn btn-danger'])}}
-                            {!! Form::close() !!}
-                        </th><!-- <th> Hay que agregar uno para la función de eliminar foto </th> -->
-                    </tr>  
-                @endforeach
+                        <th><strong>Imagen</strong></th>
+                        <th><strong>Descripción</strong></th>
+                        <th></th>
+                        <th></th>
+                        @foreach($imagenes as $imagen)
+                                <tr>
+                                    <th><img src="{{ $imagen->url_imagen }}" width="25%"></th>
+                                    <th>{{ $imagen->descripcion_imagen }}</th>
+                                    <th>
+                                        {!! Form::open(['url' => ['/admin/galeria', $imagen->id_imagen, 'editar'], 'method' => 'GET']) !!}
+                                            {{Form::submit('Editar',['class'=>'btn btn-primary'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                    <th>
+                                        {!! Form::open(['url' => ['/admin/galeria', $imagen->id_imagen], 'method' => 'POST']) !!}
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('X',['class'=>'btn btn-danger'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                </tr>  
+                        @endforeach
+                    </tr>
+                </table>
+            </div>
+        @else
+            {!! Form::open(['method'=>'GET','url'=>'/admin/galeria','role'=>'search'])  !!}
+                {{Form::text('search')}}
+                {{Form::submit('Buscar',['class'=>'btn btn-primary'])}}
+            {!! Form::close() !!}
+            <br>
+            <strong> No se encontraron elementos. </strong>
+            <br>
+            <br>
+            <table class="table table-striped table-hover">
+                    <tr>
+                        <th><strong>Imagen</strong></th>
+                        <th><strong>Descripción</strong></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
             </table>
-        </div>
+        @endif
         
     </section>
 

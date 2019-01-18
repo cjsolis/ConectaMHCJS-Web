@@ -17,7 +17,7 @@ class CreateCatalogoPiezasTable extends Migration
             $table->increments('id_pieza');
             $table->string('nombre_pieza');
             $table->longText('descripcion_pieza');
-            $table->string('url_img_pieza');
+            $table->string('url_img_pieza', 400);
         });
     }
 
