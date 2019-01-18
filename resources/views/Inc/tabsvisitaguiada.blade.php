@@ -115,7 +115,7 @@ input:checked + label {
 
 
    <section id="content1">
-     <p >
+     <p>
        <ol ALIGN="justify">
           <li >La visita guiada es el recorrido guiado por las salas de exhibición del Museo.</li>
           <li>A petición del organizador de la visita, se puede incluir:
@@ -133,6 +133,7 @@ input:checked + label {
           <li>El cupo máximo para el recorrido por las salas y edificio es de 30 personas. Si el grupo es más grande se subdividirá en  más subgrupos y el tiempo total de la visita se extenderá.</li>
           <li>Se recomienda que los grupos no traigan bolsos o salveques grandes para realizar el recorrido por las salas. </li>
        </ol>
+     </p> 
 
    </section>
 

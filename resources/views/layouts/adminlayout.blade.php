@@ -18,9 +18,9 @@
             @include('Inc.adminnavbar')
               
             <div class="container">
-                @include('Inc.showcase')
+                @include('Inc.showcaseadmin')
 
-                <div class="row" style="position: absolute;  left: 225px;top: 200px;">
+                <div class="row" style="position: absolute;  left: 175px;top: 100px;">
                    <div class="col-md-8 col-lg-8">
                         <div class="wrapper">
                             @include('Inc.mensajeerror')

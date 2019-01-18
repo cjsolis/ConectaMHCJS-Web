@@ -17,7 +17,7 @@ class CreateElemQrsTable extends Migration
             $table->increments('id_elemqr');
             $table->string('nombre_elemqr');
             $table->longText('descripcion_elemqr');
-            $table->string('url_img_elemqr');
+            $table->longText('url_img_elemqr', 400);
         });
     }
 
