@@ -18,7 +18,7 @@ class CreateNoticiasTable extends Migration
             $table->string('titulo_noticia');
             $table->longText('descripcion_noticia');
             $table->longText('contenido_noticia');
-            $table->timestamp('fecha_noticia');
+            $table->date('fecha_noticia')->nullable();
         });
     }
 

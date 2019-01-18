@@ -18,6 +18,12 @@ class GaleriaFotosController extends Controller
         return $galeria;
     }
     
+    public function indexApi()
+    {
+        $galeria = GaleriaFotos::all();
+        return $galeria;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -110,7 +116,7 @@ class GaleriaFotosController extends Controller
         $galeriaFotos = GaleriaFotos::find($id);
         $galeriaFotos->delete();
         
-        return redirect('/admin/galeria')->with('success', 'Stock has been deleted Successfully');
+        return redirect('/admin/galeria')->with('success', 'La imagen se ha borrado con éxito.');
     }
 
 }

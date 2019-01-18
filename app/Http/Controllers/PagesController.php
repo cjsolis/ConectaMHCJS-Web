@@ -117,9 +117,9 @@ class PagesController extends Controller
       return view('admineleqr');
     }
 
-    public function getAdminCatalogo(){
+    /* public function getAdminCatalogo(){
       return view('admincatalogo');
-    }
+    } */
 
     public function getAdminFormularios(){
       return view('adminformularios');

@@ -11,6 +11,6 @@
 
 @if(session('success'))
   <div class="alert alert-success"style="color:#2E25A4;background-color:white;left:30px ;top: -60px;position: relative;">
-    Formulario Enviado!
+    {{session('success')}}
   </div>
 @endif

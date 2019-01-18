@@ -8,38 +8,27 @@ use Illuminate\Http\Request;
 class CatalogoPiezasController extends Controller
 {
     
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $piezas = CatalogoPiezasController::all();
-        return view('admincatalogo', $piezas);
+        $piezas = CatalogoPiezas::orderBy('nombre_pieza', 'desc')->paginate(4);
+        return view('catalogo')->with('piezas', $piezas);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function indexAdmin()
+    {
+        
+        $piezas = CatalogoPiezas::search()->orderBy('nombre_pieza')->paginate(20);
+        return view('admincatalogo', compact('piezas'));
+    }
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //return $request->input('name');
-        //obliga a que los campos de name y email se llenen,
-        //si no no hace submit.
+
         $this->validate($request, [
             'nombre_pieza'=> 'required',
             'descripcion_pieza'=> 'required',
@@ -47,62 +36,54 @@ class CatalogoPiezasController extends Controller
 
         ]);
 
-        //  return 123;
-        //create new ReservaVisitaGuiada
         $pieza = new CatalogoPiezas;
         $pieza->nombre_pieza = $request->input('nombre_pieza');
         $pieza->descripcion_pieza = $request->input('descripcion_pieza');
         $pieza->url_img_pieza = $request->input('url_imagen_pieza');
     
-        //save message
         $pieza->save();
     
     
-        return redirect('/admin/catalogo')->with('success','Message Sent');
+        return redirect('/admin/catalogo')->with('success','Pieza añadida exitosamente.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\CatalogoPiezas  $catalogoPiezas
-     * @return \Illuminate\Http\Response
-     */
-    public function show(CatalogoPiezas $catalogoPiezas)
+    public function show($id)
     {
-        //
+        /* $pieza = CatalogoPiezas::find($id);
+        return view('mostrarnoticia')->with('pieza', $pieza); // Cambiar cuando se vaya a mostrar algo */
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\CatalogoPiezas  $catalogoPiezas
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(CatalogoPiezas $catalogoPiezas)
+    public function edit($id)
     {
-        //
+        $pieza = CatalogoPiezas::find($id);
+        return view('editarpieza')->with('pieza', $pieza); // Cambiar cuando se vaya a motrar algo
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\CatalogoPiezas  $catalogoPiezas
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, CatalogoPiezas $catalogoPiezas)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nombre_pieza'=> 'required',
+            'descripcion_pieza'=> 'required',
+            'url_imagen_pieza'=> 'required|url|active_url',
+
+        ]);
+
+        $pieza = CatalogoPiezas::find($id);
+        $pieza->nombre_pieza = $request->input('nombre_pieza');
+        $pieza->descripcion_pieza = $request->input('descripcion_pieza');
+        $pieza->url_img_pieza = $request->input('url_imagen_pieza');
+    
+        $pieza->save();
+    
+    
+        return redirect('/admin/catalogo')->with('success','Pieza actualizada exitosamente.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\CatalogoPiezas  $catalogoPiezas
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(CatalogoPiezas $catalogoPiezas)
+    public function destroy($id)
     {
-        //
+        $pieza = CatalogoPiezas::find($id);
+        $pieza->delete();
+        
+        return redirect('/admin/catalogo')->with('success', 'La pieza se ha eliminado correctamente.');
     }
 }
