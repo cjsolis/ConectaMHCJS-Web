@@ -2,8 +2,40 @@
         <ul style="position:absolute; margin-left:410px;">
           <li><a class="nav-itemarriba" href="/noticias">Noticias</a></li>
           <li><a class="nav-itemarriba" href="/contactenos">Contáctenos</a></li>
-          <li><a class="nav-itemarriba" href="logintienda">Iniciar Sesión</a></li>
-          <li><a class="nav-itemarriba" href="/registrarsetienda">Registrarse</a></li>
+          <!--<li><a class="nav-itemarriba" href="logintienda">Iniciar Sesión</a></li>
+          <li><a class="nav-itemarriba" href="/registrarsetienda">Registrarse</a></li>-->
+
+
+          <!-- Right Side Of Navbar -->
+
+              <!-- Authentication Links -->
+              @if (Auth::guest())
+                  <li><a class="nav-itemarriba" href="{{ route('login') }}">Iniciar Sesión</a></li>
+                  
+              @else
+                  <li class="dropdown">
+                      <a href="#" class=" nav-itemarriba" data-toggle="dropdown" role="button" aria-expanded="false">
+                          {{ Auth::user()->name }} <span class="caret"></span>
+                      </a>
+
+
+
+                      <ul class="dropdown-menu" role="menu" style="background:#CDCDCD;">
+                          <li>
+                              <a href="{{ route('logout') }}"
+                                  onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                                  Cerrar sesión
+                              </a>
+
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  {{ csrf_field() }}
+                              </form>
+                          </li>
+                      </ul>
+                  </li>
+              @endif
+
 
         </ul>
 </nav>

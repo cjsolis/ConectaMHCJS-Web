@@ -14,7 +14,6 @@
 /*Secciones sin implementar
 */
 Route::get('/contactenos', 'PagesController@getContactenos');
-/* Route::get('/galeria', 'PagesController@getGaleria'); */
 Route::get('/exhibicionespermanentes', 'PagesController@getExhibicionesPermanentes');
 Route::get('/exhibicionestemporales', 'PagesController@getExhibicionesTemporales');
 Route::get('/eventos', 'PagesController@getEventos');
@@ -25,8 +24,7 @@ Route::get('/guinos', 'PagesController@getGuinos');
 Route::get('/preguntasfrecuentes', 'PagesController@getPregunasFrecuentes');
 Route::get('/denunciasquejas', 'PagesController@getDenunciasQuejas');
 Route::get('/enlacesamigos', 'PagesController@getEnlacesAmigos');
-/* Route::get('/catalogotienda', 'PagesController@getCatalogoTienda'); */
-/**/
+
 
 Route::get('/', 'PagesController@getHome');
 Route::get('/acerca', 'PagesController@getAcerca');
@@ -49,12 +47,8 @@ Route::get('/registrarsetienda', 'PagesController@getRegistrarse');
 
 Route::get('/reservavisitaguiada', 'PagesController@getReservaVisitaGuiada');
 
-/** Rutas del sistema administrador */
-//Route::get('/admin', 'PagesController@getAdmin');
-/* Route::get('/admin/elemqr', 'PagesController@getAdminElemQR'); */
-
 Route::get('/admin/formularios', 'PagesController@getAdminFormularios');
-/* Route::get('/admin/galeria', 'PagesController@getAdminGaleria'); */
+
 
 Route::get('/admin/servicios', 'PagesController@getAdminServicios');
 Route::get('/admin/tramites', 'PagesController@getAdminTramites');
@@ -65,22 +59,7 @@ Route::get('/admin/usuarios', 'PagesController@getAdminUsuarios');
 Route::post('/reservavisitaguiada/Enviar', 'FormularioReservaVisitaGuiadaController@Enviar');
 Route::post('/tramites/EnviarUsoEspacios', 'FormularioUsoEspaciosController@EnviarUsoEspacios');
 Route::post('/tramites/EnviarVoluntariado', 'FormularioVoluntariadoController@EnviarVoluntariado');
-/* Route::post('/admin/galeria/EnviarImagen', 'GaleriaFotosController@store'); */
 
-/* Route::post('/admin/elemqr/EnviarElemQR', 'ElemQrController@store'); */
-
-/* Route::post('/admin/tramites/EnviarActa', 'DocumentosController@storeActa'); */
-
-// Prueba de get cosas
-/* Route::get('/admin/galeria/BuscarImagen', 'GaleriaFotosController@index'); //Este creo que ni es necesario, era un intento para hacer get de las mierdas
-
-Route::delete('/admin/galeria/EliminarImagen/{id_imagen}', 'GaleriaFotosController@destroy');
- */
-
-Route::get('/admin', 'MainController@index');
-Route::post('/admin/checklogin', 'MainController@checklogin');
-Route::get('admin/successlogin', 'MainController@successlogin');
-Route::get('admin/logout', 'MainController@logout');
 
 
 // Rutas para los elementos de la tabla noticias
@@ -143,6 +122,7 @@ Route::delete('/admin/transparencia/{acta}', 'DocumentosController@destroy');
 Route::get('/admin/transparencia/{acta}/editar', 'DocumentosController@editActa');
 Route::put('/admin/transparencia/{acta}', 'DocumentosController@updateActa');
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');//le cambie de /home a / .
@@ -161,3 +141,4 @@ Route::prefix('admin')->group(function() {
   Route::post('/password/reset', 'Auth\AdminResetPasswordController@reset');
   Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 });
+
