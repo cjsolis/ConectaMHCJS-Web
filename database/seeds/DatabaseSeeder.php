@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         GaleriaFotosTableSeeder::class,
         DocumentosTableSeeder::class,
         ContenidoSeeder::class,
+        AdminTableSeeder::class,
       ]);
     }
 }
