@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class NoticiasController extends Controller
 {
+    public function indexAdmin()
+    {
+        $noticias = Noticias::search()->orderBy('titulo_noticia')->paginate(20);
+    
+        return view('adminnoticias', compact('noticias'));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,8 @@ class NoticiasController extends Controller
      */
     public function index()
     {
-        //
+        $noticias = Noticias::orderBy('fecha_noticia', 'desc')->paginate(4);
+        return view('noticias')->with('noticias', $noticias);
     }
 
     /**
@@ -56,7 +64,7 @@ class NoticiasController extends Controller
         $noticias->save();
     
     
-        return redirect('/admin/noticias')->with('success','Message Sent');
+        return redirect('/admin/noticias')->with('success','Noticia añadida con éxito.');
     }
 
     /**
@@ -65,9 +73,11 @@ class NoticiasController extends Controller
      * @param  \App\Noticias  $noticias
      * @return \Illuminate\Http\Response
      */
-    public function show(Noticias $noticias)
+    public function show($id)
     {
-        //
+        //$noticia = Noticias::all()->where('titulo_noticia','LIKE', $id);
+        $noticia = Noticias::find($id);
+        return view('mostrarnoticia')->with('noticia', $noticia);
     }
 
     /**
@@ -76,9 +86,10 @@ class NoticiasController extends Controller
      * @param  \App\Noticias  $noticias
      * @return \Illuminate\Http\Response
      */
-    public function edit(Noticias $noticias)
+    public function edit($id)
     {
-        //
+        $noticia = Noticias::find($id);
+        return view('editarnoticia')->with('noticia', $noticia);
     }
 
     /**
@@ -88,9 +99,28 @@ class NoticiasController extends Controller
      * @param  \App\Noticias  $noticias
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Noticias $noticias)
+    public function update(Request $request, $id)
     {
-        //
+        //return $request->input('name');
+        //obliga a que los campos de name y email se llenen,
+        //si no no hace submit.
+        $this->validate($request, [
+            'titulo_noticia'=> 'required',
+            'descripcion_noticia'=> 'required',
+            'contenido_noticia'=> 'required',
+
+        ]);
+        
+        $noticias = Noticias::find($id);
+        $noticias->titulo_noticia = $request->input('titulo_noticia');
+        $noticias->descripcion_noticia = $request->input('descripcion_noticia');
+        $noticias->contenido_noticia = $request->input('contenido_noticia');
+
+        //save message
+        $noticias->save();
+    
+    
+        return redirect('/admin/noticias')->with('success','Noticia modificada con éxito.');
     }
 
     /**
@@ -99,8 +129,11 @@ class NoticiasController extends Controller
      * @param  \App\Noticias  $noticias
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Noticias $noticias)
+    public function destroy($id)
     {
-        //
+        $noticia = Noticias::find($id);
+        $noticia->delete();
+        
+        return redirect('/admin/noticias')->with('success', 'La noticia se ha eliminado correctamente.');
     }
 }

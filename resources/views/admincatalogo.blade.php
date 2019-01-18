@@ -89,35 +89,32 @@
     }
 
 </style>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
 <main>
     <strong> Administrar Catálogo de Piezas </strong><br><br>
     <input id="tab1" type="radio" class="custom-radio" name="tabs" checked>
-    <label for="tab1" class="custom-label">Añadir Piezas</label>
+    <label for="tab1" class="custom-label">Buscar Piezas</label>
 
     <input id="tab2" type="radio" class="custom-radio" name="tabs">
-    <label for="tab2" class="custom-label">Eliminar Piezas</label>
+    <label for="tab2" class="custom-label">Añadir Piezas</label>
 
-    <input id="tab3" type="radio" class="custom-radio" name="tabs">
-    <label for="tab3" class="custom-label">Modificar Piezas</label>
-
-    <section id="content1">
+    <section id="content2">
 
         <div>
-            {!! Form::open(['url' => 'admin/catalogo/EnviarPieza']) !!}
-                <div class="form-group" style="width:500px;">
+            {!! Form::open(['url' => 'admin/catalogo/agregar']) !!}
+                <div class="form-group">
                 {{Form::label('nombre_pieza', 'Nombre de la pieza:')}}
                 {{Form::text('nombre_pieza', '',['class' => 'form-control','placeholder'=> 'Nombre de la pieza'])}}
                 </div>
 
 
-                <div class="form-group" style="width:500px;">
+                <div class="form-group">
                 {{Form::label('descripcion_pieza', 'Descripción de la pieza:')}}
                 {{Form::textarea('descripcion_pieza', '',['class' => 'form-control','placeholder'=> 'Descripcion de la pieza'])}}
                 </div>
 
-                <div class="form-group" style="width:500px;">
+                <div class="form-group">
                 {{Form::label('url_imagen_pieza', 'Dirección url de la imagen de la pieza:')}}
                 {{Form::text('url_imagen_pieza', '',['class' => 'form-control','placeholder'=> 'Dirección url de imagen'])}}
                 </div>
@@ -129,15 +126,60 @@
 
     </section>
 
-    <section id="content2">
+    <section id="content1">
 
-        <p> Under construction </p>
-
-    </section>
-
-    <section id="content3">
-
-        <p> Under construction </p>
+        @if(count($piezas) > 0)
+            <div class="form-group">
+                {!! Form::open(['method'=>'GET','url'=>'/admin/catalogo','role'=>'search'])  !!}
+                    {{Form::text('search')}}
+                    {{Form::submit('Buscar', ['class'=>'btn btn-primary'])}}
+                {!! Form::close() !!}
+            </div>
+            <div style="overflow-y:scroll;width: auto; height:500px;" >
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <th><strong>Nombre</strong></th>
+                        <th><strong>Imagen</strong></th>
+                        <th></th>
+                        <th></th>
+                        @foreach($piezas as $pieza)
+                                <tr>
+                                    <th>{{ $pieza->nombre_pieza }}</th>
+                                    <th><img src="{{ $pieza->url_img_pieza }}" width="50%"></th>
+                                    <th>
+                                        {!! Form::open(['url' => ['/admin/catalogo', $pieza->id_pieza, 'editar'], 'method' => 'GET']) !!}
+                                            {{Form::submit('Editar',['class'=>'btn btn-primary'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                    <th>
+                                        {!! Form::open(['url' => ['/admin/catalogo', $pieza->id_pieza], 'method' => 'POST']) !!}
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('X',['class'=>'btn btn-danger'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                </tr>  
+                        @endforeach
+                    </tr>
+                </table>
+            </div>
+        @else
+            {!! Form::open(['method'=>'GET','url'=>'/admin/catalogo','role'=>'search'])  !!}
+                {{Form::text('search')}}
+                {{Form::submit('Buscar',['class'=>'btn btn-primary'])}}
+            {!! Form::close() !!}
+            <br>
+            <strong> No se encontraron elementos. </strong>
+            <br>
+            <br>
+            <table class="table table-striped table-hover">
+                    <tr>
+                            <th><strong>Nombre</strong></th>
+                            <th><strong>Imagen</strong></th>
+                            <th></th>
+                            <th></th>
+                    </tr>
+            </table>
+        @endif
 
     </section>
 

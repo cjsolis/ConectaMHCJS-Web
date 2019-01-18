@@ -55,21 +55,20 @@ class ElemQrController extends Controller
         //save message
         $elemqr->save();
     
-        echo 'Si se metió acá';
         return redirect('/admin/elemqr')->with('success','Message Sent');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\ElemQr  $elemQr
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show(ElemQr $elemQr)
     {
         return $elemQr;
     }
 
+    public function showApi(ElemQr $elemQr)
+    {
+        return $elemQr;
+    }
+    
     /**
      * Show the form for editing the specified resource.
      *

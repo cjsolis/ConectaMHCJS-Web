@@ -15,6 +15,7 @@ class CreateGaleriaFotosTable extends Migration
     {
         Schema::create('galeria_fotos', function (Blueprint $table) {
             $table->increments('id_imagen');
+            $table->string('descripcion_imagen')->nullable();
             $table->string('url_imagen');
 
         });

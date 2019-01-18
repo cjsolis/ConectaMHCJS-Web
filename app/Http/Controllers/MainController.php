@@ -34,7 +34,7 @@ class MainController extends Controller
    }
 
    function successlogin() {
-     return view('admincatalogo');
+     return view('adminindex');
    }
 
    function logout() {
