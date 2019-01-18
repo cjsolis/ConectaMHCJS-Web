@@ -15,7 +15,7 @@ class CreateContenidoPaginasTable extends Migration
     {
         Schema::create('contenido_paginas', function (Blueprint $table) {
             $table->increments('id_contenido');
-            $table->string('titulo_contenido');
+            $table->string('titulo_contenido')->nullable();
             $table->longText('texto_contenido');
             $table->string('tipo_contenido');
         });

@@ -7,39 +7,29 @@ use Illuminate\Http\Request;
 
 class GaleriaFotosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $galeria = GaleriaFotos::all();
-        return $galeria;
+        $imagenes = GaleriaFotos::all();
+        return view('galeria')->with('imagenes', $imagenes);
     }
     
     public function indexApi()
     {
-        $galeria = GaleriaFotos::all();
-        return $galeria;
+        $imagenes = GaleriaFotos::all();
+        return $imagenes;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function indexAdmin()
+    {
+        $imagenes = GaleriaFotos::search()->orderBy('descripcion_imagen')->paginate(20);
+        return view('admingaleria', compact('imagenes'));
+    }
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //return $request->input('name');
@@ -47,6 +37,7 @@ class GaleriaFotosController extends Controller
         //si no no hace submit.
         $this->validate($request, [
             'url_imagen'=> 'required|url|active_url',
+            'descripcion_imagen' => 'required',
 
         ]);
 
@@ -54,67 +45,50 @@ class GaleriaFotosController extends Controller
         //create new ReservaVisitaGuiada
         $imagengaleria = new GaleriaFotos;
         $imagengaleria->url_imagen = $request->input('url_imagen');
+        $imagengaleria->descripcion_imagen = $request->input('descripcion_imagen');
     
         //save message
         $imagengaleria->save();
     
     
-        return redirect('/admin/galeria')->with('success','Message Sent');
+        return redirect('/admin/galeria')->with('success','Imagen añadida.');
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\GaleriaFotos  $galeriaFotos
-     * @return \Illuminate\Http\Response
-     */
     public function show(GaleriaFotos $galeriaFotos)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\GaleriaFotos  $galeriaFotos
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(GaleriaFotos $galeriaFotos)
+    public function edit($id)
     {
-        //
+        $imagen = GaleriaFotos::find($id);
+        return view('editargaleria')->with('imagen', $imagen);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\GaleriaFotos  $galeriaFotos
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, GaleriaFotos $galeriaFotos)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $this->validate($request, [
+            'url_imagen'=> 'required|url|active_url',
+            'descripcion_imagen' => 'required',
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\GaleriaFotos  $galeriaFotos
-     * @return \Illuminate\Http\Response
-     */
-    /* public function destroy(GaleriaFotos $galeriaFotos)
-    {
-        echo $galeriaFotos;
-        $galeriaFotos->delete();
-        
-        return redirect('/admin/galeria')->with('success', 'Stock has been deleted Successfully');
-    } */
+        ]);
+
+        $imagengaleria = GaleriaFotos::find($id);
+        $imagengaleria->url_imagen = $request->input('url_imagen');
+        $imagengaleria->descripcion_imagen = $request->input('descripcion_imagen');
+    
+        //save message
+        $imagengaleria->save();
+    
+    
+        return redirect('/admin/galeria')->with('success','Imagen actualizada.');
+    }
 
     public function destroy($id)
     {
-        $galeriaFotos = GaleriaFotos::find($id);
-        $galeriaFotos->delete();
+        $imagen = GaleriaFotos::find($id);
+        $imagen->delete();
         
         return redirect('/admin/galeria')->with('success', 'La imagen se ha borrado con éxito.');
     }

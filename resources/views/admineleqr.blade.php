@@ -99,29 +99,27 @@
 <main>
     <strong> Administrar Elementos QR </strong><br><br>
     <input id="tab1" type="radio" class="custom-radio" name="tabs" checked>
-    <label for="tab1" class="custom-label">Añadir Elemento QR</label>
+    <label for="tab1" class="custom-label">Buscar Elemento QR</label>
 
     <input id="tab2" type="radio" class="custom-radio" name="tabs">
-    <label for="tab2" class="custom-label">Eliminar Elemento QR</label>
+    <label for="tab2" class="custom-label">Añadir Elemento QR</label>
 
-    <input id="tab3" type="radio" class="custom-radio" name="tabs">
-    <label for="tab3" class="custom-label">Modificar Elemento QR</label>
 
-    <section id="content1">
+    <section id="content2">
     
         <div>
-            {!! Form::open(['url' => 'admin/elemqr/EnviarElemQR']) !!}
-                <div class="form-group" style="width:500px;">
+            {!! Form::open(['url' => 'admin/elemqr/agregar']) !!}
+                <div class="form-group">
                 {{Form::label('nombre_eleqr', 'Nombre del Elemento QR:')}}
                 {{Form::text('nombre_eleqr', '',['class' => 'form-control','placeholder'=> 'Nombre del Elemento QR'])}}
                 </div>
 
-                <div class="form-group" style="width:500px;">
+                <div class="form-group">
                 {{Form::label('descripcion_eleqr', 'Descripción del Elemento QR:')}}
                 {{Form::textarea('descripcion_eleqr', '',['class' => 'form-control','placeholder'=> 'Descripcion del Elemento QR'])}}
                 </div>
 
-                <div class="form-group" style="width:500px;">
+                <div class="form-group">
                 {{Form::label('url_imagen_eleqr', 'Dirección url de la imagen del Elemento QR:')}}
                 {{Form::text('url_imagen_eleqr', '',['class' => 'form-control','placeholder'=> 'Dirección url de imagen'])}}
                 </div>
@@ -133,15 +131,63 @@
 
     </section>
 
-    <section id="content2">
+    <section id="content1">
         
-        <p> Under construction </p>
-
-    </section>
-
-    <section id="content3">
-        
-        <p> Under construction </p>
+        @if(count($elementos) > 0)
+            <div class="form-group">
+                {!! Form::open(['method'=>'GET','url'=>'/admin/elemqr','role'=>'search'])  !!}
+                    {{Form::text('search')}}
+                    {{Form::submit('Buscar', ['class'=>'btn btn-primary'])}}
+                {!! Form::close() !!}
+            </div>
+            <div style="overflow-y:scroll;width: auto; height:500px;" >
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <th><strong>Nombre</strong></th>
+                        <th><strong>Imagen</strong></th>
+                        <th><strong>QR</strong></th>
+                        <th></th>
+                        <th></th>
+                        @foreach($elementos as $elemento)
+                                <tr>
+                                    <th>{{ $elemento->nombre_elemqr }}</th>
+                                    <th><img src="{{ $elemento->url_img_elemqr }}" width="25%"></th>
+                                    <th>/api/qr/elemqr/{{ $elemento->id_elemqr }}</th>
+                                    <th>
+                                        {!! Form::open(['url' => ['/admin/elemqr', $elemento->id_elemqr, 'editar'], 'method' => 'GET']) !!}
+                                            {{Form::submit('Editar',['class'=>'btn btn-primary'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                    <th>
+                                        {!! Form::open(['url' => ['/admin/elemqr', $elemento->id_elemqr], 'method' => 'POST']) !!}
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('X',['class'=>'btn btn-danger'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                </tr>  
+                        @endforeach
+                    </tr>
+                </table>
+            </div>
+        @else
+            {!! Form::open(['method'=>'GET','url'=>'/admin/elemqr','role'=>'search'])  !!}
+                {{Form::text('search')}}
+                {{Form::submit('Buscar',['class'=>'btn btn-primary'])}}
+            {!! Form::close() !!}
+            <br>
+            <strong> No se encontraron elementos. </strong>
+            <br>
+            <br>
+            <table class="table table-striped table-hover">
+                    <tr>
+                            <th><strong>Nombre</strong></th>
+                            <th><strong>Imagen</strong></th>
+                            <th><strong>QR</strong></th>
+                            <th></th>
+                            <th></th>
+                    </tr>
+            </table>
+        @endif
 
     </section>
 

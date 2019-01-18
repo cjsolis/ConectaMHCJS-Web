@@ -7,48 +7,31 @@ use Illuminate\Http\Request;
 
 class DocumentosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function indexAdminTransp()
+    {
+        $documentos = Documentos::search()->orderBy('nombre_documento')->paginate(20);
+        return view('admintransparencia', compact('documentos'));
+    }
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function storeActa(Request $request)
     {
-        //return $request->input('name');
-        //obliga a que los campos de name y email se llenen,
-        //si no no hace submit.
+
         $this->validate($request, [
             'nombre_acta'=> 'required',
             'fecha_acta'=> 'required',
@@ -56,62 +39,66 @@ class DocumentosController extends Controller
 
         ]);
 
-        //  return 123;
-        //create new ReservaVisitaGuiada
         $documentos = new Documentos;
         $documentos->nombre_documento = $request->input('nombre_acta');
         $documentos->url_documento = $request->input('url_acta');
         $documentos->fecha_documento = $request->input('fecha_acta');
         $documentos->tipo_documento = "Acta";
-        //save message
+
         $documentos->save();
     
     
-        return redirect('/admin/noticias')->with('success','Message Sent');
+        return redirect('/admin/transparencia')->with('success','Acta añadida correctamente.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Documentos  $documentos
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Documentos $documentos)
+    public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Documentos  $documentos
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Documentos $documentos)
+    public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Documentos  $documentos
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Documentos $documentos)
+    public function editActa($id)
+    {
+        $documento = Documentos::find($id);
+        return view('editaractas')->with('documento', $documento);
+    }
+
+    public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Documentos  $documentos
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Documentos $documentos)
+    public function updateActa(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nombre_acta'=> 'required',
+            'fecha_acta'=> 'required',
+            'url_acta'=> 'required|url|active_url',
+
+        ]);
+
+        $documentos = Documentos::find($id);
+        $documentos->nombre_documento = $request->input('nombre_acta');
+        $documentos->url_documento = $request->input('url_acta');
+        $documentos->fecha_documento = $request->input('fecha_acta');
+        $documentos->tipo_documento = "Acta";
+
+        $documentos->save();
+    
+    
+        return redirect('/admin/transparencia')->with('success','Acta actualizada correctamente.');
     }
+
+    public function destroy($id)
+    {
+        $documento = Documentos::find($id);
+        $documento->delete();
+        
+        return redirect('/admin/transparencia')->with('success', 'El acta se ha borrado con éxito.');
+    }
+    
 }

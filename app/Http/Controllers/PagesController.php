@@ -14,9 +14,9 @@ class PagesController extends Controller
       return view('contactenos');
     }
 
-    public function getGaleria(){
+    /* public function getGaleria(){
       return view('galeria');
-    }
+    } */
 
     /* public function getNoticias(){
       return view('noticias');

@@ -1,135 +1,114 @@
-<div style="position: absolute;  left: 0px;top: 200px;">
-  <div class="vertical-menu">
-    <a href="/admin/catalogo">Catálogo</a>
-    <a href="/admin/elemqr">Elemento QR</a>
-    <a href="/admin/formularios">Formularios</a>
-    <a href="/admin/galeria">Galería</a>
-    <a href="/admin/noticias">Noticias</a>
-    <a href="/admin/reservaciones">Reservaciones</a>
-    <a href="/admin/servicios">Servicios</a>
-    <a href="/admin/tramites">Trámites</a>
-    <a href="/admin/transparencia">Transparencia</a>
-    <a href="/admin/usuarios">Usuarios</a>
-    <a href="{{ url('admin/logout') }}">Logout</a>
-  </div>
+<style>
+
+  .Fixed
+  {
+      position: fixed;
+
+      left:-150px;
+  }
+  /* define a fixed width for the entire menu */
+  .navigation {
+    width: 300px;
+  }
+
+  /* reset our lists to remove bullet points and padding */
+  .mainmenu, .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* make ALL links (main and submenu) have padding and background color */
+  .mainmenu a {
+    display: block;
+    background-color: #CCC;
+    text-decoration: none;
+    padding: 10px;
+    color: #000;
+  }
+
+  /* add hover behaviour */
+  .mainmenu a:hover {
+      background-color: #C5C5C5;
+  }
+
+
+  /* when hovering over a .mainmenu item,
+    display the submenu inside it.
+    we're changing the submenu's max-height from 0 to 200px;
+  */
+
+  .mainmenu li:hover .submenu {
+    display: block;
+    max-height: 200px;
+  }
+
+  /*
+    we now overwrite the background-color for .submenu links only.
+    CSS reads down the page, so code at the bottom will overwrite the code at the top.
+  */
+
+  .submenu a {
+    background-color: #999;
+  }
+
+  /* hover behaviour for links inside .submenu */
+  .submenu a:hover {
+    background-color: #666;
+  }
+
+  /* this is the initial state of all submenus.
+    we set it to max-height: 0, and hide the overflowed content.
+  */
+  .submenu {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: all 0.35s ease-out;
+  }
+</style>
+
+<div class="Fixed">
+  <nav class="navigation">
+    <ul class="mainmenu">
+      <li><a href="/admin/formularios">Formularios</a>
+        <ul class="submenu">
+          <li><a href="">Uso de Espacios</a></li>
+          <li><a href="">Voluntariado</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/admin/servicios">Servicios</a>
+        <ul class="submenu">
+          <li><a href="">Uno</a></li>
+          <li><a href="">Dos</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/admin/tramites">Trámites</a>
+        <ul class="submenu">
+          <li><a href="">Uno</a></li>
+          <li><a href="">Dos</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/admin/usuarios">Usuarios</a>
+        <ul class="submenu">
+          <li><a href="">Administrativos</a></li>
+          <li><a href="">Regulares</a></li>
+        </ul>
+      </li>
+
+
+      <li><a href="/admin/catalogo">Catálogo</a></li>
+      <li><a href="/admin/elemqr">Elemento QR</a></li>
+      <li><a href="/admin/galeria">Galería</a></li>
+      <li><a href="/admin/noticias">Noticias</a></li>
+      <li><a href="/admin/reservaciones">Reservaciones</a></li>      
+      <li><a href="/admin/transparencia">Transparencia</a></li>
+      <li><a href="{{ url('admin/logout') }}">Salir</a></li>
+      
+    </ul>
+  </nav>
 </div>
 
-<!-- <nav class="navbar navbar-expand-lg navbar-light" style=" position: absolute;  left: -25px;top: 200px; ">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item nav-link active" style="position: relative; display: inline-block; padding: 0px 0px;">
-        <a class="nav-link" href="/admin/catalogo">
-        Catálogo
-        <span class="sr-only">(current)</span></a>
-      </li>
-
-      <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/admin/elemqr">Elemento QR</a>
-      </li>
-
-      <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/admin/formularios">Formularios</a>
-      </li>
-
-      <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/admin/galeria">Galería</a>
-      </li>
-
-      <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/admin/noticias">Noticias</a>
-      </li>
-
-      <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/admin/reservaciones">Reservaciones</a>
-      </li>
-
-      <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/admin/servicios">Servicios</a>
-      </li>
-
-      <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/admin/tramites">Trámites</a>
-      </li>
-
-      <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/admin/transparencia">Transparencia</a>
-      </li>
-
-      <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/admin/usuarios">Usuarios</a>
-      </li>
-
-
-
-    </ul>
-
-  </div>
-</nav> -->
-
-
-
-<!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item nav-link active" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
-      </li>
-
-      <li class="nav-item dropdown nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Exhibiciones
-        </a>
-        <div class="dropdown-menu" style="background-color: #B61B1B;" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" style="color: white;" href="/exhibicionespermanentes">Permanentes</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" style="color: white;" href="/exhibicionestemporales">Temporales</a>
-
-        </div>
-      </li>
-      <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/galeria">Galería</a>
-      </li>
-      <li class="nav-item nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link" href="/eventos">Eventos</a>
-      </li>
-
-      <li class="nav-item dropdown nav-link" style="position: relative; display: inline-block; padding: 0px 25px;">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Servicios
-        </a>
-        <div class="dropdown-menu" style="background-color: #B61B1B;" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" style="color: white;" href="/visitaguiada">Visita Guiada</a>
-            <div class="dropdown-divider"></div>
-          <a class="dropdown-item" style="color: white;" href="/servicioseducativos">Servicios Educativos</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" style="color: white;" href="/reservavisitaguiada">Reserva Visita Guiada</a>
-
-
-        </div>
-      </li>
-
-      <li class="nav-item dropdown nav-link" style="position: relative; display: inline-block; padding: 0px 50px;">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Recursos
-        </a>
-        <div class="dropdown-menu" style="background-color: #B61B1B;" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" style="color: white;" href="/campananacional">Campaña Nacional</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" style="color: white;" href="/centroinformacion">Centro de Información</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" style="color: white;" href="/arquitecturamuseo">Arquitectura del Museo</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" style="color: white;" href="/guinos">Guiños del 56</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" style="color: white;" href="/catalogo">Catálogo de Piezas</a>
-        </div>
-      </li>
-
-
-    </ul>
-
-  </div> -->
