@@ -65,7 +65,21 @@ Route::get('/admin/galeria/BuscarImagen', 'GaleriaFotosController@index'); //Est
 
 Route::delete('/admin/galeria/EliminarImagen/{id_imagen}', 'GaleriaFotosController@destroy');
 
-Route::get('/admin', 'MainController@index');
-Route::post('/admin/checklogin', 'MainController@checklogin');
-Route::get('admin/successlogin', 'MainController@successlogin');
-Route::get('admin/logout', 'MainController@logout');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');//le cambie de /home a / .
+
+//debe estar en ese orden:
+//route::prefix('admin')->group(function(){//este group es como decir /admin/login.
+Route::prefix('admin')->group(function() {
+  Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+  Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+  Route::get('/', 'AdminController@index')->name('admin.dashboard');
+  Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+
+  // Password reset routes
+  Route::post('/password/email', 'Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+  Route::get('/password/reset', 'Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+  Route::post('/password/reset', 'Auth\AdminResetPasswordController@reset');
+  Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
+});

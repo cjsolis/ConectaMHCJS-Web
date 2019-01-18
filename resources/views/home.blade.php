@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section ('content')
 @include('Inc.carrousel')
 <div class="container" style="left: 200px;position: relative; ">
