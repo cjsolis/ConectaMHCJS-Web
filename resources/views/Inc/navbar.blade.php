@@ -11,7 +11,7 @@
               <!-- Authentication Links -->
               @if (Auth::guest())
                   <li><a class="nav-itemarriba" href="{{ route('login') }}">Iniciar Sesión</a></li>
-                  
+
               @else
                   <li class="dropdown">
                       <a href="#" class=" nav-itemarriba" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -21,6 +21,12 @@
 
 
                       <ul class="dropdown-menu" role="menu" style="background:#CDCDCD;">
+                          <li>
+                              <a href="/home" >Ir a mis reservas</a>
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  {{ csrf_field() }}
+                              </form>
+                          </li>
                           <li>
                               <a href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
@@ -35,7 +41,7 @@
                       </ul>
                   </li>
               @endif
-
+              <li><a class="nav-itemarriba" href="{{ route('register') }}">Registrarse</a></li>
 
         </ul>
 </nav>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ReservaVisitaGuiada;
 use Illuminate\Support\Facades\DB;
-
+use Auth;
 class FormularioReservaVisitaGuiadaController extends Controller
 {
   public function Enviar(Request $request){
@@ -26,7 +26,7 @@ class FormularioReservaVisitaGuiadaController extends Controller
     //  return 123;
     //create new ReservaVisitaGuiada
     $reservavisita = new ReservaVisitaGuiada;
-    $reservavisita->id_usuario=1;
+    $reservavisita->id_usuario=Auth::id();
     $reservavisita->institucion = $request->input('institucion_visitaguiada');
     $reservavisita->numpersonas = $request->input('personas_visitaguiada');
     $reservavisita->rangoedad = $request->input('rango_visitaguiada');
@@ -53,4 +53,10 @@ class FormularioReservaVisitaGuiadaController extends Controller
 
 
   }
+
+  /*public function index()
+  {
+    $formularios = ReservaVisitaGuiada::orderBy('id_reserva', 'desc')->paginate(4);
+    return view('dashboardreservas')->with('formularios', $formularios);
+  }*/
 }

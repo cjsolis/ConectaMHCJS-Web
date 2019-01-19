@@ -1,4 +1,4 @@
-@extends('layouts.adminlayout')
+@extends('layouts.dashboardreservaslayout')
 @section ('content')
 <style>
     /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
@@ -105,41 +105,47 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 <?php
-
-$datostablareservas = App\ReservaVisitaGuiada::all();
 $userId = Auth::id();//id unico del usuario logueado.
+$datostablareservas = App\ReservaVisitaGuiada::all()->where('id_usuario','=',$userId);
+
 //echo $userId;
 $datoporidusuario = App\User::find($userId);
-echo $datoporidusuario
+//$formularios = App\ReservaVisitaGuiada::orderBy('id_reserva', 'desc')->where('id_usuario','=',$userId);
+//echo $datoporidusuario
+//echo $datostablareservas
 
 ?>
-<table>
-  <tr>
-    <th>Número reserva</th>
-    <th>Id usuario</th>
-    <th>Institución</th>
-    <th>Personas</th>
-    <th>Rango de edad</th>
-    <th>Fecha</th>
-    <th>Hora</th>
-    <th>Materiales Educativos</th>
-    <th>Necesidades Especiales</th>
-    <th>Teléfono</th>
 
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Alfreds Futterkiste</td>
-  </tr>
-  
 
-</table>
+@if(count($datostablareservas)>0)
+    <table>
+      <tr>
+        <th>Número reserva</th>
+        <th>Institución</th>
+        <th>Personas</th>
+        <th>Rango de edad</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Materiales Educativos</th>
+        <th>Necesidades Especiales</th>
+        <th>Teléfono</th>
+
+        </tr>
+  @foreach($datostablareservas as $datos)
+      <tr>
+        <td>{{$datos->id_reserva}}</td>
+        <td>{{$datos->institucion}}</td>
+        <td>{{$datos->numpersonas}}</td>
+        <td>{{$datos->rangoedad}}</td>
+        <td>{{$datos->fecha}}</td>
+        <td>{{$datos->hora}}</td>
+        <td>{{$datos->materialeseducativos}}</td>
+        <td>{{$datos->necesidadesespeciales}}</td>
+        <td>{{$datos->telefono}}</td>
+      </tr>
+  @endforeach
+  </table>
+@else
+    No hay reservas para este usuario.
+@endif
 @endsection
