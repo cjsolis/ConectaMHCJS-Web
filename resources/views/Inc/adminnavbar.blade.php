@@ -4,11 +4,11 @@
   {
       position: fixed;
 
-      left:-150px;
+      left:-290px;
   }
   /* define a fixed width for the entire menu */
   .navigation {
-    width: 300px;
+    width: 500px;
   }
 
   /* reset our lists to remove bullet points and padding */
@@ -77,34 +77,29 @@
         </ul>
       </li>
 
-      <li><a href="/admin/servicios">Servicios</a>
+      <li><a href="">Servicios</a>
         <ul class="submenu">
-          <li><a href="">Uno</a></li>
-          <li><a href="">Dos</a></li>
+            <li><a href="/admin/servicios/1/editarvg">Visita Guiada</a></li>
+            <li><a href="/admin/servicios/2/editarre">Ruta de los Héroes</a></li>
+            <li><a href="/admin/servicios/3/editarae">Actividades Educativas</a></li>
         </ul>
       </li>
 
-      <li><a href="/admin/tramites">Trámites</a>
+      <li><a href="">Trámites</a>
         <ul class="submenu">
-          <li><a href="">Uno</a></li>
-          <li><a href="">Dos</a></li>
+          <li><a href="/admin/tramites/4/editarue">Uso de Espacio</a></li>
+          <li><a href="/admin/tramites/5/editarvol">Voluntariado</a></li>
+          <li><a href="/admin/tramites/6/editarpub">Publicaciones</a></li>
         </ul>
       </li>
 
-      <li><a href="/admin/usuarios">Usuarios</a>
-        <ul class="submenu">
-          <li><a href="">Administrativos</a></li>
-          <li><a href="">Regulares</a></li>
-        </ul>
-      </li>
-
-
+      <li><a href="/admin/usuarios">Usuarios</a></li>
       <li><a href="/admin/catalogo">Catálogo</a></li>
       <li><a href="/admin/elemqr">Elemento QR</a></li>
       <li><a href="/admin/galeria">Galería</a></li>
       <li><a href="/admin/noticias">Noticias</a></li>
       <li><a href="/admin/reservaciones">Reservaciones</a></li>      
-      <li><a href="/admin/transparencia">Transparencia</a></li>
+      <li><a href="/admin/transparencia">Documentos</a></li>
       <li><a href="{{ url('admin/logout') }}">Salir</a></li>
       
     </ul>
