@@ -24,38 +24,21 @@
 
 
 <h1>Catálogo de Piezas</h1>
-
-<div class="grid-container">
-  <div class="grid-item">
-    <strong>Titulo de pieza</strong>
-    <div class="item-pieza">
-      <img src="/images/carrouselinicio/banner-1.jpg" alt="Imagen1" >
-    </div>
+<div style="overflow-y:scroll;width: auto; height:700px;" >
+  <div class="grid-container">
+    @if(count($piezas) > 0)
+      @foreach($piezas as $pieza)
+        <div class="grid-item">
+          <strong><a href="/catalogo/{{$pieza->id_pieza}}">{{$pieza->nombre_pieza}}</a></strong>
+          <div class="item-pieza">
+            <a href="/catalogo/{{$pieza->id_pieza}}"><img src="{{$pieza->url_img_pieza}}" alt="Imagen1"></a>
+          </div>
+        </div>
+      @endforeach
+    @else
+      <p>No hay piezas por mostrar. <p>
+    @endif
   </div>
-  <div class="grid-item">
-    <strong>Titulo de pieza</strong>
-    <div class="item-pieza">
-      <img src="/images/carrouselinicio/banner-1.jpg" alt="Imagen1" >
-    </div>
-  </div>
-  <div class="grid-item">
-    <strong>Titulo de pieza</strong>
-    <div class="item-pieza">
-      <img src="/images/carrouselinicio/banner-1.jpg" alt="Imagen1">
-    </div>
-  </div>
-  <div class="grid-item">
-    <strong>Titulo de pieza</strong>
-    <div class="item-pieza">
-      <img src="/images/carrouselinicio/banner-1.jpg" alt="Imagen1">
-    </div>
-  </div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>
-  <div class="grid-item">4</div>
-  <div class="grid-item">5</div>
-  <div class="grid-item">6</div>
-
 </div>
 
 

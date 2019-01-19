@@ -77,7 +77,7 @@ Route::put('/admin/noticias/{noticia}', 'NoticiasController@update');
 // Rutas para los elementos del catálogo de piezas
 // Sitio web
 Route::get('/catalogo', 'CatalogoPiezasController@index');
-// Falta uno, todavía no está implementado
+Route::get('/catalogo/{pieza}', 'CatalogoPiezasController@show');
 
 // Sistema Administrador
 Route::get('/admin/catalogo', 'CatalogoPiezasController@indexAdmin');
