@@ -14,8 +14,8 @@ class FormularioVoluntariadoController extends Controller
     $this->validate($request, [
       'nombre_voluntariado'=> 'required',
       'correo_voluntariado'=> 'required',
-      'telefono_voluntariado'=> 'required',
-      'personas_voluntariado'=>'required',
+      'telefono_voluntariado'=> 'required|integer|min:1',
+      'personas_voluntariado'=>'required|integer|min:1',
       'fecha_voluntariado'=>'required',
       'hora_voluntariado'=>'required',
       'motivo_voluntariado'=>'required',
