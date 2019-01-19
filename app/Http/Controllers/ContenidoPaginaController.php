@@ -88,7 +88,7 @@ class ContenidoPaginaController extends Controller
     public function editAe($id)
     {
         $contenido = ContenidoPagina::find($id);
-        return view('editarvol')->with('contenido', $contenido);
+        return view('editarse')->with('contenido', $contenido);
     }
 
     public function update(Request $request, $id)

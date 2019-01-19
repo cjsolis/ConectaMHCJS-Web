@@ -96,7 +96,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 <main>
-    <strong> Editar Contenido </strong><br><br>
+    <strong> Editar Contenido en sección de Ruta los Héroes </strong><br><br>
 
     <div>
         {!! Form::open(['url' => ['admin/actualizar', $contenido->id_contenido], 'method' => 'POST']) !!}
