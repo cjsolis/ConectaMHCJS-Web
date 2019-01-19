@@ -111,6 +111,9 @@ input:checked + label {
 
 $doc_ue = App\Documentos::all()->where('tipo_documento', '=', 'UE');
 $doc_admin = App\Documentos::all()->where('tipo_documento', '=', 'TA');
+$contenido_ue = App\ContenidoPagina::find(4);
+$contenido_vol = App\ContenidoPagina::find(5);
+$contenido_pub = App\ContenidoPagina::find(6);
 
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -120,14 +123,14 @@ $doc_admin = App\Documentos::all()->where('tipo_documento', '=', 'TA');
    <input id="tab2" type="radio" name="tabs" >
    <label for="tab2">Voluntariado</label>
    <input id="tab3" type="radio" name="tabs" >
-   <label for="tab3">Publicaciones</label>
+   <label for="tab3">Editorial</label>
    <input id="tab4" type="radio" name="tabs" >
    <label for="tab4">Administrativos</label>
 
    <section id="content1">
-     <p ALIGN="justify" >
-       El Museo cuenta con espacios educativos y culturales para el desarrollo de actividades académicas y artísticas, tanto por parte de la comunidad de Alajuela, como por todos los costarricenses. Estos espacios tienen un costo de canon de mantenimiento que debe consultarse en la documentación adjunta. Los usuarios de estos espacios deben tener en cuenta que los edificios sede del Museo: Antiguo Cuartel de Armas y Antigua Cárcel de Alajuela,  son patrimonio arquitectónico nacional, por lo cual, cualquier actividad educativa y cultural debe estar supeditada al cuido del espacio. Para realizar una solicitud de uso de espacios llene el formulario.
-     </p>
+
+    {!! $contenido_ue->texto_contenido !!}
+
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
          {!! Form::open(['url' => 'tramites/EnviarUsoEspacios']) !!}
              <div class="form-group" style="width:500px;">
@@ -194,13 +197,9 @@ $doc_admin = App\Documentos::all()->where('tipo_documento', '=', 'TA');
    </section>
 
    <section id="content2">
-     <p>El Museo Histórico Cultural Juan Santamaría le invita a formar parte de su Programa de Voluntariado. Este programa admite voluntarios de todas las especialidades, incluyendo estudiantes con Trabajo Comunal Universitario, Práctica Profesional, Horas Beca, Extranjeros y Voluntariado Independiente.<br />
-        <br />
-          Cuando vengan de una institución educativa oficial los estudiantes deberán presentar una carta de solicitud de aceptación de Trabajo Comunal, Práctica Profesional u Horas Beca con todos los datos del estudiante y una persona de contacto en la institución (nombre y teléfono) en caso de que se presentara algún inconveniente. Además deberá presentarse la hoja de control de horas para completar las horas laboradas cuando corresponda.<br />
-          <br />
-          El tipo de trabajo a realizar dependerá de la especialización del estudiante (universitario), así como de la unidad donde labore dentro del Museo. En todo caso, se promoverá la afinidad con los conocimientos con los que cuenta el voluntario así como lo que se considere conveniente para la institución.
-          <br />Realice su solicitud de voluntariado:
-    </p>
+
+      {!! $contenido_vol->texto_contenido !!}
+
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
          {!! Form::open(['url' => 'tramites/EnviarVoluntariado']) !!}
              <div class="form-group" style="width:500px;">
@@ -246,9 +245,7 @@ $doc_admin = App\Documentos::all()->where('tipo_documento', '=', 'TA');
    </section>
 
    <section id="content3">
-     <p ALIGN="justify" >
-       El Museo Histórico Cultural Juan Santamaría ha realizado una amplia labor editorial, con la publicación de gran cantidad de obras relativas a temas como la Campaña Nacional, historia de Costa Rica, historia de Alajuela, entre otras. Con esta labor, el Museo impulsa la difusión de nuevas investigaciones de gran calidad para ampliar el conocimiento sobre los temas mencionados. Autores de investigaciones tiene la posibilidad de proponer a la Comisión Editorial del Museo sus obras, para ser evaluadas y editadas por esta institución.
-     </p>
+     {!! $contenido_pub->texto_contenido !!}
 
    </section>
 

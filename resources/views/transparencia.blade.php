@@ -24,7 +24,7 @@
 </script>
 <?php
 
-$doc_transp = App\Documentos::all()->where('tipo_documento', '=', 'Acta');
+$doc_transp = App\Documentos::all()->where('tipo_documento', '=', 'AC');
 
 ?>
 <h1 id="titulojunta">Transparencia</h1>

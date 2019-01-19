@@ -122,6 +122,17 @@ Route::delete('/admin/transparencia/{acta}', 'DocumentosController@destroy');
 Route::get('/admin/transparencia/{acta}/editar', 'DocumentosController@editActa');
 Route::put('/admin/transparencia/{acta}', 'DocumentosController@updateActa');
 
+// Rutas para editar secciones de trámites
+Route::get('/admin/tramites/{contenido}/editarue', 'ContenidoPaginaController@editUE');
+Route::get('/admin/tramites/{contenido}/editarvol', 'ContenidoPaginaController@editVol');
+Route::get('/admin/tramites/{contenido}/editarpub', 'ContenidoPaginaController@editPub');
+
+// Rutas para editar secciones de servicios
+Route::get('/admin/servicios/{contenido}/editarvg', 'ContenidoPaginaController@editVg');
+Route::get('/admin/servicios/{contenido}/editarre', 'ContenidoPaginaController@editRe');
+Route::get('/admin/servicios/{contenido}/editarae', 'ContenidoPaginaController@editAe');
+Route::put('/admin/actualizar/{contenido}', 'ContenidoPaginaController@update');
+
 
 Auth::routes();
 
