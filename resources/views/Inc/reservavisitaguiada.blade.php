@@ -116,7 +116,8 @@ input:checked + label {
 
 
    <section id="content1">
-     
+     @if(Auth::check())
+
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
          {!! Form::open(['url' => 'reservavisitaguiada/Enviar']) !!}
 
@@ -158,6 +159,9 @@ input:checked + label {
              </div>
          {!! Form::close() !!}
      </div>
+     @else
+          Debe iniciar sesión para enviar formularios.
+     @endif
    </section>
 
 
