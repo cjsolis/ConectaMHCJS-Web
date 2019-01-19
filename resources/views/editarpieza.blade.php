@@ -108,7 +108,7 @@
 
             <div class="form-group">
                 {{Form::label('descripcion_pieza', 'Descripción de la Noticia:')}}
-                {{Form::textarea('descripcion_pieza', $pieza->descripcion_pieza, ['class' => 'form-control','placeholder'=> 'Descripción de la Pieza'])}}
+                {{Form::textarea('descripcion_pieza', $pieza->descripcion_pieza, ['id' => 'article-ckeditor', 'class' => 'form-control','placeholder'=> 'Descripción de la Pieza'])}}
             </div>
             <div class="form-group">
                 {{Form::label('url_imagen_pieza', 'Contenido de la Noticia:')}}

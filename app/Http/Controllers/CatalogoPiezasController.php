@@ -10,14 +10,14 @@ class CatalogoPiezasController extends Controller
     
     public function index()
     {
-        $piezas = CatalogoPiezas::orderBy('nombre_pieza', 'desc')->paginate(4);
+        $piezas = CatalogoPiezas::orderBy('nombre_pieza', 'asc')->paginate(100);
         return view('catalogo')->with('piezas', $piezas);
     }
 
     public function indexAdmin()
     {
         
-        $piezas = CatalogoPiezas::search()->orderBy('nombre_pieza')->paginate(20);
+        $piezas = CatalogoPiezas::search()->orderBy('nombre_pieza')->paginate(100);
         return view('admincatalogo', compact('piezas'));
     }
 
@@ -49,8 +49,8 @@ class CatalogoPiezasController extends Controller
 
     public function show($id)
     {
-        /* $pieza = CatalogoPiezas::find($id);
-        return view('mostrarnoticia')->with('pieza', $pieza); // Cambiar cuando se vaya a mostrar algo */
+        $pieza = CatalogoPiezas::find($id);
+        return view('verpieza')->with('pieza', $pieza); // Cambiar cuando se vaya a mostrar algo
     }
 
     public function edit($id)
