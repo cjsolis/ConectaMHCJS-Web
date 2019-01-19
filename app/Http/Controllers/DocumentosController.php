@@ -15,7 +15,7 @@ class DocumentosController extends Controller
 
     public function indexAdminTransp()
     {
-        $documentos = Documentos::search()->orderBy('nombre_documento')->paginate(20);
+        $documentos = Documentos::search()->orderBy('nombre_documento')->paginate(300);
         return view('admintransparencia', compact('documentos'));
     }
 
@@ -34,6 +34,7 @@ class DocumentosController extends Controller
 
         $this->validate($request, [
             'nombre_acta'=> 'required',
+            'tipo_documento' => 'required',
             'fecha_acta'=> 'required',
             'url_acta'=> 'required|url|active_url',
 
@@ -43,7 +44,7 @@ class DocumentosController extends Controller
         $documentos->nombre_documento = $request->input('nombre_acta');
         $documentos->url_documento = $request->input('url_acta');
         $documentos->fecha_documento = $request->input('fecha_acta');
-        $documentos->tipo_documento = "Acta";
+        $documentos->tipo_documento = $request->input('tipo_documento');
 
         $documentos->save();
     
@@ -76,6 +77,7 @@ class DocumentosController extends Controller
     {
         $this->validate($request, [
             'nombre_acta'=> 'required',
+            'tipo_documento' => 'required',
             'fecha_acta'=> 'required',
             'url_acta'=> 'required|url|active_url',
 
@@ -85,7 +87,7 @@ class DocumentosController extends Controller
         $documentos->nombre_documento = $request->input('nombre_acta');
         $documentos->url_documento = $request->input('url_acta');
         $documentos->fecha_documento = $request->input('fecha_acta');
-        $documentos->tipo_documento = "Acta";
+        $documentos->tipo_documento = $request->input('tipo_documento');
 
         $documentos->save();
     

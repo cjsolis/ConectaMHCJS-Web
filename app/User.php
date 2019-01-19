@@ -18,4 +18,11 @@ class User  extends Authenticatable
     protected $hidden = [
         'password', 'remember_token', 
     ];
+
+    protected $primaryKey = 'id';
+
+    public function scopeSearch($user){
+
+        return empty(request()->search) ? $user : $user->where('email', 'like', '%'.request()->search.'%');
+    }
 }

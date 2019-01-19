@@ -116,6 +116,8 @@ input:checked + label {
 <?php
 
 $doc_me = App\Documentos::all()->where('tipo_documento', '=', 'ME');
+$contenido_re = App\ContenidoPagina::find(2);
+$contenido_ae = App\ContenidoPagina::find(3);
 
 ?>
 
@@ -130,63 +132,12 @@ $doc_me = App\Documentos::all()->where('tipo_documento', '=', 'ME');
    <label for="tab3">Materiales Educativos</label>
 
    <section id="content1">
-     <p ALIGN="justify">
-       El proyecto Ruta de los Héroes es impulsado por el Museo Histórico Cultural Juan Santamaría, con la finalidad de despertar la conciencia histórica de las comunidades existentes en el espacio geográfico transitado por el ejército expedicionario costarricense durante la guerra contra los filibusteros en los años 1856-1857. Las actividades son organizadas e impulsadas por el Museo según sea el grado de interés de las distintas comunidades. La iniciativa fue aprobada por el Consejo Superior de Educación, en la sesión ordinaria N° 2-05 del 18 de enero del 2005. Ver acuerdo.<br />
-       <b>Hitos Históricos: una responsabilidad compartida</b><br /><br />
-       La construcción de Hitos Históricos en comunidades que forman parte de la Ruta de los Héroes se realiza con apoyo del Museo.<br />
-       Aporte del Museo:
-        <ul style="margin-left:70px;">
-          <li>Planos para la construcción.</li>
-          <li>  Placa de referencia histórica.</li>
-          <li>Placa de crédito del Museo.</li>
-          <li>Publicaciones alusivas.</li>
-          <li>Invitaciones y material divulgativo.</li>
-        </ul>
-        Comunidad:
-         <ul style="margin-left:70px;">
-           <li>Asignación de espacio.</li>
-           <li>Construcción del hito.</li>
-           <li>Placas de crédito.</li>
-           <li>Organización del acto cívico.</li>
-           <li>Mantenimiento del espacio.</li>
-         </ul>
-        Comunidades que cuentan con Hitos Históricos:
-          <ul style="margin-left:70px;">
-            <li>Muelle, Sarapiquí.</li>
-            <li>Sardinal, Sarapiquí.</li>
-            <li>La Trinidad, Sarapiquí.</li>
-            <li>Muelle, San Carlos.</li>
-            <li>Boca San Carlos, desembocadura en el río San Juan.</li>
-            <li>MPuntarenas, Parque Victoria.</li>
-            <li>Bebedero, Cañas-Guanacaste.</li>
-            <li>Ciruelas, Alajuela .</li>
-          </ul>
-          <ul style="margin-left:70px;">
-            <li>Planos para la construcción.</li>
-            <li>  Placa de referencia histórica.</li>
-            <li>Placa de crédito del Museo.</li>
-            <li>Publicaciones alusivas.</li>
-            <li>Invitaciones y material divulgativo.</li>
-          </ul>
-          <ul style="margin-left:70px;">
-            <li>Planos para la construcción.</li>
-            <li>  Placa de referencia histórica.</li>
-            <li>Placa de crédito del Museo.</li>
-            <li>Publicaciones alusivas.</li>
-            <li>Invitaciones y material divulgativo.</li>
-          </ul>
-     </p>
+     {!! $contenido_re->texto_contenido !!}
 
    </section>
 
    <section id="content2">
-     <p>Los Servicios Educativos facilitan, promueven y organizan de manera efectiva el acercamiento de distintos públicos al Museo, según sus intereses en el ámbito educativo y de investigación, impulsando una función vital del Museo en su vocación educativa.
-
-En este sentido, impulsan una comprensión y comunicación eficiente y efectiva entre el visitante y el Museo por medio de visitas guiadas, actividades lúdicas, talleres, charlas, materiales educativos, etc.
-
-Por medio de este programa se brinda atención a los visitantes (docentes, estudiantes y público en general) procedentes de distintas partes del país. </p>
-<br />
-Los servicios educativos incluyen visitas guiadas, justificación Ruta de los Héroes, talleres y charlas y materiales educativos.
+      {!! $contenido_ae->texto_contenido !!}
 
    </section>
 
