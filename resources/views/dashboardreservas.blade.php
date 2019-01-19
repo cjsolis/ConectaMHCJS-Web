@@ -80,7 +80,27 @@
         font-size:18px;
     }
 
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
 </style>
+
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
@@ -88,7 +108,8 @@
 
 $datostablareservas = App\ReservaVisitaGuiada::all();
 $userId = Auth::id();//id unico del usuario logueado.
-$datoporidusuario = App\ReservaVisitaGuiada::find($userId);
+//echo $userId;
+$datoporidusuario = App\User::find($userId);
 echo $datoporidusuario
 
 ?>
@@ -118,6 +139,7 @@ echo $datoporidusuario
     <td>Alfreds Futterkiste</td>
     <td>Alfreds Futterkiste</td>
   </tr>
+  
 
 </table>
 @endsection
