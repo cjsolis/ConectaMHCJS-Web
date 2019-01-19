@@ -20,7 +20,7 @@
             <div class="container">
                 @include('Inc.showcaseadmin')
 
-                <div class="row" style="position: absolute;  left: 300px;top: 100px;">
+                <div class="row" style="position: absolute;  left:300px;top: 100px;">
                    <div class="col-md-8 col-lg-8">
                         <div class="wrapper">
                             @include('Inc.mensajeerror')

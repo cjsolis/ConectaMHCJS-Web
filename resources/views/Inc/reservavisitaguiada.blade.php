@@ -116,6 +116,7 @@ input:checked + label {
 
 
    <section id="content1">
+     
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
          {!! Form::open(['url' => 'reservavisitaguiada/Enviar']) !!}
 

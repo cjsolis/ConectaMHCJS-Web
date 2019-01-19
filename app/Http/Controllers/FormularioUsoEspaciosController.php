@@ -48,4 +48,18 @@ class FormularioUsoEspaciosController extends Controller
       return view('messages')->with('messages',$messages);
     }*/
   }
+
+  public function index()
+  {
+    $formularios = FormularioUsoEspacios::orderBy('id_usoespacios', 'desc')->paginate(4);
+    return view('adminformue')->with('formularios', $formularios);
+  }
+
+  public function destroy($id)
+  {
+    $formulario = FormularioUsoEspacios::find($id);
+    $formulario->delete();
+       
+    return redirect('/admin/formue')->with('success', 'El formulario se ha eliminado correctamente.');
+  }
 }
