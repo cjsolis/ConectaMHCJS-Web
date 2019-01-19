@@ -19,13 +19,13 @@ class CreateReservaVisitaGuiadasTable extends Migration
       //  $table->integer('id_usuario')->unsigned()->unique();
         //$table->foreign('id_usuario')->references('id_usuario')->on('users');
         $table->string('institucion');
-        $table->string('numpersonas');
+        $table->integer('numpersonas');
         $table->string('rangoedad');
         $table->string('fecha');
         $table->string('hora');
         $table->string('materialeseducativos');
         $table->string('necesidadesespeciales');
-        $table->string('telefono');
+        $table->integer('telefono');
 
       });
     }

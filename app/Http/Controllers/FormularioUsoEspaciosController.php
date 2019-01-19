@@ -14,8 +14,8 @@ class FormularioUsoEspaciosController extends Controller
     $this->validate($request, [
       'nombre_usoespacios'=> 'required',
       'correo_usoespacios'=> 'required',
-      'telefono_usoespacios'=> 'required',
-      'personas_usoespacios'=>'required',
+      'telefono_usoespacios'=> 'required|integer|min:1',
+      'personas_usoespacios'=>'required|integer|min:1',
       'fecha_usoespacios'=>'required',
       'hora_usoespacios'=>'required',
       'motivo_usoespacios'=>'required',

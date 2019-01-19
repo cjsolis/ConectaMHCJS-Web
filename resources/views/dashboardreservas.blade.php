@@ -80,61 +80,66 @@
         font-size:18px;
     }
 
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
 </style>
+
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 <?php
 
-$datosusuario = App\GaleriaFotos::all();
+$datostablareservas = App\ReservaVisitaGuiada::all();
+$userId = Auth::id();//id unico del usuario logueado.
+//echo $userId;
+$datoporidusuario = App\User::find($userId);
+echo $datoporidusuario
 
 ?>
+<table>
+  <tr>
+    <th>Número reserva</th>
+    <th>Id usuario</th>
+    <th>Institución</th>
+    <th>Personas</th>
+    <th>Rango de edad</th>
+    <th>Fecha</th>
+    <th>Hora</th>
+    <th>Materiales Educativos</th>
+    <th>Necesidades Especiales</th>
+    <th>Teléfono</th>
 
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+    <td>Alfreds Futterkiste</td>
+    <td>Alfreds Futterkiste</td>
+    <td>Alfreds Futterkiste</td>
+    <td>Alfreds Futterkiste</td>
+    <td>Alfreds Futterkiste</td>
+    <td>Alfreds Futterkiste</td>
+    <td>Alfreds Futterkiste</td>
+  </tr>
+  
 
-<main>
-    <strong> Administrar Galería </strong><br><br>
-    <input id="tab1" type="radio" class="custom-radio" name="tabs" checked>
-    <label for="tab1" class="custom-label">Añadir Reserva</label>
-
-    <input id="tab2" type="radio" class="custom-radio" name="tabs">
-    <label for="tab2" class="custom-label">Eliminar Reserva</label>
-
-    <section id="content1">
-
-        <div>
-            {!! Form::open(['url' => 'admin/galeria/EnviarImagen']) !!}
-                <div class="form-group" style="width:500px;">
-                {{Form::label('url_imagen', 'Dirección url de la imagen a subir:')}}
-                {{Form::text('url_imagen', '',['class' => 'form-control','placeholder'=> 'Url imagen'])}}
-                </div>
-                <div>
-                {{Form::submit('Añadir',['class'=>'btn btn-primary'])}}
-                </div>
-            {!! Form::close() !!}
-        </div>
-
-    </section>
-
-    <section id="content2">
-
-        <div style="overflow-y:scroll;height:300px;width: 800px; height:600px;" >
-            <table class="table table-striped table-hover">
-                <!-- $datosusuario es una lista que se define en la línea 89 -->
-                @foreach($datosusuario as $dato)
-                    <tr>
-                        <th><img src="{{ $dato->url_imagen}}" width="25%"></th>
-                        <th>
-                            {!! Form::open(['url' => ['admin/galeria/EliminarImagen', $dato->id_imagen], 'method' => 'POST']) !!}
-                                {{Form::hidden('_method', 'DELETE')}}
-                                {{Form::submit('Borrar',['class'=>'btn btn-danger'])}}
-                            {!! Form::close() !!}
-                        </th><!-- <th> Hay que agregar uno para la función de eliminar foto </th> -->
-                    </tr>
-                @endforeach
-            </table>
-        </div>
-
-    </section>
-
-</main>
+</table>
 @endsection

@@ -13,8 +13,8 @@ class FormularioReservaVisitaGuiadaController extends Controller
     //obliga a que los campos de name y email se llenen,
     //si no no hace submit.
     $this->validate($request, [
-      'telefono_visitaguiada'=> 'required',
-      'personas_visitaguiada'=>'required',
+      'telefono_visitaguiada'=> 'required|integer|min:1',
+      'personas_visitaguiada'=>'required|integer|min:1',
       'rango_visitaguiada'=>'required',
       'fecha_visitaguiada'=>'required',
       'hora_visitaguiada'=>'required',

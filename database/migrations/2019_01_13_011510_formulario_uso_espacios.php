@@ -17,9 +17,9 @@ class FormularioUsoEspacios extends Migration
         $table->increments('id_usoespacios');
         $table->string('nombre');
         $table->string('correo');
-        $table->string('telefono');
+        $table->integer('telefono');
         $table->string('institucion');
-        $table->string('numpersonas');
+        $table->integer('numpersonas');
         $table->string('fecha');
         $table->string('hora');
         $table->string('motivo');
