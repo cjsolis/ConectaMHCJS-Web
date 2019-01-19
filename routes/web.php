@@ -54,7 +54,7 @@ Route::get('/admin/servicios', 'PagesController@getAdminServicios');
 Route::get('/admin/tramites', 'PagesController@getAdminTramites');
 /* Route::get('/admin/transparencia', 'PagesController@getAdminTransparencia'); */
 Route::get('/admin/reservaciones', 'PagesController@getAdminReservaciones');
-Route::get('/admin/usuarios', 'PagesController@getAdminUsuarios');
+/* Route::get('/admin/usuarios', 'PagesController@getAdminUsuarios'); */
 
 Route::post('/reservavisitaguiada/Enviar', 'FormularioReservaVisitaGuiadaController@Enviar');
 Route::post('/tramites/EnviarUsoEspacios', 'FormularioUsoEspaciosController@EnviarUsoEspacios');
@@ -132,6 +132,18 @@ Route::get('/admin/servicios/{contenido}/editarvg', 'ContenidoPaginaController@e
 Route::get('/admin/servicios/{contenido}/editarre', 'ContenidoPaginaController@editRe');
 Route::get('/admin/servicios/{contenido}/editarae', 'ContenidoPaginaController@editAe');
 Route::put('/admin/actualizar/{contenido}', 'ContenidoPaginaController@update');
+
+// Rutas para formulario de uso de espacios
+Route::get('/admin/formue', 'FormularioUsoEspaciosController@index');
+Route::delete('/admin/formue/{formulario}', 'FormularioUsoEspaciosController@destroy');
+
+// Rutas para formulario de uso de espacios
+Route::get('/admin/formvol', 'FormularioVoluntariadoController@index');
+Route::delete('/admin/formvol/{formulario}', 'FormularioVoluntariadoController@destroy');
+
+// Rutas para los usuarios
+Route::get('/admin/usuarios', 'UsersController@index');
+Route::delete('/admin/usuarios/{usuario}', 'UsersController@destroy');
 
 
 Auth::routes();

@@ -50,7 +50,12 @@ class FormularioReservaVisitaGuiadaController extends Controller
       return view('messages')->with('messages',$messages);
     }*/
 
+  }
 
+  public function index(){
 
+    $formulario = FormularioUsoEspacios::search()->orderBy('id_reserva')->paginate(4);
+    
+    return view('adminnoticias', compact('noticias'));
   }
 }

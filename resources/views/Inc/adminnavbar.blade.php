@@ -70,10 +70,10 @@
 <div class="Fixed">
   <nav class="navigation">
     <ul class="mainmenu">
-      <li><a href="/admin/formularios">Formularios</a>
+      <li><a href="">Formularios</a>
         <ul class="submenu">
-          <li><a href="">Uso de Espacios</a></li>
-          <li><a href="">Voluntariado</a></li>
+          <li><a href="/admin/formue">Uso de Espacios</a></li>
+          <li><a href="/admin/formvol">Voluntariado</a></li>
         </ul>
       </li>
 

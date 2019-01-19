@@ -44,4 +44,18 @@ class FormularioVoluntariadoController extends Controller
 
     return redirect('/')->with('success','Message Sent');
   }
+
+  public function index()
+  {
+    $formularios = FormularioVoluntariado::orderBy('id_voluntariado', 'desc')->paginate(4);
+    return view('adminformvol')->with('formularios', $formularios);
+  }
+
+  public function destroy($id)
+  {
+    $formulario = FormularioVoluntariado::find($id);
+    $formulario->delete();
+       
+    return redirect('/admin/formvol')->with('success', 'El formulario se ha eliminado correctamente.');
+  }
 }
