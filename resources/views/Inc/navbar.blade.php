@@ -22,7 +22,7 @@
 
                       <ul class="dropdown-menu" role="menu" style="background:#CDCDCD;">
                           <li>
-                              <a href="/home" >Ir a mis reservas</a>
+                              <a href="/dashboardreservas" >Ir a mis reservas</a>
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                   {{ csrf_field() }}
                               </form>

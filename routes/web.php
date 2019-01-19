@@ -53,7 +53,7 @@ Route::get('/admin/formularios', 'PagesController@getAdminFormularios');
 Route::get('/admin/servicios', 'PagesController@getAdminServicios');
 Route::get('/admin/tramites', 'PagesController@getAdminTramites');
 /* Route::get('/admin/transparencia', 'PagesController@getAdminTransparencia'); */
-Route::get('/admin/reservaciones', 'PagesController@getAdminReservaciones');
+/* Route::get('/admin/reservaciones', 'PagesController@getAdminReservaciones'); */
 /* Route::get('/admin/usuarios', 'PagesController@getAdminUsuarios'); */
 
 Route::post('/reservavisitaguiada/Enviar', 'FormularioReservaVisitaGuiadaController@Enviar');
@@ -145,10 +145,14 @@ Route::delete('/admin/formvol/{formulario}', 'FormularioVoluntariadoController@d
 Route::get('/admin/usuarios', 'UsersController@index');
 Route::delete('/admin/usuarios/{usuario}', 'UsersController@destroy');
 
+//Reservaciones
+Route::get('/admin/reservaciones', 'FormularioReservaVisitaGuiadaController@indexAdmin');
+Route::delete('/admin/reservaciones/{reserva}', 'FormularioReservaVisitaGuiadaController@destroy');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');//le cambie de /home a / .
+Route::get('/dashboardreservas', 'FormularioReservaVisitaGuiadaController@index');
+Route::delete('/dashboardreservas/{reserva}', 'FormularioReservaVisitaGuiadaController@destroyCancelar');
 
 //debe estar en ese orden:
 //route::prefix('admin')->group(function(){//este group es como decir /admin/login.

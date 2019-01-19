@@ -96,14 +96,16 @@
     @if(count($formularios) > 0)
         @foreach($formularios as $formulario)
         <div class="well">
-            <h3>{{ $formulario->nombre }}</h3>
-            <h3>{{ $formulario->correo }}</h3>
-            <h3>{{ $formulario->telefono }}</h3>
-            <h3>{{ $formulario->institucion }}</h3>
-            <h3>{{ $formulario->numpersonas }}</h3>
-            <h3>{{ $formulario->fecha }}</h3>
-            <h3>{{ $formulario->hora }}</h3>
-            <h3>{{ $formulario->motivo }}</h3>
+            <h3>Nombre del solicitante:</h3>
+            <p>{{ $formulario->nombre }}</p>
+            <h3>Correo del solicitante:</h3>
+            <p>{{ $formulario->correo }}</p>
+            <h3>Teléfono del solicitante:</h3>
+            <p>{{ $formulario->telefono }}</p>
+            <h3>Fecha solicitada:</h3>
+            <p>{{ $formulario->fecha }}</p>
+            <h3>Motivo de solicitud:</h3>
+            <p>{{ $formulario->motivo }}</p>
             {!! Form::open(['url' => ['/admin/formue', $formulario->id_usoespacios], 'method' => 'POST']) !!}
                 {{Form::hidden('_method', 'DELETE')}}
                 {{Form::submit('Eliminar',['class'=>'btn btn-danger'])}}

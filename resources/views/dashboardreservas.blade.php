@@ -21,33 +21,26 @@ $datoporidusuario = App\User::find($userId);
 
 <div class="ignoreparentreserva">
 @if(count($datostablareservas)>0)
-    <table>
-      <tr>
-        <th>&nbsp Número reserva &nbsp</th>
-        <th>&nbsp Institución &nbsp</th>
-        <th>&nbsp Personas &nbsp</th>
-        <th>&nbsp Rango de edad &nbsp</th>
-        <th>&nbsp Fecha &nbsp  </th>
-        <th>&nbsp Hora &nbsp </th>
-        <th>&nbsp Materiales Educativos  &nbsp</th>
-        <th>&nbsp Necesidades Especiales &nbsp </th>
-        <th>&nbsp Teléfono  &nbsp</th>
+    <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
+        @foreach($datostablareservas as $datos)
+            <div class="well">
+                <p>Número de reserva: {{$datos->id_reserva}}</p>
+                <p>Institución: {{$datos->institucion}}</p>
+                <p>Cantidad de Personas: {{$datos->numpersonas}}</p>
+                <p>Rango de edad: {{$datos->rangoedad}}</p>
+                <p>Fecha solicitada: {{$datos->fecha}}</p>
+                <p>Solicitud de materiales: {{$datos->materialeseducativos}}</p>
+                <p>Solicitudes en necesidades especiales: {{$datos->necesidadesespeciales}}</p>
+                <p>Número telefónico: {{$datos->telefono}}</p>
+                <p>Estado: {{$datos->estado}}</p>
+                {!! Form::open(['url' => ['/dashboardreservas', $datos->id_reserva], 'method' => 'POST']) !!}
+                {{Form::hidden('_method', 'DELETE')}}
+                {{Form::submit('Cancelar',['class'=>'btn btn-primary'])}}
+                {!! Form::close() !!}                
+            </div>
+        @endforeach
 
-        </tr>
-  @foreach($datostablareservas as $datos)
-      <tr>
-        <td>{{$datos->id_reserva}}</td>
-        <td>&nbsp {{$datos->institucion}} &nbsp</td>
-        <td> {{$datos->numpersonas}}</td>
-        <td>&nbsp {{$datos->rangoedad}} &nbsp</td>
-        <td>&nbsp {{$datos->fecha}} &nbsp</td>
-        <td>&nbsp {{$datos->hora}} &nbsp</td>
-        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$datos->materialeseducativos}} </td>
-        <td>&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$datos->necesidadesespeciales}} </td>
-        <td>&nbsp {{$datos->telefono}}&nbsp </td>
-      </tr>
-  @endforeach
-  </table>
+    </div>
 @else
     No hay reservas para este usuario.
 @endif

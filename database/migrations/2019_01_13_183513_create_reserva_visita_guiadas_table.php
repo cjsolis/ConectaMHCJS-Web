@@ -16,16 +16,15 @@ class CreateReservaVisitaGuiadasTable extends Migration
       Schema::create('reserva_visita_guiadas', function (Blueprint $table) {
         $table->increments('id_reserva');
         $table->integer('id_usuario')->unsigned();
-      //  $table->integer('id_usuario')->unsigned()->unique();
-        //$table->foreign('id_usuario')->references('id_usuario')->on('users');
-        $table->string('institucion');
+        $table->string('institucion')->nullable();
         $table->integer('numpersonas');
         $table->string('rangoedad');
-        $table->string('fecha');
-        $table->string('hora');
-        $table->string('materialeseducativos');
-        $table->string('necesidadesespeciales');
+        $table->date('fecha')->unique();
+        $table->mediumText('materialeseducativos')->nullable();
+        $table->mediumText('necesidadesespeciales')->nullable();
         $table->integer('telefono');
+        $table->string('estado');
+        $table->timestamps();
 
       });
     }

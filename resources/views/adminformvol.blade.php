@@ -96,14 +96,14 @@
     @if(count($formularios) > 0)
         @foreach($formularios as $formulario)
         <div class="well">
-            <h3>{{ $formulario->nombre }}</h3>
-            <h3>{{ $formulario->correo }}</h3>
-            <h3>{{ $formulario->telefono }}</h3>
-            <h3>{{ $formulario->institucion }}</h3>
-            <h3>{{ $formulario->numpersonas }}</h3>
-            <h3>{{ $formulario->fecha }}</h3>
-            <h3>{{ $formulario->hora }}</h3>
-            <h3>{{ $formulario->motivo }}</h3>
+            <h3>Nombre del Solicitante:</h3>
+            <p> {{ $formulario->nombre }} </p>
+            <h3>Correo electrónico del solicitante:</h3>
+            <p>{{ $formulario->correo }}</p>
+            <h3>Número telefónico del solicitante:</h3>
+            <p>{{ $formulario->telefono }}</p>
+            <h3>Motivo del solicitante: </h3>
+            <p>{{ $formulario->motivo }}</p>
             {!! Form::open(['url' => ['/admin/formvol', $formulario->id_voluntariado], 'method' => 'POST']) !!}
                 {{Form::hidden('_method', 'DELETE')}}
                 {{Form::submit('Eliminar',['class'=>'btn btn-danger'])}}
