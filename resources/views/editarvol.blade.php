@@ -96,31 +96,15 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 <main>
-    <strong> Editar Imagen </strong><br><br>
+    <strong> Editar Contenido de Voluntariado</strong><br><br>
 
     <div>
-        {!! Form::open(['url' => ['admin/transparencia', $documento->id_documento], 'method' => 'POST']) !!}
+        {!! Form::open(['url' => ['admin/actualizar', $contenido->id_contenido], 'method' => 'POST']) !!}
             {{Form::hidden('_method', 'PUT')}}
             <div class="form-group">
-                {{Form::label('nombre_acta', 'Nombre del Acta:')}}
-                {{Form::text('nombre_acta', $documento->nombre_documento, ['class' => 'form-control','placeholder'=> 'Nombre del Acta'])}}
+                {{Form::label('texto_contenido', 'Contenido:')}}
+                {{Form::textarea('texto_contenido', $contenido->texto_contenido, ['id' => 'article-ckeditor', 'class' => 'form-control'])}}
             </div>
-
-            <div class="form-group">
-                {{Form::label('tipo_documento', 'Tipo de Documento:')}}
-                {{Form::select('tipo_documento', ['AC' => 'Acta de  Transparencia', 'UE' => 'Documento sobre Uso de Espacio', 'ME' => 'Material Educativo', 'TA' => 'Documento Administrativo'], $documento->tipo_documento, ['class' => 'form-control'])}}
-            </div>
-
-            <div class="form-group">
-                {{Form::label('fecha_acta', 'Fecha del Acta:')}}
-                {{Form::date('fecha_acta', $documento->fecha_documento, ['class' => 'form-control','placeholder'=> 'Fecha del Acta'])}}
-            </div>
-
-            <div class="form-group">
-                {{Form::label('url_acta', 'Dirección url del Acta:')}}
-                {{Form::text('url_acta', $documento->url_documento, ['class' => 'form-control','placeholder'=> 'Dirección url del Acta'])}}
-            </div>
-
             <div class="form-group">
                 {{Form::submit('Editar', ['class'=>'btn btn-primary'])}}
             </div>

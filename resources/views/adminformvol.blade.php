@@ -1,5 +1,6 @@
 @extends('layouts.adminlayout')
 @section ('content')
+
 <style>
     /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
     @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
@@ -71,7 +72,8 @@
     }
 
     #tab1:checked ~ #content1,
-    #tab2:checked ~ #content2{
+    #tab2:checked ~ #content2,
+    #tab3:checked ~ #content3 {
         display: block;
     }
 
@@ -83,49 +85,37 @@
     .custom-textarea{
         width: 100%;
         font-size:18px;
-        height: 100px;
-    }
-
-    .custom-textarea2{
-        width: 100%;
-        font-size:18px;
-        height: 600px;
+        height: 200px;
     }
 
 </style>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
 <main>
-    <strong> Editar Imagen </strong><br><br>
-
-    <div>
-        {!! Form::open(['url' => ['admin/transparencia', $documento->id_documento], 'method' => 'POST']) !!}
-            {{Form::hidden('_method', 'PUT')}}
-            <div class="form-group">
-                {{Form::label('nombre_acta', 'Nombre del Acta:')}}
-                {{Form::text('nombre_acta', $documento->nombre_documento, ['class' => 'form-control','placeholder'=> 'Nombre del Acta'])}}
-            </div>
-
-            <div class="form-group">
-                {{Form::label('tipo_documento', 'Tipo de Documento:')}}
-                {{Form::select('tipo_documento', ['AC' => 'Acta de  Transparencia', 'UE' => 'Documento sobre Uso de Espacio', 'ME' => 'Material Educativo', 'TA' => 'Documento Administrativo'], $documento->tipo_documento, ['class' => 'form-control'])}}
-            </div>
-
-            <div class="form-group">
-                {{Form::label('fecha_acta', 'Fecha del Acta:')}}
-                {{Form::date('fecha_acta', $documento->fecha_documento, ['class' => 'form-control','placeholder'=> 'Fecha del Acta'])}}
-            </div>
-
-            <div class="form-group">
-                {{Form::label('url_acta', 'Dirección url del Acta:')}}
-                {{Form::text('url_acta', $documento->url_documento, ['class' => 'form-control','placeholder'=> 'Dirección url del Acta'])}}
-            </div>
-
-            <div class="form-group">
-                {{Form::submit('Editar', ['class'=>'btn btn-primary'])}}
-            </div>
-        {!! Form::close() !!}
-    </div>
-
+    <h1>Formularios de Voluntariado</h1>
+    @if(count($formularios) > 0)
+        @foreach($formularios as $formulario)
+        <div class="well">
+            <h3>{{ $formulario->nombre }}</h3>
+            <h3>{{ $formulario->correo }}</h3>
+            <h3>{{ $formulario->telefono }}</h3>
+            <h3>{{ $formulario->institucion }}</h3>
+            <h3>{{ $formulario->numpersonas }}</h3>
+            <h3>{{ $formulario->fecha }}</h3>
+            <h3>{{ $formulario->hora }}</h3>
+            <h3>{{ $formulario->motivo }}</h3>
+            {!! Form::open(['url' => ['/admin/formvol', $formulario->id_voluntariado], 'method' => 'POST']) !!}
+                {{Form::hidden('_method', 'DELETE')}}
+                {{Form::submit('Eliminar',['class'=>'btn btn-danger'])}}
+            {!! Form::close() !!}
+        </div>
+        @endforeach
+        {{ $formularios->links() }}
+    @else
+        <br>
+        <strong>No hay formularios por mostrar.</strong>
+        <br>
+        <br>
+    @endif
 </main>
 @endsection
