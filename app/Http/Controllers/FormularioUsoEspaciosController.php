@@ -12,26 +12,22 @@ class FormularioUsoEspaciosController extends Controller
     //obliga a que los campos de name y email se llenen,
     //si no no hace submit.
     $this->validate($request, [
-      'nombre_usoespacios'=> 'required',
-      'correo_usoespacios'=> 'required',
-      'telefono_usoespacios'=> 'required|integer|min:1',
-      'personas_usoespacios'=>'required|integer|min:1',
-      'fecha_usoespacios'=>'required',
-      'hora_usoespacios'=>'required',
-      'motivo_usoespacios'=>'required',
+      'nombre_uso_de_espacios'=> 'required',
+      'correo_uso_de_espacios'=> 'required|email',
+      'telefono_uso_de_espacios'=> 'required|integer|min:1',
+      'fecha_uso_de_espacios'=>'required',
+      'motivo_uso_de_espacios'=>'required',
 
     ]);
     //  return 123;
     //create new reserva espacio
     $reservausoespacios = new FormularioUsoEspacios;
-    $reservausoespacios->nombre = $request->input('nombre_usoespacios');
-    $reservausoespacios->correo = $request->input('correo_usoespacios');
-    $reservausoespacios->telefono = $request->input('telefono_usoespacios');
+    $reservausoespacios->nombre = $request->input('nombre_uso_de_espacios');
+    $reservausoespacios->correo = $request->input('correo_uso_de_espacios');
+    $reservausoespacios->telefono = $request->input('telefono_uso_de_espacios');
     $reservausoespacios->institucion = $request->input('institucion_usoespacios');
-    $reservausoespacios->numpersonas = $request->input('personas_usoespacios');
-    $reservausoespacios->fecha = $request->input('fecha_usoespacios');
-    $reservausoespacios->hora = $request->input('hora_usoespacios');
-    $reservausoespacios->motivo = $request->input('motivo_usoespacios');
+    $reservausoespacios->fecha = $request->input('fecha_uso_de_espacios');
+    $reservausoespacios->motivo = $request->input('motivo_uso_de_espacios');
 
 
 
@@ -41,7 +37,7 @@ class FormularioUsoEspaciosController extends Controller
     //$values = array($reservavisita->id_usuario,$reservavisita->institucion,$reservavisita->numpersonas,$reservavisita->rangoedad,$reservavisita->fecha,$reservavisita->hora,$reservavisita->materialeseducativos,$reservavisita->necesidadesespeciales,$reservavisita->telefono);
     //DB::table('reserva_visita_guiadas')->insert($values);
 
-    return redirect('/')->with('success','Message Sent');
+    return redirect('/')->with('success','Formulario enviado con éxito.');
 
   /*  public function getMessages(){
       $messages = Message::all();

@@ -134,36 +134,28 @@ $contenido_pub = App\ContenidoPagina::find(6);
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
          {!! Form::open(['url' => 'tramites/EnviarUsoEspacios']) !!}
              <div class="form-group" style="width:500px;">
-               {{Form::label('nombre_usoespacios', 'Nombre')}}
-               {{Form::text('nombre_usoespacios', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
+               {{Form::label('nombre_usoespacios', 'Nombre completo:')}}
+               {{Form::text('nombre_uso_de_espacios', '',['class' => 'form-control','placeholder'=> 'Nombre completo'])}}
              </div>
              <div class="form-group" style="width:500px;">
                {{Form::label('correo_usoespacios', 'Correo electrónico')}}
-               {{Form::text('correo_usoespacios', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
+               {{Form::text('correo_uso_de_espacios', '',['class' => 'form-control','placeholder'=> 'Correo electrónico'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('telefono_usoespacios', 'Teléfono')}}
-               {{Form::text('telefono_usoespacios', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
+               {{Form::label('telefono_usoespacios', 'Número telefónico')}}
+               {{Form::text('telefono_uso_de_espacios', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('institucion_usoespacios', 'Institución(opcional)')}}
+               {{Form::label('institucion_usoespacios', 'Institución (opcional)')}}
                {{Form::text('institucion_usoespacios', '',['class' => 'form-control','placeholder'=> 'Institución'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('personas_usoespacios', 'Cantidad de personas')}}
-               {{Form::text('personas_usoespacios', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
                {{Form::label('fecha_usoespacios', 'Fecha')}}
-               {{Form::text('fecha_usoespacios', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
-               {{Form::label('hora_usoespacios', 'Hora')}}
-               {{Form::text('hora_usoespacios', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
+               {{Form::date('fecha_uso_de_espacios', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
              </div>
              <div class="form-group" style="width:500px;">
                {{Form::label('motivo_usoespacios', 'Motivo')}}
-               {{Form::text('motivo_usoespacios', '',['class' => 'form-control','placeholder'=> 'Motivo'])}}
+               {{Form::textarea('motivo_uso_de_espacios', '',['class' => 'form-control','placeholder'=> 'Descripción del motivo de solicitud de un espacio dentro del museo.'])}}
              </div>
              <div>
                {{Form::submit('Enviar',['class'=>'btn btn-primary'])}}
@@ -203,36 +195,20 @@ $contenido_pub = App\ContenidoPagina::find(6);
      <div style="overflow-y:scroll;height:300px;width: 800px; margin-left:200px; height:600px;" >
          {!! Form::open(['url' => 'tramites/EnviarVoluntariado']) !!}
              <div class="form-group" style="width:500px;">
-               {{Form::label('nombre_voluntariado', 'Nombre')}}
-               {{Form::text('nombre_voluntariado', '',['class' => 'form-control','placeholder'=> 'Nombre'])}}
+               {{Form::label('nombre_voluntariado', 'Nombre completo:')}}
+               {{Form::text('nombre_voluntario', '',['class' => 'form-control','placeholder'=> 'Nombre completo'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('correo_voluntariado', 'Correo electrónico')}}
-               {{Form::text('correo_voluntariado', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
+               {{Form::label('correo_voluntariado', 'Correo electrónico:')}}
+               {{Form::text('correo_voluntario', '',['class' => 'form-control','placeholder'=> 'Correo'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('telefono_voluntariado', 'Teléfono')}}
-               {{Form::text('telefono_voluntariado', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
+               {{Form::label('telefono_voluntariado', 'Teléfono:')}}
+               {{Form::text('telefono_voluntario', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('institucion_voluntariado', 'Institución(opcional)')}}
-               {{Form::text('institucion_voluntariado', '',['class' => 'form-control','placeholder'=> 'Institución'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
-               {{Form::label('personas_voluntariado', 'Cantidad de personas')}}
-               {{Form::text('personas_voluntariado', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
-               {{Form::label('fecha_voluntariado', 'Fecha')}}
-               {{Form::text('fecha_voluntariado', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
-               {{Form::label('hora_voluntariado', 'Hora')}}
-               {{Form::text('hora_voluntariado', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
-               {{Form::label('motivo_voluntariado', 'Motivo')}}
-               {{Form::text('motivo_voluntariado', '',['class' => 'form-control','placeholder'=> 'Motivo'])}}
+               {{Form::label('motivo_voluntariado', 'Motivo:')}}
+               {{Form::textarea('motivo_voluntario', '',['class' => 'form-control','placeholder'=> 'Una breve explicación de los motivos de su solicitud de voluntariado.'])}}
              </div>
 
              <div>

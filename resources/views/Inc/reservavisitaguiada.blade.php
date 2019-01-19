@@ -123,35 +123,32 @@ input:checked + label {
 
              <div class="form-group" style="width:500px;">
                {{Form::label('telefono_visitaguiada', 'Teléfono')}}
-               {{Form::text('telefono_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
+               {{Form::text('telefono_del_solicitante', '',['class' => 'form-control','placeholder'=> 'Teléfono'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('institucion_visitaguiada', 'Institución(opcional)')}}
-               {{Form::text('institucion_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Institución'])}}
+               {{Form::label('institucion_visitaguiada', 'Institución (opcional)')}}
+               {{Form::text('institucion_del_visitante', '',['class' => 'form-control','placeholder'=> 'Ejemplo: Instituto Tecnológico de Costa Rica'])}}
              </div>
              <div class="form-group" style="width:500px;">
                {{Form::label('personas_visitaguiada', 'Cantidad de personas')}}
-               {{Form::text('personas_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Cantidad de personas'])}}
+               {{Form::text('cantidad_de_personas', '',['class' => 'form-control','placeholder'=> 'Ej: 12'])}}
              </div>
              <div class="form-group" style="width:500px;">
                {{Form::label('rango_visitaguiada', 'Rango de edad')}}
-               {{Form::text('rango_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Rango de edad'])}}
+               {{Form::text('rango_de_edad', '',['class' => 'form-control','placeholder'=> 'Ej: 12-16'])}}
              </div>
              <div class="form-group" style="width:500px;">
                {{Form::label('fecha_visitaguiada', 'Fecha')}}
-               {{Form::text('fecha_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
+               {{Form::date('fecha_de_visita', '',['class' => 'form-control','placeholder'=> 'Fecha'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('hora_visitaguiada', 'Hora')}}
-               {{Form::text('hora_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Hora'])}}
+               {{Form::label('materialeseducativos_visitaguiada', 'Materiales Educativos (opcional)')}}
+               {{Form::textarea('materialeseducativos_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Describa si necesita algún material educativo para apoyar la visita.'])}}
              </div>
+
              <div class="form-group" style="width:500px;">
-               {{Form::label('materialeseducativos_visitaguiada', 'Materiales Educativos')}}
-               {{Form::text('materialeseducativos_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Materiales Educativos'])}}
-             </div>
-             <div class="form-group" style="width:500px;">
-               {{Form::label('necesidadesespeciales_visitaguiada', 'Necesidades especiales')}}
-               {{Form::text('necesidadesespeciales_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Necesidades especiales'])}}
+               {{Form::label('necesidadesespeciales_visitaguiada', 'Necesidades especiales (opcional)')}}
+               {{Form::textarea('necesidadesespeciales_visitaguiada', '',['class' => 'form-control','placeholder'=> 'Describa si existe alguna necesidad especial en caso de personas con discapacidad.'])}}
              </div>
 
              <div>
