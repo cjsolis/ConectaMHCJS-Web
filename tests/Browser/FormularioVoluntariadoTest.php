@@ -6,7 +6,7 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class ExampleTest extends DuskTestCase
+class FormularioVoluntariadoTest extends DuskTestCase
 {
     /**
      * A basic browser test example.
@@ -23,9 +23,9 @@ class ExampleTest extends DuskTestCase
                     ->assertSee('Transparencia');
                     //->assertPathIs('tramites');enlace es el correcto, todo el path
         });
-    }
+    }*/
 
-    public function testReservaVisitaGuiadaCorrecto()//seguir el formato de test al inicio, si no no lo corre.
+    public function testVoluntariadoCorrecto()//seguir el formato de test al inicio, si no no lo corre.
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/reservavisitaguiada')
@@ -37,7 +37,7 @@ class ExampleTest extends DuskTestCase
                     //->assertPathIs('tramites');enlace es el correcto, todo el path
         });
     }*/
-    public function testReservaVisitaGuiadaCorrecto()//seguir el formato de test al inicio, si no no lo corre.
+    public function testVoluntariadoInCorrecto()//seguir el formato de test al inicio, si no no lo corre.
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/reservavisitaguiada')
@@ -51,4 +51,3 @@ class ExampleTest extends DuskTestCase
     }
 
 }
-
