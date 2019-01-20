@@ -11,6 +11,7 @@
               <!-- Authentication Links -->
               @if (Auth::guest())
                   <li><a class="nav-itemarriba" href="{{ route('login') }}">Iniciar Sesión</a></li>
+                  <li><a class="nav-itemarriba" href="{{ route('register') }}">Registrarse</a></li>
 
               @else
                   <li class="dropdown">
@@ -41,7 +42,7 @@
                       </ul>
                   </li>
               @endif
-              <li><a class="nav-itemarriba" href="{{ route('register') }}">Registrarse</a></li>
+              
 
         </ul>
 </nav>
