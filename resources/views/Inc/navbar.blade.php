@@ -65,7 +65,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Exhibiciones
         </a>
-        <div class="dropdown-menu" style="background-color: #CED2D8;" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" style="background-color: #AC4B5A;" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" style="color: white;" href="/exhibicionespermanentes">Permanentes</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" style="color: white;" href="/exhibicionestemporales">Temporales</a>
@@ -83,7 +83,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Servicios
         </a>
-        <div class="dropdown-menu" style="background-color: #CED2D8;" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" style="background-color: #AC4B5A;" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" style="color: white;" href="/visitaguiada">Visita Guiada</a>
             <div class="dropdown-divider"></div>
           <a class="dropdown-item" style="color: white;" href="/servicioseducativos">Servicios Educativos</a>
@@ -98,7 +98,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Recursos
         </a>
-        <div class="dropdown-menu" style="background-color: #CED2D8;" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" style="background-color: #AC4B5A;" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" style="color: white;" href="/campananacional">Campaña Nacional</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" style="color: white;" href="/centroinformacion">Centro de Información</a>
