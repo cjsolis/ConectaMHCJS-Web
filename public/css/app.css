@@ -95,8 +95,10 @@ nav ul li:nth-child(5) {}*/
 }
 
 .nav-itemarriba:hover {
-  background-color: #fff;
+  color:white;
+  background-color: #702532;
   opacity: 0.5;
+  text-decoration: none;
 }
 
 .nav-itemarriba:focus {
