@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'qr'], function(){
+Route::group(['prefix' => 'qr', 'middleware' => ['api', 'cors']], function(){
 
     //Para hacer api get de galería
     //dominio/api/qr/galeria y retorna el json en lista de todos los elementos que están en galería
