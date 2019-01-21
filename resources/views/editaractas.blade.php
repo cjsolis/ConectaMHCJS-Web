@@ -96,14 +96,14 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 <main>
-    <strong> Editar Imagen </strong><br><br>
+    <strong> Editar Documentos </strong><br><br>
 
     <div>
         {!! Form::open(['url' => ['admin/transparencia', $documento->id_documento], 'method' => 'POST']) !!}
             {{Form::hidden('_method', 'PUT')}}
             <div class="form-group">
-                {{Form::label('nombre_acta', 'Nombre del Acta:')}}
-                {{Form::text('nombre_acta', $documento->nombre_documento, ['class' => 'form-control','placeholder'=> 'Nombre del Acta'])}}
+                {{Form::label('nombre_acta', 'Nombre del Documento:')}}
+                {{Form::text('nombre_acta', $documento->nombre_documento, ['class' => 'form-control','placeholder'=> 'Nombre del Documento'])}}
             </div>
 
             <div class="form-group">
@@ -112,13 +112,13 @@
             </div>
 
             <div class="form-group">
-                {{Form::label('fecha_acta', 'Fecha del Acta:')}}
-                {{Form::date('fecha_acta', $documento->fecha_documento, ['class' => 'form-control','placeholder'=> 'Fecha del Acta'])}}
+                {{Form::label('fecha_acta', 'Fecha del Documento:')}}
+                {{Form::date('fecha_acta', $documento->fecha_documento, ['class' => 'form-control','placeholder'=> 'Fecha del Documento'])}}
             </div>
 
             <div class="form-group">
-                {{Form::label('url_acta', 'Dirección url del Acta:')}}
-                {{Form::text('url_acta', $documento->url_documento, ['class' => 'form-control','placeholder'=> 'Dirección url del Acta'])}}
+                {{Form::label('url_acta', 'Dirección url del Documento:')}}
+                {{Form::text('url_acta', $documento->url_documento, ['class' => 'form-control','placeholder'=> 'Dirección url del Documento'])}}
             </div>
 
             <div class="form-group">
