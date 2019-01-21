@@ -18,6 +18,8 @@ class CatalogoPiezasController extends Controller
     public function indexAdmin()
     {
         if(Auth::guard('admin')){
+            echo Auth::check();
+            echo Auth::guard('admin');
             $piezas = CatalogoPiezas::search()->orderBy('nombre_pieza')->paginate(100);
             return view('admincatalogo', compact('piezas'));
         }else{
