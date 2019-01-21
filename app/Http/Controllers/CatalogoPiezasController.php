@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\CatalogoPiezas;
 use Illuminate\Http\Request;
+use Auth;
 
 class CatalogoPiezasController extends Controller
 {
@@ -16,9 +17,14 @@ class CatalogoPiezasController extends Controller
 
     public function indexAdmin()
     {
+        if(Auth::guard('admin')){
+            $piezas = CatalogoPiezas::search()->orderBy('nombre_pieza')->paginate(100);
+            return view('admincatalogo', compact('piezas'));
+        }else{
+
+            return $piezas;
+        }   
         
-        $piezas = CatalogoPiezas::search()->orderBy('nombre_pieza')->paginate(100);
-        return view('admincatalogo', compact('piezas'));
     }
 
     public function create()
