@@ -97,7 +97,7 @@
             {!! Form::open(['url' => 'admin/transparencia/agregar']) !!}
                 <div class="form-group">
                 {{Form::label('nombre_acta', 'Nombre del Documento:')}}
-                {{Form::text('nombre_acta', '',['class' => 'form-control','placeholder'=> 'Nombre del Acta'])}}
+                {{Form::text('nombre_acta', '',['class' => 'form-control','placeholder'=> 'Nombre del Documento'])}}
                 </div>
 
                 {{-- Quedé en meter documentos en esta sección agregando un combo box --}}
@@ -108,12 +108,12 @@
 
                 <div class="form-group">
                 {{Form::label('fecha_acta', 'Fecha del Documento:')}}
-                {{Form::date('fecha_acta', '',['class' => 'form-control','placeholder'=> 'Fecha del Acta'])}}
+                {{Form::date('fecha_acta', '',['class' => 'form-control','placeholder'=> 'Fecha del Documento'])}}
                 </div>
 
                 <div class="form-group">
                 {{Form::label('url_acta', 'Dirección url del Documento:')}}
-                {{Form::text('url_acta', '',['class' => 'form-control','placeholder'=> 'Dirección url del Acta'])}}
+                {{Form::text('url_acta', '',['class' => 'form-control','placeholder'=> 'Dirección url del Documento'])}}
                 </div>
 
                 <div>
