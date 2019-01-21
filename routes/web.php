@@ -47,11 +47,11 @@ Route::get('/registrarsetienda', 'PagesController@getRegistrarse');
 
 Route::get('/reservavisitaguiada', 'PagesController@getReservaVisitaGuiada');
 
-Route::get('/admin/formularios', 'PagesController@getAdminFormularios');
+/* Route::get('/admin/formularios', 'PagesController@getAdminFormularios');
 
 
 Route::get('/admin/servicios', 'PagesController@getAdminServicios');
-Route::get('/admin/tramites', 'PagesController@getAdminTramites');
+Route::get('/admin/tramites', 'PagesController@getAdminTramites'); */
 /* Route::get('/admin/transparencia', 'PagesController@getAdminTransparencia'); */
 /* Route::get('/admin/reservaciones', 'PagesController@getAdminReservaciones'); */
 /* Route::get('/admin/usuarios', 'PagesController@getAdminUsuarios'); */

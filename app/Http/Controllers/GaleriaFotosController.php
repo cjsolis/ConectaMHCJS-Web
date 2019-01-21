@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\GaleriaFotos;
 use Illuminate\Http\Request;
+use Auth;
 
 class GaleriaFotosController extends Controller
 {

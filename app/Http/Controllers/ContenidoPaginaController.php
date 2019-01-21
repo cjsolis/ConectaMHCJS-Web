@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ContenidoPagina;
 use Illuminate\Http\Request;
+use Auth;
 
 class ContenidoPaginaController extends Controller
 {

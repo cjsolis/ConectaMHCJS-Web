@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Noticias;
 use Illuminate\Http\Request;
+use Auth;
 
 class NoticiasController extends Controller
 {

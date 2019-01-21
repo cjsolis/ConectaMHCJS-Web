@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\FormularioUsoEspacios;
+use Auth;
 
 class FormularioUsoEspaciosController extends Controller
 {
