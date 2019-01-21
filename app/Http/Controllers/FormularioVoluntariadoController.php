@@ -40,15 +40,25 @@ class FormularioVoluntariadoController extends Controller
 
   public function index()
   {
-    $formularios = FormularioVoluntariado::orderBy('id_voluntariado', 'desc')->paginate(4);
-    return view('adminformvol')->with('formularios', $formularios);
+    if(Auth::guard('admin')->check()){
+      $formularios = FormularioVoluntariado::orderBy('id_voluntariado', 'desc')->paginate(4);
+      return view('adminformvol')->with('formularios', $formularios);
+    }else{
+
+      return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+    }
   }
 
   public function destroy($id)
   {
-    $formulario = FormularioVoluntariado::find($id);
-    $formulario->delete();
-       
-    return redirect('/admin/formvol')->with('success', 'El formulario se ha eliminado correctamente.');
+    if(Auth::guard('admin')->check()){
+      $formulario = FormularioVoluntariado::find($id);
+      $formulario->delete();
+        
+      return redirect('/admin/formvol')->with('success', 'El formulario se ha eliminado correctamente.');
+    }else{
+
+      return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+    }
   }
 }

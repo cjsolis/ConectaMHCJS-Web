@@ -47,15 +47,25 @@ class FormularioUsoEspaciosController extends Controller
 
   public function index()
   {
-    $formularios = FormularioUsoEspacios::orderBy('id_usoespacios', 'desc')->paginate(4);
-    return view('adminformue')->with('formularios', $formularios);
+    if(Auth::guard('admin')->check()){
+      $formularios = FormularioUsoEspacios::orderBy('id_usoespacios', 'desc')->paginate(4);
+      return view('adminformue')->with('formularios', $formularios);
+    }else{
+
+      return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+    }
   }
 
   public function destroy($id)
   {
-    $formulario = FormularioUsoEspacios::find($id);
-    $formulario->delete();
-       
-    return redirect('/admin/formue')->with('success', 'El formulario se ha eliminado correctamente.');
+    if(Auth::guard('admin')->check()){
+      $formulario = FormularioUsoEspacios::find($id);
+      $formulario->delete();
+        
+      return redirect('/admin/formue')->with('success', 'El formulario se ha eliminado correctamente.');
+    }else{
+
+      return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+    }
   }
 }

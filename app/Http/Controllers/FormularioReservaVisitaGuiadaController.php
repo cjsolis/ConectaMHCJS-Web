@@ -57,8 +57,13 @@ class FormularioReservaVisitaGuiadaController extends Controller
 
   public function indexAdmin()
   {
-    $reservas = ReservaVisitaGuiada::orderBy('created_at', 'desc')->paginate(4);
-    return view('adminreservaciones', compact('reservas'));
+    if(Auth::guard('admin')->check()){
+      $reservas = ReservaVisitaGuiada::orderBy('created_at', 'desc')->paginate(4);
+      return view('adminreservaciones', compact('reservas'));
+    }else{
+
+      return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+    }
   }
 
   public function destroyCancelar($id)
@@ -71,9 +76,14 @@ class FormularioReservaVisitaGuiadaController extends Controller
 
   public function destroy($id)
   {
-    $formulario = ReservaVisitaGuiada::find($id);
-    $formulario->delete();
-       
-    return redirect('/admin/reservaciones')->with('success', 'La reserva se ha eliminado exitosamente.');
+    if(Auth::guard('admin')->check()){
+      $formulario = ReservaVisitaGuiada::find($id);
+      $formulario->delete();
+        
+      return redirect('/admin/reservaciones')->with('success', 'La reserva se ha eliminado exitosamente.');
+    }else{
+
+      return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+    }
   }
 }
