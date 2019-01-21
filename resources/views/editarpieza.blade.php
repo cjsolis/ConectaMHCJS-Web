@@ -102,13 +102,13 @@
         {!! Form::open(['url' => ['admin/catalogo', $pieza->id_pieza], 'method' => 'POST']) !!}
             {{Form::hidden('_method', 'PUT')}}
             <div class="form-group">
-                {{Form::label('nombre_pieza', 'Título de la Noticia:')}}
-                {{Form::text('nombre_pieza', $pieza->nombre_pieza,['class' => 'form-control','placeholder'=> 'Título de la Noticia'])}}
+                {{Form::label('nombre_pieza', 'Nombre de la pieza:')}}
+                {{Form::text('nombre_pieza', $pieza->nombre_pieza,['class' => 'form-control','placeholder'=> 'Nombre de la pieza'])}}
             </div>
 
             <div class="form-group">
-                {{Form::label('descripcion_pieza', 'Descripción de la Noticia:')}}
-                {{Form::textarea('descripcion_pieza', $pieza->descripcion_pieza, ['id' => 'article-ckeditor', 'class' => 'form-control','placeholder'=> 'Descripción de la Pieza'])}}
+                {{Form::label('descripcion_pieza', 'Descripción url de la imagen:')}}
+                {{Form::textarea('descripcion_pieza', $pieza->descripcion_pieza, ['id' => 'article-ckeditor', 'class' => 'form-control','placeholder'=> 'Descripción de la pieza'])}}
             </div>
             <div class="form-group">
                 {{Form::label('url_imagen_pieza', 'Contenido de la Noticia:')}}
