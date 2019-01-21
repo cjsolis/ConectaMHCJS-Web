@@ -107,11 +107,11 @@
             </div>
 
             <div class="form-group">
-                {{Form::label('descripcion_pieza', 'Descripción url de la imagen:')}}
+                {{Form::label('descripcion_pieza', 'Descripción de la pieza:')}}
                 {{Form::textarea('descripcion_pieza', $pieza->descripcion_pieza, ['id' => 'article-ckeditor', 'class' => 'form-control','placeholder'=> 'Descripción de la pieza'])}}
             </div>
             <div class="form-group">
-                {{Form::label('url_imagen_pieza', 'Contenido de la Noticia:')}}
+                {{Form::label('url_imagen_pieza', 'Direccíon url de la imagen:')}}
                 {{Form::text('url_imagen_pieza', $pieza->url_img_pieza, ['class' => 'form-control','placeholder'=> 'Dirección url de imagen'])}}
             </div>
             <div class="form-group">
