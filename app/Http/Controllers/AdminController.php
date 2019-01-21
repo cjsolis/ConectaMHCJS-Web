@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Http\Controllers\Admin;
 
 
 class AdminController extends Controller
@@ -26,5 +28,25 @@ class AdminController extends Controller
     {
     //  return view('admincatalogo');
         return view('adminindex');
+    }
+
+    public function update(){
+        if(Auth::guard('admin')->check()){
+            $this->validate($request, [
+                'contraseña'=> 'required',
+            ]);
+            $id = 1;
+            $admin = Admin::find($id);
+            $admin->password = Hash::make($request->input());
+  
+        
+            $pieza->save();
+        
+        
+            return redirect('/admin')->with('success','Contraseña actualizada exitosamente.');
+        }else{
+
+            return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+        }
     }
 }
