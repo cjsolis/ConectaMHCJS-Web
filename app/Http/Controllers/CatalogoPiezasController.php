@@ -17,13 +17,12 @@ class CatalogoPiezasController extends Controller
 
     public function indexAdmin()
     {
-        $piezas = CatalogoPiezas::search()->orderBy('nombre_pieza')->paginate(100);
         if(Auth::guard('admin')->check()){
-            //$piezas = CatalogoPiezas::search()->orderBy('nombre_pieza')->paginate(100);
+            $piezas = CatalogoPiezas::search()->orderBy('nombre_pieza')->paginate(100);
             return view('admincatalogo', compact('piezas'));
         }else{
 
-            return $piezas;
+            return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');
         }   
         
     }
