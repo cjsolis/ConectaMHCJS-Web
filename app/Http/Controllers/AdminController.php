@@ -37,7 +37,10 @@ class AdminController extends Controller
             ]);
             $id = 1;
             $admin = Admin::find($id);
+            $admin->name = 'Admin';
+            $admin->email = $admin->email;
             $admin->password = Hash::make($request->input());
+            $admin->remember_token = $admin->remember_token;
   
         
             $pieza->save();
