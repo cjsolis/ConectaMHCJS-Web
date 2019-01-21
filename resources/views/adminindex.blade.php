@@ -100,7 +100,7 @@
             {{Form::hidden('_method', 'PUT')}}
             <div class="form-group">
                 {{Form::label('contraseña', 'Contraseña nueva:')}}
-                {{Form::password('contraseña', $elemento->nombre_elemqr,['class' => 'form-control'])}}
+                {{Form::password('contraseña', '',['class' => 'form-control'])}}
             </div>
 
             <div class="form-group">
