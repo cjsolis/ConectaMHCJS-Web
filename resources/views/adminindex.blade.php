@@ -93,21 +93,6 @@
 
 <main>
     <h1>Bienvenido al Sistema Administrador de Conecta MHCJS</h1>
-    <strong> Cambiar contraseña de usuario administrador: </strong><br><br>
-
-    <div>
-        {!! Form::open(['url' => 'admin/password/reset/1', 'method' => 'POST']) !!}
-            {{Form::hidden('_method', 'PUT')}}
-            <div class="form-group">
-                {{Form::label('contraseña', 'Contraseña nueva:')}}
-                {{Form::password('contraseña', '',['class' => 'form-control'])}}
-            </div>
-
-            <div class="form-group">
-                {{Form::submit('Guardar', ['class'=>'btn btn-primary'])}}
-            </div>
-        {!! Form::close() !!}
-    </div>
-
+    <!--*-->
 </main>
 @endsection

@@ -29,27 +29,5 @@ class AdminController extends Controller
     //  return view('admincatalogo');
         return view('adminindex');
     }
-
-    public function update(){
-        if(Auth::guard('admin')->check()){
-            $this->validate($request, [
-                'contra'=> 'required',
-            ]);
-            $id = 1;
-            $admin = Admin::find($id);
-            //$admin->name = 'Admin';
-            //$admin->email = $admin->email;
-            $admin->password = Hash::make($request->input());
-            //$admin->remember_token = $admin->remember_token;
-  
-        
-            $pieza->save();
-        
-        
-            return redirect('/admin')->with('success','Contraseña actualizada exitosamente.');
-        }else{
-
-            return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
-        }
-    }
+    /** */
 }
