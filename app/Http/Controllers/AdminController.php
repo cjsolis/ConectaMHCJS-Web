@@ -33,14 +33,14 @@ class AdminController extends Controller
     public function update(){
         if(Auth::guard('admin')->check()){
             $this->validate($request, [
-                'contraseña'=> 'required',
+                'contra'=> 'required',
             ]);
             $id = 1;
             $admin = Admin::find($id);
-            $admin->name = 'Admin';
-            $admin->email = $admin->email;
+            //$admin->name = 'Admin';
+            //$admin->email = $admin->email;
             $admin->password = Hash::make($request->input());
-            $admin->remember_token = $admin->remember_token;
+            //$admin->remember_token = $admin->remember_token;
   
         
             $pieza->save();
