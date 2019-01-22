@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ContenidoPagina;
 use Illuminate\Http\Request;
+use Auth;
 
 class ContenidoPaginaController extends Controller
 {
@@ -57,55 +58,90 @@ class ContenidoPaginaController extends Controller
      */
     public function editUE($id)
     {
-        $contenido = ContenidoPagina::find($id);
-        return view('editarusoesp')->with('contenido', $contenido);
+        if(Auth::guard('admin')->check()){
+            $contenido = ContenidoPagina::find($id);
+            return view('editarusoesp')->with('contenido', $contenido);
+        }else{
+
+            return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+        }
     }
 
     public function editVol($id)
     {
-        $contenido = ContenidoPagina::find($id);
-        return view('editarvol')->with('contenido', $contenido);
+        if(Auth::guard('admin')->check()){
+            $contenido = ContenidoPagina::find($id);
+            return view('editarvol')->with('contenido', $contenido);
+        }else{
+
+            return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+        }
     }
 
     public function editPub($id)
     {
-        $contenido = ContenidoPagina::find($id);
-        return view('editarpub')->with('contenido', $contenido);
+        if(Auth::guard('admin')->check()){
+            $contenido = ContenidoPagina::find($id);
+            return view('editarpub')->with('contenido', $contenido);
+        }else{
+
+            return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+        }
     }
 
     public function editVg($id)
     {
-        $contenido = ContenidoPagina::find($id);
-        return view('editarvg')->with('contenido', $contenido);
+        if(Auth::guard('admin')->check()){
+            $contenido = ContenidoPagina::find($id);
+            return view('editarvg')->with('contenido', $contenido);
+        }else{
+
+            return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+        }
     }
 
     public function editRe($id)
     {
-        $contenido = ContenidoPagina::find($id);
-        return view('editarre')->with('contenido', $contenido);
+        if(Auth::guard('admin')->check()){
+            $contenido = ContenidoPagina::find($id);
+            return view('editarre')->with('contenido', $contenido);
+        }else{
+
+            return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+        }
     }
 
     public function editAe($id)
     {
-        $contenido = ContenidoPagina::find($id);
-        return view('editarse')->with('contenido', $contenido);
+        if(Auth::guard('admin')->check()){
+            $contenido = ContenidoPagina::find($id);
+            return view('editarse')->with('contenido', $contenido);
+        }else{
+
+            return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+        }
     }
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'texto_contenido'=> 'required',
+        if(Auth::guard('admin')->check()){
+            $this->validate($request, [
+                'texto_contenido'=> 'required',
 
-        ]);
+            ]);
 
-        $contenido = ContenidoPagina::find($id);
-        $contenido->texto_contenido = $request->input('texto_contenido');
- 
+            $contenido = ContenidoPagina::find($id);
+            $contenido->texto_contenido = $request->input('texto_contenido');
     
-        $contenido->save();
-    
-    
-        return redirect('/admin/catalogo')->with('success','Contenido actualizado correctamente.');
+        
+            $contenido->save();
+        
+        
+            return redirect('/admin/catalogo')->with('success','Contenido actualizado correctamente.');
+        }else{
+
+            return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+        }
     }
 
     public function destroy(ContenidoPagina $contenidoPagina)

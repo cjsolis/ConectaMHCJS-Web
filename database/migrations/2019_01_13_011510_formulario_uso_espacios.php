@@ -19,7 +19,7 @@ class FormularioUsoEspacios extends Migration
         $table->string('correo');
         $table->integer('telefono');
         $table->string('institucion')->nullable();
-        $table->string('fecha');
+        $table->date('fecha');
         $table->string('motivo');
 
 

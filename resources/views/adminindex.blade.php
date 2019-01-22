@@ -93,6 +93,6 @@
 
 <main>
     <h1>Bienvenido al Sistema Administrador de Conecta MHCJS</h1>
-
+    <!--*-->
 </main>
 @endsection

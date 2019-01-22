@@ -89,7 +89,7 @@
         <ul class="submenu">
           <li><a href="/admin/tramites/4/editarue">Uso de Espacio</a></li>
           <li><a href="/admin/tramites/5/editarvol">Voluntariado</a></li>
-          <li><a href="/admin/tramites/6/editarpub">Publicaciones</a></li>
+          <li><a href="/admin/tramites/6/editarpub">Editorial</a></li>
         </ul>
       </li>
 

@@ -14,7 +14,7 @@ class AdminTableSeeder extends Seeder
     {
         Admin::create([
             'name' => 'Admin',
-            'email' => 'admin@admin.com',
+            'email' => 'admin@mhcjs.go.cr',
             'password' => Hash::make('password'),
             'remember_token' => str_random(10),
           ]);

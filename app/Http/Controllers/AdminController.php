@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Http\Controllers\Admin;
 
 
 class AdminController extends Controller
@@ -27,4 +29,5 @@ class AdminController extends Controller
     //  return view('admincatalogo');
         return view('adminindex');
     }
+    /** */
 }

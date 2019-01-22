@@ -1,5 +1,5 @@
 
-<div id="footerb"style="width:100%; height:265px;background:#062F5D;">
+<div id="footerb"style="width:100%; height:265px;background:#702532;">
    <div class="container footer">
      <div class="one_fourth"  style="width: 500px;">
         <ul class="list-inline">
@@ -16,6 +16,7 @@
 
 
      </div>
+     <br>
      <div class="one_fourth"></div>
      <div class="one_fourth">
        <ul>

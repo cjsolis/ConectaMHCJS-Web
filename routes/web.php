@@ -47,11 +47,11 @@ Route::get('/registrarsetienda', 'PagesController@getRegistrarse');
 
 Route::get('/reservavisitaguiada', 'PagesController@getReservaVisitaGuiada');
 
-Route::get('/admin/formularios', 'PagesController@getAdminFormularios');
+/* Route::get('/admin/formularios', 'PagesController@getAdminFormularios');
 
 
 Route::get('/admin/servicios', 'PagesController@getAdminServicios');
-Route::get('/admin/tramites', 'PagesController@getAdminTramites');
+Route::get('/admin/tramites', 'PagesController@getAdminTramites'); */
 /* Route::get('/admin/transparencia', 'PagesController@getAdminTransparencia'); */
 /* Route::get('/admin/reservaciones', 'PagesController@getAdminReservaciones'); */
 /* Route::get('/admin/usuarios', 'PagesController@getAdminUsuarios'); */
@@ -153,6 +153,7 @@ Auth::routes();
 
 Route::get('/dashboardreservas', 'FormularioReservaVisitaGuiadaController@index');
 Route::delete('/dashboardreservas/{reserva}', 'FormularioReservaVisitaGuiadaController@destroyCancelar');
+Route::get('/admin/password/reset/{id}', 'AdminController@update');
 
 //debe estar en ese orden:
 //route::prefix('admin')->group(function(){//este group es como decir /admin/login.
@@ -161,6 +162,8 @@ Route::prefix('admin')->group(function() {
   Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
   Route::get('/', 'AdminController@index')->name('admin.dashboard');
   Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+
+
 
   // Password reset routes
   Route::post('/password/email', 'Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');

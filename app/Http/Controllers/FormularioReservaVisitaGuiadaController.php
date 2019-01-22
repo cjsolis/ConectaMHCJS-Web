@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\ReservaVisitaGuiada;
 use Illuminate\Support\Facades\DB;
 use Auth;
+
 class FormularioReservaVisitaGuiadaController extends Controller
 {
   public function Enviar(Request $request){
@@ -14,7 +15,7 @@ class FormularioReservaVisitaGuiadaController extends Controller
     //si no no hace submit.
     $this->validate($request, [
       'telefono_del_solicitante'=> 'required|integer|min:8',
-      'cantidad_de_personas'=>'required|integer|gt:5|lt:20',
+      'cantidad_de_personas'=>'required|integer',
       'rango_de_edad'=>'required',
       'fecha_de_visita'=>'required|unique:reserva_visita_guiadas,fecha',
 
@@ -57,8 +58,13 @@ class FormularioReservaVisitaGuiadaController extends Controller
 
   public function indexAdmin()
   {
-    $reservas = ReservaVisitaGuiada::orderBy('created_at', 'desc')->paginate(4);
-    return view('adminreservaciones', compact('reservas'));
+    if(Auth::guard('admin')->check()){
+      $reservas = ReservaVisitaGuiada::orderBy('created_at', 'desc')->paginate(4);
+      return view('adminreservaciones', compact('reservas'));
+    }else{
+
+      return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+    }
   }
 
   public function destroyCancelar($id)
@@ -71,9 +77,14 @@ class FormularioReservaVisitaGuiadaController extends Controller
 
   public function destroy($id)
   {
-    $formulario = ReservaVisitaGuiada::find($id);
-    $formulario->delete();
-       
-    return redirect('/admin/reservaciones')->with('success', 'La reserva se ha eliminado exitosamente.');
+    if(Auth::guard('admin')->check()){
+      $formulario = ReservaVisitaGuiada::find($id);
+      $formulario->delete();
+        
+      return redirect('/admin/reservaciones')->with('success', 'La reserva se ha eliminado exitosamente.');
+    }else{
+
+      return redirect('/admin/login')->with('error','Debe estar conectado como administrador para entrar.');    
+    }
   }
 }
