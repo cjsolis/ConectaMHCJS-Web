@@ -15,7 +15,7 @@ class FormularioReservaVisitaGuiadaController extends Controller
     //si no no hace submit.
     $this->validate($request, [
       'telefono_del_solicitante'=> 'required|integer|min:8',
-      'cantidad_de_personas'=>'required|integer|gt:5|lt:20',
+      'cantidad_de_personas'=>'required|integer',
       'rango_de_edad'=>'required',
       'fecha_de_visita'=>'required|unique:reserva_visita_guiadas,fecha',
 
