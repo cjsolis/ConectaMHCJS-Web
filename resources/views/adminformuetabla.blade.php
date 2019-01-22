@@ -92,8 +92,59 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 <main>
+    <h1>Formularios de Uso de Espacio</h1>
+    @if(count($formularios) > 0)
+        <div style="overflow-y:scroll;width: auto; height:500px;" >
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>
+                        <strong>Nombre</strong>
+                    </th>
 
-        <div class="well">
+                    <th>
+                        <strong>Correo</strong>
+                    </th>
+
+                    <th>
+                        <strong>Fecha de envío</strong>
+                    </th>
+
+                    <th>
+                        <strong>Estado</strong>
+                    </th>
+
+                    <th>
+                    </th>
+
+                    
+                    @foreach($formularios as $formulario)
+                        <tr>
+                            <th>
+                                <p> {{$formulario->nombre}}</p>
+                            </th>
+
+                            <th>
+                                <p> {{$formulario->correo}}</p>
+                            </th>
+
+                            <th>
+                                <p> {{$formulario->created_at}}</p>
+                            </th>
+
+                            <th>
+                                <p> {{$formulario->estado}}</p>
+                            </th>
+
+                            <th>
+                                <a href="/admin/formue/{{ $formulario->id_usoespacios }}">Ver</a>
+                            </th>
+
+                        </tr>
+                    @endforeach
+                </tr>
+            </table>
+        </div>
+        {{-- <div class="well">
             <h3>Nombre del solicitante:</h3>
             <p>{{ $formulario->nombre }}</p>
             <h3>Correo del solicitante:</h3>
@@ -104,19 +155,16 @@
             <p>{{ $formulario->fecha }}</p>
             <h3>Motivo de solicitud:</h3>
             <p>{{ $formulario->motivo }}</p>
-            <h3>Fecha de solicitud recibida:</h3>
-            <p>{{ $formulario->created_at }}</p>
-            @if($formulario->estado == 'Sin leer')
-                {!! Form::open(['url' => ['/admin/formue/update', $formulario->id_usoespacios], 'method' => 'POST']) !!}
-                    {{Form::hidden('_method', 'PUT')}}
-                    {{Form::submit('Leído',['class'=>'btn btn-primary'])}}
-                {!! Form::close() !!}
-            @else
-                {!! Form::open(['url' => '/admin/formue/', 'method' => 'GET']) !!}
-                    {{Form::submit('Volver',['class'=>'btn btn-primary'])}}
-                {!! Form::close() !!}
-            @endif 
-        </div>
-
+            {!! Form::open(['url' => ['/admin/formue', $formulario->id_usoespacios], 'method' => 'POST']) !!}
+                {{Form::hidden('_method', 'DELETE')}}
+                {{Form::submit('Eliminar',['class'=>'btn btn-danger'])}}
+            {!! Form::close() !!}
+        </div> --}}
+    @else
+        <br>
+        <strong>No hay formularios por mostrar.</strong>
+        <br>
+        <br>
+    @endif
 </main>
 @endsection

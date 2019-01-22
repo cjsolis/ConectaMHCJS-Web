@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class FormularioVoluntariado extends Model
 {
-  public $timestamps = false;
+  public $timestamps = true;
   protected $primaryKey = 'id_voluntariado';
 }

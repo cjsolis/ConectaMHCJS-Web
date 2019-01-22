@@ -10,7 +10,7 @@
 
 <?php
 $userId = Auth::id();//id unico del usuario logueado.
-$datostablareservas = App\ReservaVisitaGuiada::all()->where('id_usuario','=',$userId);
+$datostablareservas = App\ReservaVisitaGuiada::orderBy('created_at', 'desc')->get()->where('id_usuario','=',$userId);
 
 //echo $userId;
 $datoporidusuario = App\User::find($userId);
@@ -27,16 +27,21 @@ $datoporidusuario = App\User::find($userId);
                 <p>Número de reserva: {{$datos->id_reserva}}</p>
                 <p>Institución: {{$datos->institucion}}</p>
                 <p>Cantidad de Personas: {{$datos->numpersonas}}</p>
-                <p>Rango de edad: {{$datos->rangoedad}}</p>
+                <p>Rango de edad:</p>
+                <p>De {{$datos->rangoedadmenor}} años a {{$datos->rangoedadmayor}} años.</p>
                 <p>Fecha solicitada: {{$datos->fecha}}</p>
                 <p>Solicitud de materiales: {{$datos->materialeseducativos}}</p>
                 <p>Solicitudes en necesidades especiales: {{$datos->necesidadesespeciales}}</p>
                 <p>Número telefónico: {{$datos->telefono}}</p>
                 <p>Estado: {{$datos->estado}}</p>
-                {!! Form::open(['url' => ['/dashboardreservas', $datos->id_reserva], 'method' => 'POST']) !!}
-                {{Form::hidden('_method', 'DELETE')}}
-                {{Form::submit('Cancelar',['class'=>'btn btn-primary'])}}
-                {!! Form::close() !!}                
+                <p>Fecha de la realización de la solicitud: {{$datos->created_at}}</p>
+                @if($datos->estado == 'Pendiente')
+                    {!! Form::open(['url' => ['dashboardreservas/update', $datos->id_reserva], 'method' => 'POST']) !!}
+                        {{Form::hidden('_method', 'PUT')}}
+                        {{Form::submit('Cancelar',['class'=>'btn btn-primary'])}}
+                    {!! Form::close() !!}
+                @else
+                @endif                
             </div>
         @endforeach
 

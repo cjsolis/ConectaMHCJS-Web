@@ -18,7 +18,9 @@ class FormularioVoluntariado extends Migration
         $table->string('nombre');
         $table->string('correo');
         $table->integer('telefono');
-        $table->string('motivo');
+        $table->longText('motivo');
+        $table->string('estado');
+        $table->timestamps();
       });
     }
 
