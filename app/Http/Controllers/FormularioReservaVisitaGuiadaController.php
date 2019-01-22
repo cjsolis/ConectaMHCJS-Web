@@ -14,21 +14,21 @@ class FormularioReservaVisitaGuiadaController extends Controller
     //obliga a que los campos de name y email se llenen,
     //si no no hace submit.
     $this->validate($request, [
-      'telefono_del_solicitante'=> 'required|integer|min:8',
-      'cantidad_de_personas'=>'required|integer',
-      'rango_de_edad'=>'required',
+      'telefono_del_solicitante'=> 'required|integer|digits:8',
+      'cantidad_de_personas'=>'required|integer|min:5|max:20',
+      'rango_de_edad_menor'=>'required|integer|min:1|max:120',
+      'rango_de_edad_mayor'=>'required|integer|min:1|max:120|gte:rango_de_edad_menor',
       'fecha_de_visita'=>'required|unique:reserva_visita_guiadas,fecha',
-
-
-
     ]);
+
     //  return 123;
     //create new ReservaVisitaGuiada
     $reservavisita = new ReservaVisitaGuiada;
-    $reservavisita->id_usuario=Auth::id();
+    $reservavisita->id_usuario = Auth::id();
     $reservavisita->institucion = $request->input('institucion_del_visitante');
     $reservavisita->numpersonas = $request->input('cantidad_de_personas');
-    $reservavisita->rangoedad = $request->input('rango_de_edad');
+    $reservavisita->rangoedadmenor = $request->input('rango_de_edad_menor');
+    $reservavisita->rangoedadmayor = $request->input('rango_de_edad_mayor');
     $reservavisita->fecha = $request->input('fecha_de_visita');
     $reservavisita->materialeseducativos = $request->input('materialeseducativos_visitaguiada');
     $reservavisita->necesidadesespeciales = $request->input('necesidadesespeciales_visitaguiada');
@@ -41,7 +41,7 @@ class FormularioReservaVisitaGuiadaController extends Controller
     //$values = array($reservavisita->id_usuario,$reservavisita->institucion,$reservavisita->numpersonas,$reservavisita->rangoedad,$reservavisita->fecha,$reservavisita->hora,$reservavisita->materialeseducativos,$reservavisita->necesidadesespeciales,$reservavisita->telefono);
     //DB::table('reserva_visita_guiadas')->insert($values);
 
-    return redirect('/')->with('success','Reservación creada.');
+    return redirect('/reservavisitaguiada')->with('success','Reservación creada.');
 
   /*  public function getReservaUsuario(Request $idusuario){
       $datosusuario = DB::table('reserva_visita_guiadas')->where('id_usuario', 1)->get();
@@ -73,6 +73,16 @@ class FormularioReservaVisitaGuiadaController extends Controller
     $formulario->delete();
        
     return redirect('/dashboardreservas')->with('success', 'La reserva se ha cancelado exitosamente.');
+  }
+
+  public function updateStatusCancelled(Request $request, $id){
+
+    $reservavisita = ReservaVisitaGuiada::find($id);
+
+    $reservavisita->estado = 'Cancelada';
+
+    $reservavisita->save();
+    return redirect('/dashboardreservas')->with('success','Reservación cancelada.');
   }
 
   public function destroy($id)

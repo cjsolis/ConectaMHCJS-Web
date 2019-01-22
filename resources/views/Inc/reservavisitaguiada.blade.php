@@ -131,11 +131,18 @@ input:checked + label {
              </div>
              <div class="form-group" style="width:500px;">
                {{Form::label('personas_visitaguiada', 'Cantidad de personas')}}
-               {{Form::text('cantidad_de_personas', '',['class' => 'form-control','placeholder'=> 'Ej: 12'])}}
+               {{Form::text('cantidad_de_personas', '',['class' => 'form-control','placeholder'=> 'Ej: 7'])}}
              </div>
              <div class="form-group" style="width:500px;">
-               {{Form::label('rango_visitaguiada', 'Rango de edad')}}
-               {{Form::text('rango_de_edad', '',['class' => 'form-control','placeholder'=> 'Ej: 12-16'])}}
+               {{Form::label('rango_visitaguiada', 'Rango de edad (años)')}}
+              </div>
+              <div class="form-group" style="width:500px;">
+               {{Form::label('rango_visitaguiada', 'De:')}}
+               {{Form::text('rango_de_edad_menor', '',['class' => 'form-control','placeholder'=> 'Ej: 12'])}}
+             </div>
+             <div class="form-group" style="width:500px;">
+               {{Form::label('rango_visitaguiada', 'A:')}}
+               {{Form::text('rango_de_edad_mayor', '',['class' => 'form-control','placeholder'=> 'Ej: 16'])}}
              </div>
              <div class="form-group" style="width:500px;">
                {{Form::label('fecha_visitaguiada', 'Fecha')}}

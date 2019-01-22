@@ -20,9 +20,9 @@ class FormularioUsoEspacios extends Migration
         $table->integer('telefono');
         $table->string('institucion')->nullable();
         $table->date('fecha');
-        $table->string('motivo');
-
-
+        $table->longText('motivo');
+        $table->string('estado');
+        $table->timestamps();
       });
     }
 

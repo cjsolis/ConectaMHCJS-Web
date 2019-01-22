@@ -18,7 +18,8 @@ class CreateReservaVisitaGuiadasTable extends Migration
         $table->integer('id_usuario')->unsigned();
         $table->string('institucion')->nullable();
         $table->integer('numpersonas');
-        $table->string('rangoedad');
+        $table->integer('rangoedadmenor');
+        $table->integer('rangoedadmayor');
         $table->date('fecha')->unique();
         $table->mediumText('materialeseducativos')->nullable();
         $table->mediumText('necesidadesespeciales')->nullable();

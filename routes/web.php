@@ -136,10 +136,14 @@ Route::put('/admin/actualizar/{contenido}', 'ContenidoPaginaController@update');
 // Rutas para formulario de uso de espacios
 Route::get('/admin/formue', 'FormularioUsoEspaciosController@index');
 Route::delete('/admin/formue/{formulario}', 'FormularioUsoEspaciosController@destroy');
+Route::get('/admin/formue/{formulario}', 'FormularioUsoEspaciosController@show');
+Route::put('/admin/formue/update/{id}', 'FormularioUsoEspaciosController@update');
 
 // Rutas para formulario de uso de espacios
 Route::get('/admin/formvol', 'FormularioVoluntariadoController@index');
 Route::delete('/admin/formvol/{formulario}', 'FormularioVoluntariadoController@destroy');
+Route::get('/admin/formvol/{formulario}', 'FormularioVoluntariadoController@show');
+Route::put('/admin/formvol/update/{id}', 'FormularioVoluntariadoController@update');
 
 // Rutas para los usuarios
 Route::get('/admin/usuarios', 'UsersController@index');
@@ -152,6 +156,7 @@ Route::delete('/admin/reservaciones/{reserva}', 'FormularioReservaVisitaGuiadaCo
 Auth::routes();
 
 Route::get('/dashboardreservas', 'FormularioReservaVisitaGuiadaController@index');
+Route::put('/dashboardreservas/update/{id}', 'FormularioReservaVisitaGuiadaController@updateStatusCancelled');
 Route::delete('/dashboardreservas/{reserva}', 'FormularioReservaVisitaGuiadaController@destroyCancelar');
 Route::get('/admin/password/reset/{id}', 'AdminController@update');
 

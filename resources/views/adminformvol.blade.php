@@ -92,9 +92,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 <main>
-    <h1>Formularios de Voluntariado</h1>
-    @if(count($formularios) > 0)
-        @foreach($formularios as $formulario)
+
         <div class="well">
             <h3>Nombre del Solicitante:</h3>
             <p> {{ $formulario->nombre }} </p>
@@ -104,18 +102,17 @@
             <p>{{ $formulario->telefono }}</p>
             <h3>Motivo del solicitante: </h3>
             <p>{{ $formulario->motivo }}</p>
-            {!! Form::open(['url' => ['/admin/formvol', $formulario->id_voluntariado], 'method' => 'POST']) !!}
-                {{Form::hidden('_method', 'DELETE')}}
-                {{Form::submit('Eliminar',['class'=>'btn btn-danger'])}}
-            {!! Form::close() !!}
+            @if($formulario->estado == 'Sin leer')
+                {!! Form::open(['url' => ['/admin/formvol/update', $formulario->id_voluntariado], 'method' => 'POST']) !!}
+                    {{Form::hidden('_method', 'PUT')}}
+                    {{Form::submit('Leído',['class'=>'btn btn-primary'])}}
+                {!! Form::close() !!}
+            @else
+                {!! Form::open(['url' => '/admin/formvol/', 'method' => 'GET']) !!}
+                    {{Form::submit('Volver',['class'=>'btn btn-primary'])}}
+                {!! Form::close() !!}
+            @endif 
         </div>
-        @endforeach
-        {{ $formularios->links() }}
-    @else
-        <br>
-        <strong>No hay formularios por mostrar.</strong>
-        <br>
-        <br>
-    @endif
+
 </main>
 @endsection
